@@ -37,9 +37,9 @@
   }
 }
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) .logo img,:root:not([data-theme="light"]) .drawer-head img{background:#FFFFFF;border-radius:10px;padding:5px 10px}
+  :root:not([data-theme="light"]) .logo img,:root:not([data-theme="light"]) .drawer-head img{background:#FFFFFF;border-radius:10px;padding:5px 10px;box-sizing:content-box}
 }
-:root[data-theme="dark"] .logo img,:root[data-theme="dark"] .drawer-head img{background:#FFFFFF;border-radius:10px;padding:5px 10px}
+:root[data-theme="dark"] .logo img,:root[data-theme="dark"] .drawer-head img{background:#FFFFFF;border-radius:10px;padding:5px 10px;box-sizing:content-box}
 :root[data-theme="dark"]{
   --ivory:#1A110B; --paper:#22170F; --peach:#3A2516; --peach-soft:#2A1B11;
   --heading:#FFE3D2; --ink:#F6ECE2; --ink-soft:#CDBBAC; --line:#3D2A1C;
@@ -101,8 +101,10 @@ p{margin:0}
 .site-header.scrolled{background:color-mix(in srgb,var(--ivory) 94%,transparent);box-shadow:0 1px 0 var(--line),0 10px 30px -24px rgba(60,30,10,.5)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:80px;transition:min-height .3s}
 .scrolled .nav{min-height:68px}
-.logo img{height:48px;width:auto;transition:height .3s}
-.scrolled .logo img{height:42px}
+.logo{flex:none;display:block}
+.logo img,.drawer-head img,.f-logo img{width:auto;max-width:none;object-fit:contain}
+.logo img{height:44px;transition:height .3s}
+.scrolled .logo img{height:40px}
 .menu{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
 .menu > li{position:relative}
 .menu a,.menu .dd-toggle{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:500;font-size:.98rem;color:var(--ink);background:none;border:0;font-family:inherit;cursor:pointer;position:relative}
@@ -118,10 +120,10 @@ p{margin:0}
 @media (max-width:1240px){.menu a,.menu .dd-toggle{padding:10px 10px;font-size:.94rem}.menu > li > a::after,.menu .dd-toggle::after{left:10px;right:10px}}
 .burger{display:none;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;place-items:center}
 .burger svg{width:22px;height:22px}
-@media (max-width:1080px){
+@media (max-width:1200px){
   .menu,.nav-cta .btn{display:none}
   .burger{display:grid}
-  .logo img{height:42px}
+  .logo img{height:40px}
 }
 
 /* Mobile drawer */
@@ -410,7 +412,7 @@ a.c-val:hover{color:var(--accent-text)}
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a class="logo" href="https://archi-med.de/" aria-label="ARCHIMED – zur Startseite">
-      <img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED Logo" width="180" height="48">
+      <img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED Logo" width="233" height="44">
     </a>
     <nav aria-label="Hauptnavigation">
       <ul class="menu">
@@ -450,7 +452,7 @@ a.c-val:hover{color:var(--accent-text)}
   <div class="drawer-backdrop" data-close></div>
   <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menü">
     <div class="drawer-head">
-      <img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED Logo" width="150" height="40">
+      <img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED Logo" width="212" height="40">
       <button class="burger" style="display:grid" data-close aria-label="Menü schließen"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
     </div>
     <nav aria-label="Mobile Navigation">
@@ -752,7 +754,7 @@ a.c-val:hover{color:var(--accent-text)}
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <a class="f-logo" href="https://archi-med.de/" aria-label="ARCHIMED – zur Startseite"><img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED Logo" width="150" height="40" loading="lazy"></a>
+        <a class="f-logo" href="https://archi-med.de/" aria-label="ARCHIMED – zur Startseite"><img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED Logo" width="212" height="40" loading="lazy"></a>
         <p>Pflege, Intensivpflege und soziale Unterstützung in Hannover – seit 2007.</p>
         <div class="f-social">
           <a href="https://www.facebook.com/archimedgmbh/" target="_blank" rel="noopener" aria-label="ARCHIMED auf Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
