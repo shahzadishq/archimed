@@ -419,11 +419,12 @@ button{font:inherit;color:inherit}
 .social svg{width:18px;height:18px}
 .f-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:60px;padding-top:24px;border-top:1px solid var(--cocoa-line);font-size:.875rem}
 .f-bottom ul{flex-direction:row;gap:22px;flex-wrap:wrap}
-.f-contact{gap:14px}
-.f-contact a{display:flex;align-items:flex-start;gap:12px;line-height:1.5}
-.fi{flex:none;width:32px;height:32px;margin-top:-4px;border-radius:50%;display:grid;place-items:center;background:rgba(243,105,43,.18);color:#FF9663;transition:background-color .25s,color .25s}
-.fi svg{width:16px;height:16px}
-.f-contact a:hover .fi{background:var(--btn);color:#FFFFFF}
+.f-contact{gap:12px}
+.f-contact a{display:flex;align-items:center;gap:14px;line-height:1.5}
+/* same outline circle as the social icons */
+.fi{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--cocoa-line);display:grid;place-items:center;color:#FFFFFF;transition:border-color .25s,transform .3s var(--ease)}
+.fi svg{width:18px;height:18px}
+.f-contact a:hover .fi{border-color:#FFB48A;transform:translateY(-3px)}
 @media (max-width:900px){.f-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.f-brand{grid-column:1/-1}}
 @media (max-width:480px){.f-grid{grid-template-columns:1fr}}
 
