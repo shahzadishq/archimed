@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ARCHIMED Hannover – Ambulante Intensivpflege mit Herz</title>
+<meta name="description" content="ARCHIMED Hannover: ambulante Intensivpflege für Erwachsene und Kinder, Intensiv-Wohngemeinschaften, Schul- und Kitabegleitung, Individualbegleitung und ambulante Tourenpflege in Niedersachsen und Bremen. Seit 2007 · 24/7 Rufbereitschaft.">
+<meta name="theme-color" content="#1C120C">
+<link rel="icon" href="https://archi-med.de/wp-content/uploads/2024/04/cropped-lgo-1-300x300.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700;800&display=swap">
+<link rel="preload" as="image" href="https://archi-med.de/wp-content/uploads/2024/09/6NB6840-1536x1024.webp">
+<script>
+  /* Scroll animations are opt-in: everything stays visible if JavaScript never runs */
+  (function(d){d.classList.add('js');setTimeout(function(){if(!window.__d4)d.classList.remove('js');},3000);})(document.documentElement);
+</script>
+<style>
+/* Design 4 · "Premium" — espresso and warm ivory, brand orange as the single accent,
+   oversized Poppins display type, cinematic imagery and scroll-driven motion.
+   Body text: Mulish 16px, small text 14px (as on archi-med.de). */
+:root{
+  --espresso:#1C120C; --espresso-2:#2A1B12; --espresso-3:#3A2619;
+  --ivory:#FFFFFF; --cream:#F8F2EB; --sand:#EFE4D8;
+  --ink:#241913; --heading:#22150D; --muted:#6E625A; --line:rgba(34,21,13,.12);
+  --on-dark:#FFFFFF; --on-dark-soft:rgba(255,255,255,.72); --dark-line:rgba(255,255,255,.14);
+  --orange:#F3692B; --btn:#E2581B; --btn-hover:#C2470F; --orange-text:#B84A12; --orange-soft:#FFB48A;
+  --display:"Poppins","Segoe UI",system-ui,sans-serif; --body:"Mulish","Segoe UI",system-ui,-apple-system,sans-serif;
+  --wrap:1280px; --gutter:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.22,.8,.24,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+html:not(.lenis){scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--display);color:var(--heading);letter-spacing:-.03em;line-height:1.05;font-weight:500;text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
+em.o{font-style:normal;color:var(--orange)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.skip{position:fixed;left:12px;top:-80px;z-index:400;background:var(--btn);color:#fff;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.ic{width:20px;height:20px;flex:none}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Shared */
+.section{padding-block:clamp(88px,11vw,160px)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.8125rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--orange-text)}
+.eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
+.dark .eyebrow{color:var(--orange-soft)}
+.h2{font-size:clamp(2.2rem,5vw,4.25rem);font-weight:500}
+.h2 .light{font-weight:300}
+.lede{color:var(--muted);max-width:56ch}
+.dark{background:var(--espresso);color:var(--on-dark)}
+.dark h2,.dark h3{color:var(--on-dark)}
+.dark .lede{color:var(--on-dark-soft)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 30px;border-radius:999px;font-weight:800;font-size:1rem;text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap;overflow:hidden;isolation:isolate;transition:color .4s var(--ease),border-color .4s,transform .4s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:translateY(101%);transition:transform .5s var(--ease)}
+.btn:hover::before{transform:none}
+.btn .ic{width:18px;height:18px;transition:transform .4s var(--ease)}
+.btn:hover .ic-arrow{transform:translateX(4px)}
+.btn-primary{background:var(--btn);color:#fff}
+.btn-primary::before{background:var(--btn-hover)}
+.btn-ghost-light{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost-light::before{background:#fff}
+.btn-ghost-light:hover{color:var(--espresso)}
+.btn-dark{background:var(--espresso);color:#fff}
+.btn-dark::before{background:var(--btn)}
+.btn-line{border-color:var(--line);color:var(--heading)}
+.btn-line::before{background:var(--espresso)}
+.btn-line:hover{color:#fff;border-color:var(--espresso)}
+.link{display:inline-flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--orange-text)}
+.dark .link{color:var(--orange-soft)}
+.link .ic{width:16px;height:16px;transition:transform .35s var(--ease)}
+.link:hover .ic{transform:translateX(5px)}
+.stars{color:#F5B13D;letter-spacing:2px}
+.stars-45{color:transparent;background:linear-gradient(90deg,#F5B13D 0 90%,rgba(255,255,255,.3) 90%);-webkit-background-clip:text;background-clip:text}
+
+/* Intro curtain (pure CSS, never blocks: it lifts itself after ~1s) */
+.intro{position:fixed;inset:0;z-index:300;background:var(--espresso);display:grid;place-items:center;pointer-events:none;animation:curtain .9s var(--ease-out) .85s forwards}
+.intro-inner{display:flex;flex-direction:column;align-items:center;gap:18px}
+.intro img{height:40px;width:auto;opacity:0;animation:fadeIn .6s var(--ease) .1s forwards}
+.intro span{display:block;width:140px;height:1px;background:rgba(255,255,255,.18);overflow:hidden;position:relative}
+.intro span::after{content:"";position:absolute;inset:0;background:var(--orange);transform:scaleX(0);transform-origin:left;animation:grow .7s var(--ease) .15s forwards}
+@keyframes curtain{to{transform:translateY(-100%);visibility:hidden}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes grow{to{transform:scaleX(1)}}
+
+/* Progress */
+.progress{position:fixed;inset:0 0 auto 0;height:2px;z-index:150;background:var(--orange);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto 0;z-index:120;transition:background-color .5s,box-shadow .5s,transform .5s var(--ease)}
+.header .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:88px;transition:min-height .4s}
+.header.solid{background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+.header.solid .nav{min-height:74px}
+.header.hide{transform:translateY(-100%)}
+.brand{position:relative;flex:none;line-height:0}
+.brand img{height:36px;width:auto;max-width:none;transition:opacity .4s}
+.brand .on-light{position:absolute;inset:0 auto auto 0;opacity:0}
+.header.solid .brand .on-dark{opacity:0}
+.header.solid .brand .on-light{opacity:1}
+.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.menu a{position:relative;display:block;padding:10px 14px;text-decoration:none;font-weight:600;font-size:.9375rem;color:#fff;transition:color .3s}
+.menu a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.menu a:hover::after,.menu a.on::after{transform:scaleX(1);transform-origin:left}
+.header.solid .menu a{color:var(--ink)}
+.menu a.on{color:var(--orange-soft)}
+.header.solid .menu a.on{color:var(--orange-text)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.nav-cta .btn{min-height:48px;padding:0 22px}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;cursor:pointer;place-items:center;transition:border-color .3s,color .3s}
+.header.solid .burger{border-color:var(--line);color:var(--ink)}
+.burger svg{width:22px;height:22px}
+@media (max-width:1100px){.menu{display:none}.burger{display:grid}}
+@media (max-width:540px){.nav-cta .btn span{display:none}.nav-cta .btn{width:48px;padding:0}.brand img{height:30px}}
+@media (max-width:360px){.header .nav{gap:10px}.brand img{height:26px}}
+
+/* Full-screen menu */
+.overlay{position:fixed;inset:0;z-index:200;background:var(--espresso);color:#fff;display:flex;flex-direction:column;padding:calc(22px + env(safe-area-inset-top,0px)) var(--gutter) calc(28px + env(safe-area-inset-bottom,0px));clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .7s var(--ease-out),visibility 0s .7s;overflow-y:auto}
+.overlay.open{clip-path:inset(0);visibility:visible;transition:clip-path .8s var(--ease-out),visibility 0s}
+.ov-top{display:flex;justify-content:space-between;align-items:center}
+.ov-top img{height:30px;width:auto}
+.ov-close{width:48px;height:48px;border-radius:50%;border:1px solid var(--dark-line);background:none;color:#fff;cursor:pointer;display:grid;place-items:center}
+.overlay ol{list-style:none;margin:auto 0;padding:32px 0;counter-reset:m}
+.overlay li{overflow:hidden;border-bottom:1px solid var(--dark-line)}
+.overlay ol a{display:flex;align-items:baseline;gap:18px;padding:12px 0;text-decoration:none;font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,8vw,3rem);letter-spacing:-.03em;color:#fff;transform:translateY(100%);transition:transform .8s var(--ease-out),color .3s}
+.overlay ol a::before{counter-increment:m;content:"0" counter(m);font-family:var(--body);font-size:.8125rem;font-weight:800;letter-spacing:.12em;color:var(--orange)}
+.overlay ol a:hover{color:var(--orange-soft)}
+.overlay.open ol a{transform:none}
+.overlay.open li:nth-child(2) a{transition-delay:.05s}.overlay.open li:nth-child(3) a{transition-delay:.1s}.overlay.open li:nth-child(4) a{transition-delay:.15s}.overlay.open li:nth-child(5) a{transition-delay:.2s}.overlay.open li:nth-child(6) a{transition-delay:.25s}
+.ov-foot{display:grid;gap:10px;font-size:.875rem;color:var(--on-dark-soft)}
+.ov-foot a{color:#fff;text-decoration:none}
+
+/* Hero */
+.hero{position:relative;height:100svh;min-height:640px;color:#fff;overflow:hidden;isolation:isolate;background:var(--espresso)}
+.hero-media{position:absolute;inset:0;z-index:-2;transform:translate3d(0,var(--hy,0),0) scale(var(--hs,1));transform-origin:50% 40%}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:kenburns 2.4s var(--ease-out) .7s both}
+@keyframes kenburns{from{transform:scale(1.18)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,12,7,.92) 0%,rgba(20,12,7,.7) 38%,rgba(20,12,7,.18) 75%),linear-gradient(0deg,rgba(20,12,7,.85) 0%,rgba(20,12,7,0) 45%)}
+.hero-content{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(40px,8vh,96px);opacity:var(--ho,1);transform:translate3d(0,var(--hc,0),0)}
+.hero .eyebrow{color:var(--orange-soft);margin-bottom:26px;animation:rise .9s var(--ease-out) 1.05s both}
+.hero h1{color:#fff;font-weight:500;font-size:clamp(2.9rem,8vw,7.2rem);line-height:.98;letter-spacing:-.045em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln > span{display:block;animation:lineUp 1.2s var(--ease-out) both}
+.hero h1 .ln:nth-child(1) > span{animation-delay:1s}
+.hero h1 .ln:nth-child(2) > span{animation-delay:1.12s}
+.hero h1 .light{font-weight:300;color:var(--orange-soft)}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-top:34px}
+.hero-row p{max-width:54ch;color:rgba(255,255,255,.82);animation:rise 1s var(--ease-out) 1.3s both}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;animation:rise 1s var(--ease-out) 1.42s both}
+.glass{display:grid;grid-template-columns:repeat(3,auto);gap:0;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);animation:rise 1s var(--ease-out) 1.55s both}
+.glass div{padding:20px 26px;border-left:1px solid rgba(255,255,255,.14)}
+.glass div:first-child{border-left:0}
+.glass b{display:block;font-family:var(--display);font-weight:500;font-size:1.9rem;line-height:1;letter-spacing:-.03em}
+.glass b i{font-style:normal;color:var(--orange)}
+.glass span{display:block;margin-top:8px;font-size:.875rem;color:rgba(255,255,255,.72)}
+.scroll-cue{position:absolute;right:var(--gutter);top:50%;display:flex;flex-direction:column;align-items:center;gap:14px;font-size:.75rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;writing-mode:vertical-rl;color:rgba(255,255,255,.7);animation:fadeIn 1s 2s both}
+.scroll-cue::after{content:"";width:1px;height:70px;background:linear-gradient(var(--orange),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes lineUp{from{transform:translateY(105%)}to{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (max-width:980px){.hero-row{grid-template-columns:1fr}.scroll-cue{display:none}}
+@media (max-width:600px){.glass{grid-template-columns:repeat(3,minmax(0,1fr))}.glass div{padding:14px 12px}.glass b{font-size:1.35rem}.glass span{font-size:.75rem}.hero::after{background:linear-gradient(0deg,rgba(20,12,7,.95) 10%,rgba(20,12,7,.55) 60%,rgba(20,12,7,.35) 100%)}}
+
+/* Awards strip */
+.awards{border-bottom:1px solid var(--line)}
+.awards .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;padding-block:26px}
+.aw{display:flex;align-items:center;gap:14px;font-size:.875rem;color:var(--muted);line-height:1.4}
+.aw b{display:block;color:var(--heading);font-size:1rem}
+.aw img{height:56px;width:auto;border-radius:4px}
+.aw .g{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:700 1.3rem/1 var(--display);color:#fff;background:conic-gradient(#EA4335 0 25%,#FBBC05 0 50%,#34A853 0 75%,#4285F4 0)}
+.aw .stars-45{background:linear-gradient(90deg,#F5B13D 0 90%,#D8CFC7 90%);-webkit-background-clip:text;background-clip:text}
+.aw .pinc{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--orange-text)}
+
+/* About */
+.statement{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.6vw,3.25rem);line-height:1.22;letter-spacing:-.025em;color:var(--heading);max-width:22ch;margin-top:30px}
+.statement .w{opacity:var(--o,1);transition:opacity .15s linear}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:center;margin-top:clamp(64px,9vw,120px)}
+.frame{position:relative;overflow:hidden;border-radius:28px;background:var(--cream)}
+.frame img{width:100%;height:116%;object-fit:cover;transform:translate3d(0,var(--py,0),0)}
+.about-pic{aspect-ratio:4/5}
+.about-copy{display:flex;flex-direction:column;gap:22px}
+.about-copy h3{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:500}
+.about-copy p{color:var(--muted)}
+.signature{display:flex;align-items:center;gap:16px;padding-top:24px;margin-top:6px;border-top:1px solid var(--line)}
+.signature img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 20%;background:var(--cream)}
+.signature b{display:block;color:var(--heading);font-size:1.05rem}
+.signature span{font-size:.875rem;color:var(--muted)}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mini div{padding:22px;border-radius:20px;background:var(--cream)}
+.mini b{display:block;font-family:var(--display);font-weight:600;color:var(--heading);margin-bottom:8px;line-height:1.3}
+.mini p{font-size:.875rem;line-height:1.6}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(64px,9vw,120px);border-top:1px solid var(--line)}
+.stat{padding:30px 24px 0;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--display);font-weight:300;font-size:clamp(2.8rem,6vw,5rem);line-height:1;letter-spacing:-.05em;color:var(--heading);font-variant-numeric:tabular-nums}
+.stat b i{font-style:normal;color:var(--orange);font-weight:400}
+.stat span{display:block;margin-top:12px;font-size:.875rem;color:var(--muted)}
+@media (max-width:900px){.about-grid{grid-template-columns:minmax(0,1fr)}.about-pic{max-width:520px;aspect-ratio:4/4.4}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(3){border-left:0;padding-left:0}.stat:nth-child(n+3){margin-top:30px}}
+@media (max-width:520px){.mini{grid-template-columns:minmax(0,1fr)}}
+
+/* Services — pinned horizontal scroll on large screens */
+.hs{position:relative;background:var(--espresso);color:#fff}
+.hs-sticky{display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,4vh,48px);padding-block:clamp(80px,10vw,120px)}
+.hs.pin .hs-sticky{position:sticky;top:0;height:100vh;overflow:hidden;padding-block:clamp(84px,11vh,110px) clamp(24px,4vh,48px);gap:clamp(22px,3.5vh,40px)}
+.hs-head{display:flex;justify-content:space-between;align-items:end;gap:24px 60px;flex-wrap:wrap}
+.hs-head .h2{color:#fff;max-width:20ch;font-size:clamp(2rem,4vw,3.4rem)}
+.hs-head p{color:var(--on-dark-soft);max-width:42ch}
+.hs-bar{height:1px;background:var(--dark-line);margin-top:28px;position:relative}
+.hs-bar i{position:absolute;inset:0;background:var(--orange);transform-origin:0 50%;transform:scaleX(var(--hp,0))}
+.hs-track{display:flex;gap:clamp(16px,2vw,28px);padding-inline:max(var(--gutter),calc((100vw - var(--wrap)) / 2 + var(--gutter)));will-change:transform}
+.svc{position:relative;flex:0 0 auto;width:clamp(290px,28vw,400px);height:min(50vh,520px);min-height:340px;border-radius:26px;overflow:hidden;text-decoration:none;color:#fff;isolation:isolate;background:var(--espresso-3)}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.08);transition:transform 1.2s var(--ease-out)}
+.svc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,12,7,.1) 20%,rgba(20,12,7,.92) 100%);transition:background .6s}
+.svc:hover img{transform:scale(1.15)}
+.svc-in{position:absolute;inset:auto 0 0 0;padding:28px;display:flex;flex-direction:column;gap:10px}
+.svc .num{font-size:.8125rem;font-weight:800;letter-spacing:.16em;color:var(--orange-soft)}
+.svc h3{color:#fff;font-size:clamp(1.4rem,2vw,1.75rem);font-weight:500;line-height:1.15}
+.svc p{color:rgba(255,255,255,.8);font-size:.875rem;line-height:1.6;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .5s}
+.svc:hover p,.svc:focus-visible p{max-height:140px;opacity:1}
+.svc .go{display:inline-flex;align-items:center;gap:10px;margin-top:4px;font-weight:800;font-size:.875rem}
+.svc .go span{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.4);display:grid;place-items:center;transition:background-color .35s,border-color .35s,transform .35s var(--ease)}
+.svc:hover .go span{background:var(--btn);border-color:var(--btn);transform:rotate(-45deg)}
+.svc .go svg{width:16px;height:16px}
+.svc.end{background:var(--btn);display:flex;align-items:flex-end}
+.svc.end::after{display:none}
+.svc.end .svc-in{position:static}
+.svc.end h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
+.svc.end p{max-height:none;opacity:1;color:rgba(255,255,255,.9);font-size:1rem}
+/* Default (phones, tablets, reduced motion, no JS): swipeable row. Large screens pin it. */
+.hs:not(.pin) .hs-track{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;scroll-padding-inline:var(--gutter)}
+.hs:not(.pin) .hs-track::-webkit-scrollbar{display:none}
+.hs:not(.pin) .svc{scroll-snap-align:start;width:min(82vw,380px);height:480px;min-height:0}
+.hs:not(.pin) .svc p{max-height:none;opacity:1}
+.hs:not(.pin) .hs-bar{display:none}
+
+/* Banner */
+.banner{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;color:#fff;isolation:isolate}
+.banner .bg{position:absolute;inset:-14% 0;z-index:-2;transform:translate3d(0,var(--py,0),0)}
+.banner .bg img{width:100%;height:100%;object-fit:cover}
+.banner::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 20% 50%,rgba(20,12,7,.88) 0%,rgba(20,12,7,.55) 55%,rgba(20,12,7,.35) 100%)}
+.banner h2{color:#fff;font-size:clamp(2.4rem,6vw,5.4rem);font-weight:500;max-width:16ch;margin:22px 0 26px}
+.banner h2 .light{font-weight:300;color:var(--orange-soft)}
+.banner p{max-width:52ch;color:rgba(255,255,255,.82)}
+.banner .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.live{display:inline-flex;align-items:center;gap:12px;padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.25);font-size:.875rem;font-weight:700}
+.live i{position:relative;width:9px;height:9px;border-radius:50%;background:#34C27A}
+.live i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid #34C27A;animation:ping 2s var(--ease) infinite}
+@keyframes ping{from{transform:scale(.5);opacity:1}to{transform:scale(1.6);opacity:0}}
+
+/* Advantages — scroll story */
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);margin-top:clamp(48px,6vw,80px)}
+.story-visual{position:sticky;top:14vh;height:72vh;border-radius:28px;overflow:hidden;background:var(--cream)}
+.story-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .8s var(--ease),transform 1.4s var(--ease-out)}
+.story-visual img.on{opacity:1;transform:none}
+.story-visual .count{position:absolute;left:24px;bottom:24px;display:flex;align-items:baseline;gap:6px;padding:12px 18px;border-radius:16px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-family:var(--display);color:var(--heading)}
+.story-visual .count b{font-size:2rem;font-weight:500;line-height:1}
+.story-visual .count span{font-size:.875rem;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0}
+.step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;gap:16px;padding-block:40px;border-top:1px solid var(--line);opacity:.28;transition:opacity .6s var(--ease)}
+.step:first-child{border-top:0}
+.step.on{opacity:1}
+.step .n{font-size:.8125rem;font-weight:800;letter-spacing:.16em;color:var(--orange-text)}
+.step h3{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:500}
+.step p{color:var(--muted);max-width:46ch}
+.step .m-img{display:none}
+@media (max-width:900px){.story{grid-template-columns:minmax(0,1fr)}.story-visual{display:none}.step{min-height:0;opacity:1;padding-block:36px}.step .m-img{display:block;aspect-ratio:16/10;border-radius:20px;overflow:hidden;margin-bottom:6px}.step .m-img img{width:100%;height:100%;object-fit:cover}}
+
+/* Values */
+.values{background:var(--cream)}
+.v-list{list-style:none;margin:clamp(40px,6vw,72px) 0 0;padding:0;border-top:1px solid var(--line)}
+.v-row{position:relative;display:grid;grid-template-columns:90px minmax(0,1.1fr) minmax(0,1fr);gap:16px 40px;align-items:center;padding:clamp(26px,3vw,40px) 0;border-bottom:1px solid var(--line);isolation:isolate}
+.v-row::before{content:"";position:absolute;inset:0 calc(var(--gutter) * -1);z-index:-1;background:var(--espresso);transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease)}
+.v-row:hover::before{transform:scaleY(1);transform-origin:top}
+.v-row .n{font-family:var(--display);font-weight:300;font-size:1.25rem;color:var(--orange-text);transition:color .4s}
+.v-row h3{font-size:clamp(1.6rem,3.4vw,3rem);font-weight:400;transition:color .4s,transform .6s var(--ease)}
+.v-row p{color:var(--muted);transition:color .4s}
+.v-row:hover h3{color:#fff;transform:translateX(12px)}
+.v-row:hover p{color:var(--on-dark-soft)}
+.v-row:hover .n{color:var(--orange-soft)}
+@media (max-width:760px){.v-row{grid-template-columns:50px minmax(0,1fr)}.v-row p{grid-column:2}}
+
+/* Reviews marquee */
+.reviews{overflow:hidden}
+.rev-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+.rating{display:flex;align-items:center;gap:16px}
+.rating .g{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:700 1.5rem/1 var(--display);color:#fff;background:conic-gradient(#EA4335 0 25%,#FBBC05 0 50%,#34A853 0 75%,#4285F4 0)}
+.rating b{display:block;font-family:var(--display);font-weight:500;font-size:2.4rem;line-height:1;color:#fff}
+.rating small{font-size:.875rem;color:var(--on-dark-soft)}
+.mq{display:flex;gap:20px;width:max-content;animation:mq 60s linear infinite}
+.mq + .mq{margin-top:20px;animation-direction:reverse;animation-duration:70s}
+.reviews:hover .mq{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.rv{flex:none;width:min(420px,80vw);margin:0;display:flex;flex-direction:column;gap:18px;padding:30px;border-radius:24px;background:var(--espresso-2);border:1px solid var(--dark-line)}
+.rv blockquote{margin:0;flex:1;color:rgba(255,255,255,.88)}
+.rv figcaption{display:flex;align-items:center;gap:12px;font-size:.875rem;color:var(--on-dark-soft);line-height:1.35}
+.rv figcaption b{display:block;color:#fff;font-size:1rem}
+.av{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(243,105,43,.18);color:var(--orange-soft);font-weight:800}
+
+/* Team */
+.team-head{display:flex;justify-content:space-between;align-items:end;gap:24px 60px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+.team{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.member .pic{aspect-ratio:3/4;border-radius:24px;overflow:hidden;background:var(--cream);margin-bottom:18px}
+.member img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transform:scale(1.14);transition:filter .7s var(--ease),transform 1.1s var(--ease-out)}
+.member:hover img{filter:none;transform:scale(1.2)}
+.member b{display:block;font-family:var(--display);font-weight:500;font-size:1.25rem;color:var(--heading)}
+.member span{font-size:.875rem;color:var(--muted)}
+.member:nth-child(even){margin-top:56px}
+@media (max-width:900px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}.member:nth-child(even){margin-top:36px}}
+
+/* Press + social */
+.press-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,90px);align-items:start}
+.press{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.press a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .45s var(--ease),color .3s}
+.press a:hover{padding-left:14px;color:var(--orange-text)}
+.press b{font-family:var(--display);font-weight:400;font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:-.02em}
+.press span{display:inline-flex;align-items:center;gap:8px;font-size:.875rem;font-weight:700;color:var(--muted)}
+.press span i{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background-color .3s,border-color .3s,color .3s,transform .4s var(--ease)}
+.press a:hover span i{background:var(--btn);border-color:var(--btn);color:#fff;transform:rotate(-45deg)}
+.press svg{width:15px;height:15px}
+.social{margin-top:36px;padding:28px;border-radius:24px;background:var(--cream)}
+.social .who{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.social .who img{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.social .who b{display:block;color:var(--heading)}
+.social .who span{font-size:.875rem;color:var(--muted)}
+.social p{color:var(--muted)}
+.soc{display:flex;gap:10px;margin-top:20px}
+.soc a{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;color:var(--heading);transition:background-color .3s,color .3s,border-color .3s,transform .35s var(--ease)}
+.soc a:hover{background:var(--espresso);color:#fff;border-color:var(--espresso);transform:translateY(-3px)}
+.soc svg{width:19px;height:19px}
+@media (max-width:900px){.press-wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* Blog */
+.posts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.post{text-decoration:none;display:flex;flex-direction:column;gap:18px}
+.post .pic{aspect-ratio:3/2;border-radius:24px;overflow:hidden;background:var(--cream)}
+.post .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease-out)}
+.post:hover .pic img{transform:scale(1.05)}
+.post time{font-size:.875rem;color:var(--muted)}
+.post h3{font-size:clamp(1.2rem,1.8vw,1.5rem);font-weight:500;line-height:1.3;transition:color .3s}
+.post:hover h3{color:var(--orange-text)}
+.post p{color:var(--muted)}
+@media (max-width:760px){.posts{grid-template-columns:minmax(0,1fr)}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(40px,7vw,100px);align-items:start}
+.contact .h2{margin:22px 0 22px}
+.c-list{list-style:none;margin:36px 0 0;padding:0;border-top:1px solid var(--dark-line)}
+.c-list a{display:flex;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid var(--dark-line);text-decoration:none;transition:padding .4s var(--ease)}
+.c-list a:hover{padding-left:10px}
+.c-list .circle{flex:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--dark-line);display:grid;place-items:center;transition:border-color .3s}
+.c-list a:hover .circle{border-color:var(--orange-soft)}
+.c-list svg{width:18px;height:18px}
+.c-list small{display:block;font-size:.8125rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}
+.c-list b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);color:#fff;overflow-wrap:anywhere}
+.form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;padding:clamp(26px,4vw,44px);border-radius:28px;background:rgba(255,255,255,.04);border:1px solid var(--dark-line)}
+.form h3{grid-column:1/-1;color:#fff;font-size:1.6rem;font-weight:500}
+.form .hint{grid-column:1/-1;margin-top:-6px;font-size:.875rem;color:var(--on-dark-soft)}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.875rem;font-weight:700;color:rgba(255,255,255,.85)}
+.field input,.field select,.field textarea{width:100%;font-size:1rem;color:#fff;background:rgba(255,255,255,.06);border:1px solid var(--dark-line);border-radius:14px;padding:14px 16px;transition:border-color .25s,background-color .25s,box-shadow .25s;color-scheme:dark}
+.field select option{color:var(--ink)}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);background:rgba(255,255,255,.09);box-shadow:0 0 0 4px rgba(243,105,43,.18)}
+.field [aria-invalid="true"]{border-color:#FF8A5C}
+.form .btn{grid-column:1/-1;justify-self:start}
+.status{grid-column:1/-1;min-height:1.5em;font-size:.875rem;color:var(--orange-soft)}
+@media (max-width:900px){.contact{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.form{grid-template-columns:minmax(0,1fr)}}
+
+/* Footer */
+.footer{background:#140C07;color:#fff;font-size:.875rem;padding:clamp(70px,9vw,110px) 0 30px}
+.footer a{color:#fff;text-decoration:none;transition:color .2s}
+.footer a:hover{color:var(--orange-soft)}
+.f-big{font-family:var(--display);font-weight:300;font-size:clamp(2.4rem,7vw,6rem);letter-spacing:-.05em;line-height:1;color:#fff;margin-bottom:clamp(48px,7vw,80px)}
+.f-big a{display:inline-flex;align-items:center;gap:.3em}
+.f-big a span{display:inline-grid;place-items:center;width:.9em;height:.9em;border-radius:50%;background:var(--btn);transition:transform .5s var(--ease)}
+.f-big a:hover{color:#fff}
+.f-big a:hover span{transform:rotate(-45deg)}
+.f-big svg{width:.38em;height:.38em}
+.f-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:40px;padding-top:48px;border-top:1px solid var(--dark-line)}
+.f-brand img{height:34px;width:auto;margin-bottom:20px}
+.f-brand p{max-width:42ch;line-height:1.7}
+.footer h2{font-family:var(--body);font-size:.8125rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.circle-o{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--dark-line);display:grid;place-items:center;color:#fff;transition:border-color .25s,transform .3s var(--ease)}
+.circle-o svg{width:18px;height:18px}
+.f-social{display:flex;gap:10px;margin-top:22px}
+.f-social a:hover{border-color:var(--orange-soft);transform:translateY(-3px)}
+.f-contact{gap:12px}
+.f-contact a{display:flex;align-items:center;gap:14px;line-height:1.5}
+.f-contact a:hover .circle-o{border-color:var(--orange-soft);transform:translateY(-3px)}
+.f-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--dark-line)}
+.f-bottom ul{flex-direction:row;gap:22px;flex-wrap:wrap}
+@media (max-width:900px){.f-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.f-brand{grid-column:1/-1}}
+@media (max-width:480px){.f-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Back to top with progress ring */
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:110;width:54px;height:54px;border-radius:50%;border:0;background:var(--espresso);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .4s,transform .4s var(--ease),visibility .4s}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop svg.ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.totop svg.ring circle{fill:none;stroke:var(--orange);stroke-width:2;stroke-dasharray:157;stroke-dashoffset:calc(157 - 157 * var(--p,0))}
+.totop .arr{width:18px;height:18px;transform:rotate(-90deg)}
+
+/* Scroll reveals */
+.js [data-reveal]{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease-out),transform 1.1s var(--ease-out);transition-delay:var(--d,0s)}
+.js [data-reveal="clip"]{opacity:1;transform:none;clip-path:inset(18% 0 18% 0 round 28px);transition:clip-path 1.4s var(--ease-out)}
+.js [data-reveal="mask"]{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.1s var(--ease-out);transition-delay:var(--d,0s)}
+.js [data-reveal].in{opacity:1;transform:none}
+.js [data-reveal="clip"].in{clip-path:inset(0 0 0 0 round 28px)}
+.js [data-reveal="mask"].in{clip-path:inset(0 0 -20% 0)}
+
+/* Very small phones */
+@media (max-width:380px){.h2{font-size:1.85rem}h1,h2,h3{overflow-wrap:anywhere}.btn{white-space:normal;text-align:center;padding:0 22px}.form{padding:20px}}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .intro{display:none}
+  .js [data-reveal]{opacity:1;transform:none;clip-path:none}
+  .statement .w{opacity:1}
+  .mq{flex-wrap:wrap;width:auto;justify-content:center}
+  .mq[aria-hidden="true"],.mq .dup{display:none}
+  .member img{filter:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="intro" aria-hidden="true"><div class="intro-inner"><img src="https://archi-med.de/wp-content/uploads/2025/02/20240807_193751-1024x183.png" alt="" width="224" height="40"><span></span></div></div>
+<div class="progress" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3h3l1.6 4.2-2 1.5a12 12 0 0 0 6.1 6.1l1.5-2L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.2 1.7 3.6 3.9 3.8v3a7 7 0 0 1-3.9-1.2v6.2A5.8 5.8 0 1 1 10.8 9v3.1a2.8 2.8 0 1 0 2 2.7V3h3.8z"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="#start" aria-label="ARCHIMED – nach oben">
+      <img class="on-dark" src="https://archi-med.de/wp-content/uploads/2025/02/20240807_193751-1024x183.png" alt="ARCHIMED" width="201" height="36">
+      <img class="on-light" src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="" width="191" height="36">
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="menu">
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#vorteile">Vorteile</a></li>
+        <li><a href="#bewertungen">Bewertungen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="tel:+495118982332" aria-label="Jetzt anrufen: 0511 / 8982332"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span>Jetzt anrufen</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="menu" role="dialog" aria-modal="true" aria-label="Menü">
+  <div class="ov-top">
+    <img src="https://archi-med.de/wp-content/uploads/2025/02/20240807_193751-1024x183.png" alt="ARCHIMED" width="168" height="30">
+    <button class="ov-close" type="button" aria-label="Menü schließen"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <ol>
+    <li><a href="#ueber-uns">Über uns</a></li>
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#vorteile">Vorteile</a></li>
+    <li><a href="#bewertungen">Bewertungen</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ol>
+  <div class="ov-foot">
+    <a class="btn btn-primary" href="tel:+495118982332"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>0511 / 8982332</a>
+    <a href="mailto:intensiv@archi-med.de">intensiv@archi-med.de</a>
+    <span>Sokelantstraße 5, 30165 Hannover</span>
+  </div>
+</div>
+
+<main id="inhalt">
+
+<!-- Hero -->
+<section class="hero" id="start" aria-labelledby="hero-title">
+  <div class="hero-media"><img src="https://archi-med.de/wp-content/uploads/2024/09/6NB6840-1536x1024.webp" alt="Zwei Pflegekräfte von ARCHIMED kümmern sich im Wohnzimmer um eine ältere Frau" width="1536" height="1024" fetchpriority="high"></div>
+  <div class="wrap hero-content">
+    <span class="eyebrow">Pflege &amp; Soziale Dienste · Hannover</span>
+    <h1 id="hero-title"><span class="ln"><span>Mehr als Pflege.</span></span><span class="ln"><span class="light">Echte Begleitung.</span></span></h1>
+    <div class="hero-row">
+      <div>
+        <p>Seit 2007 steht ARCHIMED für erstklassige ambulante Intensivpflege und soziale Begleitung. Mit über 350 hochqualifizierten Mitarbeiter*innen unterstützen wir Menschen in jeder Lebenssituation – rund um die Uhr.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#ueber-uns">Jetzt mehr erfahren <svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost-light" href="#leistungen">Unsere Leistungen</a>
+        </div>
+      </div>
+      <div class="glass">
+        <div><b>2007</b><span>Gegründet</span></div>
+        <div><b>350<i>+</i></b><span>Mitarbeiter*innen</span></div>
+        <div><b>24<i>/</i>7</b><span>Rufbereitschaft</span></div>
+      </div>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true">Scroll</span>
+</section>
+
+<!-- Awards strip -->
+<div class="awards">
+  <div class="wrap">
+    <div class="aw"><img src="https://archi-med.de/wp-content/uploads/2026/04/kununu_TopCompanyBadge_2026_RGB-d44cec26-227x300.png" alt="kununu Top Company 2026" width="42" height="56" loading="lazy"><img src="https://archi-med.de/wp-content/uploads/2025/02/kununu_TopCompanyBadge_2025_RGB-228x300.png" alt="kununu Top Company 2025" width="42" height="56" loading="lazy"><span><b>Top Company 2025 &amp; 2026</b>ausgezeichnet bei kununu</span></div>
+    <div class="aw"><span class="g" aria-hidden="true">G</span><span><b>4,5 <span class="stars stars-45" aria-hidden="true">★★★★★</span></b>10 Google-Bewertungen</span></div>
+    <div class="aw"><span class="pinc" aria-hidden="true"><svg class="ic"><use href="#i-pin"/></svg></span><span><b>Niedersachsen &amp; Bremen</b>mit Sitz in Hannover</span></div>
+  </div>
+</div>
+
+<!-- About -->
+<section class="section" id="ueber-uns" aria-labelledby="about-title">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Über uns · Wer ist ARCHIMED?</span>
+    <h2 class="sr-only" id="about-title">Wer ist ARCHIMED?</h2>
+    <p class="statement" data-words>Seit 2007 steht ARCHIMED für hochwertige ambulante Intensivpflege. Unsere Mission: Menschen durch qualitätsgesicherte Pflege ein selbstbestimmtes Leben im eigenen Zuhause zu ermöglichen.</p>
+
+    <div class="about-grid">
+      <div class="frame about-pic" data-reveal="clip"><img data-parallax="0.08" src="https://archi-med.de/wp-content/uploads/2024/09/6NB6768-min-2.jpeg" alt="Eine ältere Frau wird herzlich von zwei jüngeren Frauen umarmt" width="1232" height="1144" loading="lazy" decoding="async"></div>
+      <div class="about-copy">
+        <h3 data-reveal>Wertvolle Erfahrung <em class="o">und Expertise.</em></h3>
+        <p data-reveal>Erfahrung und fachliche Kompetenz prägen unser tägliches Handeln. Mit Sitz in Hannover versorgen wir Patient*innen in Niedersachsen und Bremen und begleiten sie in allen Bereichen des täglichen Lebens, die sie nicht mehr selbstständig bewältigen können.</p>
+        <p data-reveal>Unser Anspruch ist es, nicht nur medizinische Versorgung sicherzustellen, sondern Lebensqualität zu erhalten und Selbstbestimmung zu stärken.</p>
+        <div class="mini" data-reveal>
+          <div><b>Ein verantwortungsvoller Arbeitgeber</b><p>Teamgeist, Fortbildungen und eine offene, respektvolle Unternehmenskultur.</p></div>
+          <div><b>Individuelle Betreuung</b><p>Jede Pflegesituation ist einzigartig – wir richten uns konsequent nach Ihren Bedürfnissen.</p></div>
+        </div>
+        <div class="signature" data-reveal>
+          <img src="https://archi-med.de/wp-content/uploads/2025/08/Dimitrij-Sonkin-Geschaftsfuhrer-300x300.png" alt="" width="64" height="64" loading="lazy">
+          <div><b>Dimitrij Sonkin</b><span>Geschäftsführer</span></div>
+          <a class="link" href="https://archi-med.de/unternehmen/" style="margin-left:auto">Erfahren Sie mehr <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <dl class="stats">
+      <div class="stat" data-reveal><dt class="sr-only">Gründung</dt><dd style="margin:0"><b data-count="2007" data-from="1990">2007</b><span>Gegründet in Hannover</span></dd></div>
+      <div class="stat" data-reveal><dt class="sr-only">Mitarbeiter*innen</dt><dd style="margin:0"><b><span data-count="350">350</span><i>+</i></b><span>Mitarbeiter*innen</span></dd></div>
+      <div class="stat" data-reveal><dt class="sr-only">Erreichbarkeit</dt><dd style="margin:0"><b>24<i>/</i>7</b><span>Rufbereitschaft</span></dd></div>
+      <div class="stat" data-reveal><dt class="sr-only">Leistungsbereiche</dt><dd style="margin:0"><b data-count="6">6</b><span>Leistungsbereiche</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- Services: pinned horizontal scroll -->
+<section class="hs" id="leistungen" aria-labelledby="svc-title">
+  <div class="hs-sticky">
+    <div class="wrap">
+      <div class="hs-head">
+        <div>
+          <span class="eyebrow">Unsere Dienstleistungen</span>
+          <h2 class="h2" id="svc-title" style="margin-top:18px">Maßgeschneiderte Pflege <span class="light">für Ihre Bedürfnisse</span></h2>
+        </div>
+        <p>Von der 1:1-Intensivpflege bis zur Begleitung in Schule und Alltag – sechs Leistungsbereiche, ein verlässliches Team.</p>
+      </div>
+      <div class="hs-bar" aria-hidden="true"><i></i></div>
+    </div>
+    <div class="hs-track">
+      <a class="svc" href="https://archi-med.de/intensivpflege-fuer-erwachsene/"><img src="https://archi-med.de/wp-content/uploads/2026/04/sdfgh.jpg" alt="" loading="lazy" decoding="async"><div class="svc-in"><span class="num">01</span><h3>(Intensiv)-Pflege für Erwachsene</h3><p>Für jede Pflegestufe die passende Unterstützung – rund um die Uhr die bestmögliche Betreuung.</p><span class="go">Mehr erfahren <span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></div></a>
+      <a class="svc" href="https://archi-med.de/intensivstation-fuer-kinder/"><img src="https://archi-med.de/wp-content/uploads/2024/06/archi-med-Intensivpflege-fur-Kinder.jpg" alt="" loading="lazy" decoding="async"><div class="svc-in"><span class="num">02</span><h3>(Intensiv)-Pflege für Kinder</h3><p>Spezialisierte häusliche Pflege, zugeschnitten auf die einzigartigen Bedürfnisse jedes Kindes.</p><span class="go">Mehr erfahren <span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></div></a>
+      <a class="svc" href="https://archi-med.de/wohngemeinschaften/"><img src="https://archi-med.de/wp-content/uploads/2024/06/Archi-Med_WG_am_Waldpark.jpg" alt="" loading="lazy" decoding="async"><div class="svc-in"><span class="num">03</span><h3>(Intensiv)-Wohngemeinschaften</h3><p>Eine sichere, unterstützende Umgebung mit erfahrenen Pflegefachkräften, die schnell handeln.</p><span class="go">Mehr erfahren <span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></div></a>
+      <a class="svc" href="https://archi-med.de/schul-kitabegleitung/"><img src="https://archi-med.de/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-09-at-15.07.173-scaled-1-768x1024.jpeg" alt="" loading="lazy" decoding="async"><div class="svc-in"><span class="num">04</span><h3>Schul-/Kitabegleitung</h3><p>Begleitung für Kinder und Jugendliche mit besonderem Förderbedarf – schulisch wie sozial.</p><span class="go">Mehr erfahren <span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></div></a>
+      <a class="svc" href="#kontakt"><img src="https://archi-med.de/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-09-at-15.07.174-scaled-1-768x1024.jpeg" alt="" loading="lazy" decoding="async"><div class="svc-in"><span class="num">05</span><h3>Nachmittags-/<wbr>Individual&shy;begleitung</h3><p>Einzelfallhilfe, die soziale Teilhabe und persönliche Ziele von Kindern und Jugendlichen fördert.</p><span class="go">Beratung anfragen <span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></div></a>
+      <a class="svc" href="https://archi-med.de/ambulante-tourenpflege/"><img src="https://archi-med.de/wp-content/uploads/2024/04/archi-med-Ambulante-Tourenpflege-.jpg" alt="" loading="lazy" decoding="async" style="object-position:25% 50%"><div class="svc-in"><span class="num">06</span><h3>Ambulante Tourenpflege</h3><p>Fürsorgliche Betreuung zu Hause – im Alter, nach Schicksalsschlägen oder bei plötzlicher Pflegebedürftigkeit.</p><span class="go">Mehr erfahren <span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></div></a>
+      <a class="svc end" href="#kontakt"><div class="svc-in"><span class="num" style="color:#FFE0CC">Persönliche Beratung</span><h3>Welche Unterstützung passt zu Ihnen?</h3><p>Wir beraten Sie gern – unverbindlich und persönlich.</p><span class="go">Kontakt aufnehmen <span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 24/7 banner -->
+<section class="banner" aria-labelledby="banner-title">
+  <div class="bg" data-parallax-bg><img src="https://archi-med.de/wp-content/uploads/2025/02/DSC2776-min-scaled-1-1.webp" alt="" loading="lazy" decoding="async"></div>
+  <div class="wrap">
+    <span class="live" data-reveal><i aria-hidden="true"></i>24/7 Rufbereitschaft</span>
+    <h2 id="banner-title" data-reveal>Immer für Sie da: <span class="light">Ihre Gesundheit in besten Händen.</span></h2>
+    <p data-reveal>Wir sind rund um die Uhr für Patient*innen und Angehörige erreichbar – schnell, verlässlich und kompetent, auch in akuten oder unerwarteten Situationen.</p>
+    <div class="actions" data-reveal>
+      <a class="btn btn-primary" href="tel:+495118982332"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>0511 / 8982332</a>
+      <a class="btn btn-ghost-light" href="#kontakt">Nachricht schreiben</a>
+    </div>
+  </div>
+</section>
+
+<!-- Advantages: scroll story -->
+<section class="section" id="vorteile" aria-labelledby="adv-title">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Warum wir</span>
+    <h2 class="h2" id="adv-title" data-reveal style="margin-top:18px;max-width:16ch">Ihre Vorteile mit uns <em class="o">an Ihrer Seite.</em></h2>
+    <div class="story">
+      <div class="story-visual" aria-hidden="true">
+        <img class="on" src="https://archi-med.de/wp-content/uploads/2024/09/6NB6802-min-1024x682.jpeg" alt="" loading="lazy" decoding="async">
+        <img src="https://archi-med.de/wp-content/uploads/2026/04/sdfgh.jpg" alt="" loading="lazy" decoding="async">
+        <img src="https://archi-med.de/wp-content/uploads/2024/04/archi-med-Ambulante-Tourenpflege-.jpg" alt="" loading="lazy" decoding="async" style="object-position:25% 50%">
+        <img src="https://archi-med.de/wp-content/uploads/2024/06/Untitled-design.png" alt="" loading="lazy" decoding="async">
+        <img src="https://archi-med.de/wp-content/uploads/2024/06/archi-med-Intensivpflege-fur-Kinder.jpg" alt="" loading="lazy" decoding="async">
+        <div class="count"><b>01</b><span>/ 05</span></div>
+      </div>
+      <ol class="steps">
+        <li class="step on"><div class="m-img"><img src="https://archi-med.de/wp-content/uploads/2024/09/6NB6802-min-1024x682.jpeg" alt="" loading="lazy" decoding="async"></div><span class="n">01</span><h3>Ein Team aus Expert*innen</h3><p>Zertifiziert und speziell qualifiziert für die außerklinische Beatmung und ambulante Intensivpflege – mit regelmäßigen Fort- und Weiterbildungen bei anerkannten Bildungsträgern.</p></li>
+        <li class="step"><div class="m-img"><img src="https://archi-med.de/wp-content/uploads/2026/04/sdfgh.jpg" alt="" loading="lazy" decoding="async"></div><span class="n">02</span><h3>(Intensiv-)medizinische Versorgung</h3><p>Von der grundlegenden pflegerischen Unterstützung bis zur spezialisierten Intensivpflege – inklusive Schmerzmanagement und spezialisierter Therapien.</p></li>
+        <li class="step"><div class="m-img"><img src="https://archi-med.de/wp-content/uploads/2024/04/archi-med-Ambulante-Tourenpflege-.jpg" alt="" loading="lazy" decoding="async" style="object-position:25% 50%"></div><span class="n">03</span><h3>24/7 Rufbereitschaft</h3><p>Rund um die Uhr für Patient*innen und Angehörige erreichbar. Unser Team reagiert schnell, verlässlich und kompetent.</p></li>
+        <li class="step"><div class="m-img"><img src="https://archi-med.de/wp-content/uploads/2024/06/Untitled-design.png" alt="" loading="lazy" decoding="async"></div><span class="n">04</span><h3>Familienorientierte Betreuung</h3><p>Wir beziehen Angehörige aktiv in den Pflegeprozess ein und schaffen Stabilität, Sicherheit und ein unterstützendes Miteinander.</p></li>
+        <li class="step"><div class="m-img"><img src="https://archi-med.de/wp-content/uploads/2024/06/archi-med-Intensivpflege-fur-Kinder.jpg" alt="" loading="lazy" decoding="async"></div><span class="n">05</span><h3>Technologie und Innovation</h3><p>Moderne Pflege- und Medizintechnologie nach aktuellen Standards ermöglicht eine qualitativ hochwertige, sichere Versorgung.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section values" aria-labelledby="val-title">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Unsere Leitprinzipien</span>
+    <h2 class="h2" id="val-title" data-reveal style="margin-top:18px;max-width:18ch">Mehr als ein Pflegedienst – <em class="o">eine Gemeinschaft.</em></h2>
+    <p class="lede" data-reveal style="margin-top:22px">Jeder Mensch hat das Recht auf qualitativ hochwertige Pflege und ein würdevolles Leben. Diese Werte leiten uns jeden Tag.</p>
+    <ol class="v-list">
+      <li class="v-row" data-reveal><span class="n">01</span><h3>Empathie &amp; Mitgefühl</h3><p>Pflege ist für uns eine Berufung, nicht nur ein Job. Wir zeigen Mitgefühl und Verständnis in jeder Situation.</p></li>
+      <li class="v-row" data-reveal><span class="n">02</span><h3>Professionalität &amp; Exzellenz</h3><p>Hochqualifizierte Fachkräfte, die kontinuierlich nach den höchsten Standards der Pflegepraxis arbeiten.</p></li>
+      <li class="v-row" data-reveal><span class="n">03</span><h3>Respekt &amp; Würde</h3><p>Jeder Mensch wird respektvoll behandelt – unabhängig von Gesundheitszustand, Herkunft oder sozialem Status.</p></li>
+      <li class="v-row" data-reveal><span class="n">04</span><h3>Vertrauen &amp; Zuverlässigkeit</h3><p>Patient*innen und Familien können sich darauf verlassen, dass wir da sind, wenn sie uns am dringendsten brauchen.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section dark reviews" id="bewertungen" aria-labelledby="rev-title">
+  <div class="wrap rev-head">
+    <div>
+      <span class="eyebrow" data-reveal>Bewertungen</span>
+      <h2 class="h2" id="rev-title" data-reveal style="margin-top:18px;max-width:14ch">Was unsere Klient*innen <span class="light">über uns denken</span></h2>
+    </div>
+    <div class="rating" data-reveal><span class="g" aria-hidden="true">G</span><div><b>4,5</b><small><span class="stars stars-45" aria-hidden="true">★★★★★</span> · Ausgezeichnet · 10 Google-Bewertungen</small></div></div>
+  </div>
+  <div class="mq" role="list" aria-label="Google-Bewertungen">
+    <figure class="rv" role="listitem"><span class="stars" aria-label="5 von 5 Sternen">★★★★★</span><blockquote><p>„Ich möchte mich bei dem gesamten Team für die herausragende Fürsorge und kompetente Beratung, Wundversorgung und Pflege bedanken! Meine Wünsche und Anforderungen wurden ausnahmslos erfüllt.“</p></blockquote><figcaption><span class="av" aria-hidden="true">Y</span><span><b>Yvonne P.</b>Ambulante Pflege</span></figcaption></figure>
+    <figure class="rv" role="listitem"><span class="stars" aria-label="5 von 5 Sternen">★★★★★</span><blockquote><p>„Egal ob Mitarbeiter oder Chef, alle sind für einen da und geben einem das Gefühl, nicht allein da zu stehen! Ich weiß, dass mein Vater dort in den besten Händen ist!“</p></blockquote><figcaption><span class="av" aria-hidden="true">A</span><span><b>Anton A.</b>Angehöriger</span></figcaption></figure>
+    <figure class="rv" role="listitem"><span class="stars" aria-label="5 von 5 Sternen">★★★★★</span><blockquote><p>„Bezüglich Schulbegleitung kann ich nur Positives berichten: Sie haben super schnell eine qualifizierte Fachkraft für meinen Sohn gefunden.“</p></blockquote><figcaption><span class="av" aria-hidden="true">P</span><span><b>Ployphailin B.</b>Schulbegleitung</span></figcaption></figure>
+    <figure class="rv" role="listitem"><span class="stars" aria-label="5 von 5 Sternen">★★★★★</span><blockquote><p>„Meine Oma wird von dem Pflegedienst seit 15 Jahren versorgt. Alles top. Sehr zufrieden, zum Empfehlen.“</p></blockquote><figcaption><span class="av" aria-hidden="true">A</span><span><b>Alexander Z.</b>Angehöriger</span></figcaption></figure>
+    <figure class="rv" role="listitem"><span class="stars" aria-label="5 von 5 Sternen">★★★★★</span><blockquote><p>„Tolle Beratung und sehr menschlicher Umgang, gerade in der Pflege sehr wichtig.“</p></blockquote><figcaption><span class="av" aria-hidden="true">D</span><span><b>Dani M.</b>Beratung</span></figcaption></figure>
+    <!-- duplicate set for a seamless loop -->
+    <figure class="rv dup" aria-hidden="true"><span class="stars">★★★★★</span><blockquote><p>„Ich möchte mich bei dem gesamten Team für die herausragende Fürsorge und kompetente Beratung, Wundversorgung und Pflege bedanken! Meine Wünsche und Anforderungen wurden ausnahmslos erfüllt.“</p></blockquote><figcaption><span class="av">Y</span><span><b>Yvonne P.</b>Ambulante Pflege</span></figcaption></figure>
+    <figure class="rv dup" aria-hidden="true"><span class="stars">★★★★★</span><blockquote><p>„Egal ob Mitarbeiter oder Chef, alle sind für einen da und geben einem das Gefühl, nicht allein da zu stehen! Ich weiß, dass mein Vater dort in den besten Händen ist!“</p></blockquote><figcaption><span class="av">A</span><span><b>Anton A.</b>Angehöriger</span></figcaption></figure>
+    <figure class="rv dup" aria-hidden="true"><span class="stars">★★★★★</span><blockquote><p>„Bezüglich Schulbegleitung kann ich nur Positives berichten: Sie haben super schnell eine qualifizierte Fachkraft für meinen Sohn gefunden.“</p></blockquote><figcaption><span class="av">P</span><span><b>Ployphailin B.</b>Schulbegleitung</span></figcaption></figure>
+    <figure class="rv dup" aria-hidden="true"><span class="stars">★★★★★</span><blockquote><p>„Meine Oma wird von dem Pflegedienst seit 15 Jahren versorgt. Alles top. Sehr zufrieden, zum Empfehlen.“</p></blockquote><figcaption><span class="av">A</span><span><b>Alexander Z.</b>Angehöriger</span></figcaption></figure>
+    <figure class="rv dup" aria-hidden="true"><span class="stars">★★★★★</span><blockquote><p>„Tolle Beratung und sehr menschlicher Umgang, gerade in der Pflege sehr wichtig.“</p></blockquote><figcaption><span class="av">D</span><span><b>Dani M.</b>Beratung</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section" id="team" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="team-head">
+      <div>
+        <span class="eyebrow" data-reveal>Unsere Experten</span>
+        <h2 class="h2" id="team-title" data-reveal style="margin-top:18px">Unser Team <em class="o">im Fokus.</em></h2>
+        <p class="lede" data-reveal style="margin-top:20px">Unsere Mitarbeitenden sind das Herzstück unseres Erfolgs – hochqualifizierte Pflegefachkräfte, die sich täglich für das Wohl unserer Patient*innen einsetzen.</p>
+      </div>
+      <a class="btn btn-dark" href="https://archi-med.de/jobs/" data-reveal>Zu den offenen Stellen <svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <ul class="team">
+      <li class="member" data-reveal><div class="pic"><img src="https://archi-med.de/wp-content/uploads/2024/04/3-1.jpg" alt="Stephanie, Pflegefachkraft" loading="lazy" decoding="async" style="object-position:50% 30%"></div><b>Stephanie</b><span>Pflegefachkraft</span></li>
+      <li class="member" data-reveal><div class="pic"><img src="https://archi-med.de/wp-content/uploads/2024/04/ERTYU.jpg" alt="Andreas, Pflegefachkraft" loading="lazy" decoding="async" style="object-position:40% 25%"></div><b>Andreas</b><span>Pflegefachkraft</span></li>
+      <li class="member" data-reveal><div class="pic"><img src="https://archi-med.de/wp-content/uploads/2024/09/6NB6810-min-1-768x580.jpeg" alt="Anna, Pflegefachkraft" loading="lazy" decoding="async" style="object-position:50% 25%"></div><b>Anna</b><span>Pflegefachkraft</span></li>
+      <li class="member" data-reveal><div class="pic"><img src="https://archi-med.de/wp-content/uploads/2024/04/4-1.jpg" alt="Iveta, Pflegehelferin" loading="lazy" decoding="async" style="object-position:40% 25%"></div><b>Iveta</b><span>Pflegehelferin</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Press + social -->
+<section class="section" aria-labelledby="press-title" style="padding-top:0">
+  <div class="wrap press-wrap">
+    <div>
+      <span class="eyebrow" data-reveal>Presse</span>
+      <h2 class="h2" id="press-title" data-reveal style="margin-top:18px">ARCHIMED <em class="o">in den Medien.</em></h2>
+      <div class="social" data-reveal>
+        <div class="who"><img src="https://archi-med.de/wp-content/uploads/2025/08/Dimitrij-Sonkin-Geschaftsfuhrer-300x300.png" alt="" width="54" height="54" loading="lazy"><div><b>Folgen Sie uns</b><span>für mitfühlende Pflege und Einblicke in die Gesundheit</span></div></div>
+        <p>Auf Social Media teilen wir hilfreiche und vertrauenswürdige Inhalte rund um Pflege und Alltag.</p>
+        <div class="soc">
+          <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a href="https://www.facebook.com/archimedgmbh/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+          <a href="https://www.tiktok.com/@archimed_pflegedienst" target="_blank" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tt"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <ul class="press">
+      <li data-reveal><a href="https://www.connektar.de/gesundheitswesen-wellness/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz-155736" target="_blank" rel="noopener"><b>connektar.de</b><span>Zum Artikel <i><svg aria-hidden="true"><use href="#i-ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://www.pflumm.de/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz/" target="_blank" rel="noopener"><b>pflumm.de</b><span>Zum Artikel <i><svg aria-hidden="true"><use href="#i-ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://www.presseprisma.de/2025/10/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz/" target="_blank" rel="noopener"><b>presseprisma.de</b><span>Zum Artikel <i><svg aria-hidden="true"><use href="#i-ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://www.newsnomade.de/2025/10/06/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz/" target="_blank" rel="noopener"><b>newsnomade.de</b><span>Zum Artikel <i><svg aria-hidden="true"><use href="#i-ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://neue-pressemitteilungen.de/mit-sicherheit-gross-werden-kinderintensivpflege-von-archimed-hannover.html" target="_blank" rel="noopener"><b>neue-pressemitteilungen.de</b><span>Zum Artikel <i><svg aria-hidden="true"><use href="#i-ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://newsdach.de/bildung-karriere/a-14783/" target="_blank" rel="noopener"><b>newsdach.de</b><span>Zum Artikel <i><svg aria-hidden="true"><use href="#i-ext"/></svg></i></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="section" aria-labelledby="blog-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="team-head">
+      <div>
+        <span class="eyebrow" data-reveal>Unser Blog</span>
+        <h2 class="h2" id="blog-title" data-reveal style="margin-top:18px;max-width:18ch">Gesundheitstipps &amp; <em class="o">Erfolgsgeschichten.</em></h2>
+      </div>
+    </div>
+    <div class="posts">
+      <a class="post" data-reveal href="https://archi-med.de/vom-krankenhaus-nach-hause-so-gelingt-der-uebergang-in-die-ausserklinische-intensivpflege/"><div class="pic"><img src="https://archi-med.de/wp-content/uploads/2026/09/cf0d02fe-cf5e-4e14-b95d-a6d36aafe090-768x512.png" alt="" width="768" height="512" loading="lazy" decoding="async"></div><time datetime="2026-09-21">21. September 2026</time><h3>Vom Krankenhaus nach Hause: So gelingt der Übergang in die außerklinische Intensivpflege</h3><p>Der Übergang von der Klinik nach Hause kann herausfordernd sein – so bereiten Sie die außerklinische Intensivpflege gut vor.</p></a>
+      <a class="post" data-reveal href="https://archi-med.de/vom-krankenhaus-nach-hause-so-gelingt-der-sichere-uebergang-in-die-intensivpflege/"><div class="pic"><img src="https://archi-med.de/wp-content/uploads/2026/09/fe0b0561-6a8a-4a50-ae85-3499ade38719-768x512.png" alt="" width="768" height="512" loading="lazy" decoding="async"></div><time datetime="2026-09-21">21. September 2026</time><h3>Vom Krankenhaus nach Hause: So gelingt der sichere Übergang in die Intensivpflege</h3><p>Wie Sie den Übergang nach Hause sicher gestalten und welche Unterstützung Ihnen dabei zur Verfügung steht.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section dark" id="kontakt" aria-labelledby="contact-title">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow" data-reveal>Kontakt aufnehmen</span>
+      <h2 class="h2" id="contact-title" data-reveal>Haben Sie weitere Fragen? <span class="light">Wir freuen uns auf Sie.</span></h2>
+      <p class="lede" data-reveal>Füllen Sie das Kontaktformular aus und treten Sie mit uns in Verbindung. Lassen Sie uns gemeinsam den Weg zu Ihrer bestmöglichen Gesundheit gehen.</p>
+      <ul class="c-list">
+        <li data-reveal><a href="tel:+495118982332"><span class="circle" aria-hidden="true"><svg><use href="#i-phone"/></svg></span><span><small>Telefon · 24/7</small><b>0511 / 8982332</b></span></a></li>
+        <li data-reveal><a href="mailto:intensiv@archi-med.de"><span class="circle" aria-hidden="true"><svg><use href="#i-mail"/></svg></span><span><small>E-Mail</small><b>intensiv@archi-med.de</b></span></a></li>
+        <li data-reveal><a href="https://www.google.com/maps/search/?api=1&amp;query=Sokelantstra%C3%9Fe+5%2C+30165+Hannover" target="_blank" rel="noopener"><span class="circle" aria-hidden="true"><svg><use href="#i-pin"/></svg></span><span><small>Adresse</small><b>Sokelantstraße 5, 30165 Hannover</b></span></a></li>
+      </ul>
+    </div>
+    <form class="form" id="anfrage" data-reveal novalidate>
+      <h3>Kontaktieren Sie uns</h3>
+      <p class="hint">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Nachricht an ARCHIMED.</p>
+      <div class="field"><label for="f-name">Name *</label><input id="f-name" name="fullname" autocomplete="name" required></div>
+      <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="f-mail">E-Mail *</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="f-date">Wunschtermin</label><input id="f-date" name="date" type="date"></div>
+      <div class="field full"><label for="f-topic">Thema</label><select id="f-topic" name="topic"><option>Anfrage Pflege</option><option>Anfrage Schulbegleitung</option><option>Bewerbung</option></select></div>
+      <div class="field full"><label for="f-msg">Nachricht</label><textarea id="f-msg" name="msg"></textarea></div>
+      <button class="btn btn-primary" type="submit">Jetzt Kontakt aufnehmen <svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <p class="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-big"><a href="tel:+495118982332">0511 / 8982332 <span aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></p>
+    <div class="f-grid">
+      <div class="f-brand">
+        <img src="https://archi-med.de/wp-content/uploads/2025/02/20240807_193751-1024x183.png" alt="ARCHIMED" width="190" height="34" loading="lazy">
+        <p>ARCHIMED ist ein führender Anbieter spezialisierter Pflege- und Betreuungsdienstleistungen. Seit 2007 bieten wir umfassende und hochwertige Pflege, insbesondere in der Intensivpflege für Erwachsene und Kinder – mit modernen Pflegetechnologien und kontinuierlicher Weiterbildung.</p>
+        <div class="f-social">
+          <a class="circle-o" href="https://www.facebook.com/archimedgmbh/" target="_blank" rel="noopener" aria-label="ARCHIMED auf Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+          <a class="circle-o" href="https://www.instagram.com/archimed.gmbh" target="_blank" rel="noopener" aria-label="ARCHIMED auf Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="circle-o" href="https://www.tiktok.com/@archimed_pflegedienst" target="_blank" rel="noopener" aria-label="ARCHIMED auf TikTok"><svg aria-hidden="true"><use href="#i-tt"/></svg></a>
+        </div>
+      </div>
+      <nav aria-labelledby="f1">
+        <h2 id="f1">Erkunden</h2>
+        <ul>
+          <li><a href="https://archi-med.de/">Startseite</a></li>
+          <li><a href="https://archi-med.de/unternehmen/">Unternehmen</a></li>
+          <li><a href="https://archi-med.de/jobs/">Jobs</a></li>
+          <li><a href="https://archi-med.de/presse/">Presse</a></li>
+          <li><a href="https://archi-med.de/kontakt/">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f2">
+        <h2 id="f2">Leistungen</h2>
+        <ul>
+          <li><a href="https://archi-med.de/intensivpflege-fuer-erwachsene/">1:1 (Intensiv)-Pflege für Erwachsene</a></li>
+          <li><a href="https://archi-med.de/intensivstation-fuer-kinder/">1:1 (Intensiv)-Pflege für Kinder</a></li>
+          <li><a href="https://archi-med.de/wohngemeinschaften/">(Intensiv)-Wohngemeinschaften</a></li>
+          <li><a href="https://archi-med.de/schul-kitabegleitung/">Schul-/Kitabegleitung</a></li>
+          <li><a href="https://archi-med.de/ambulante-tourenpflege/">Ambulante Tourenpflege</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Kontakt</h2>
+        <ul class="f-contact">
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Sokelantstra%C3%9Fe+5%2C+30165+Hannover" target="_blank" rel="noopener"><span class="circle-o" aria-hidden="true"><svg><use href="#i-pin"/></svg></span><span>Sokelantstraße 5<br>30165 Hannover</span></a></li>
+          <li><a href="tel:+495118982332"><span class="circle-o" aria-hidden="true"><svg><use href="#i-phone"/></svg></span><span>0511 / 8982332</span></a></li>
+          <li><a href="mailto:intensiv@archi-med.de"><span class="circle-o" aria-hidden="true"><svg><use href="#i-mail"/></svg></span><span>intensiv@archi-med.de</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Copyright © <span id="year">2026</span> ARCHIMED. Alle Rechte vorbehalten.</p>
+      <ul>
+        <li><a href="https://archi-med.de/impressum/">Impressum</a></li>
+        <li><a href="https://archi-med.de/datenschutz/">Datenschutz</a></li>
+        <li><a href="https://archi-med.de/barrierefreiheit/">Barrierefreiheit</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" type="button" aria-label="Nach oben"><svg class="ring" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="25"/></svg><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script>
+addEventListener('DOMContentLoaded',function(){
+  window.__d4=1;
+  var d=document, root=d.documentElement;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s,c){return (c||d).querySelector(s);} function $$(s,c){return [].slice.call((c||d).querySelectorAll(s));}
+  function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+  $('#year').textContent=new Date().getFullYear();
+
+  /* Smooth scrolling (Lenis) — skipped for reduced motion or if the library failed to load */
+  var lenis=null;
+  if(!reduce && window.Lenis){
+    lenis=new Lenis({lerp:.09,wheelMultiplier:1});
+    (function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(performance.now());
+  }
+  function go(target){
+    var el=typeof target==='string'?$(target):target; if(!el) return;
+    if(lenis) lenis.scrollTo(el,{offset:el.id==='start'?0:-70,duration:1.4});
+    else el.scrollIntoView({behavior:reduce?'auto':'smooth'});
+  }
+  $$('a[href^="#"]').forEach(function(a){
+    var h=a.getAttribute('href'); if(h.length<2) return;
+    a.addEventListener('click',function(e){var t=$(h);if(!t)return;e.preventDefault();closeMenu(false);go(t);history.replaceState(null,'',h);});
+  });
+
+  /* Mobile menu */
+  var overlay=$('#menu'), burger=$('.burger'), closeBtn=$('.ov-close'), lastFocus;
+  function openMenu(){lastFocus=d.activeElement;overlay.classList.add('open');burger.setAttribute('aria-expanded','true');if(lenis)lenis.stop();root.style.overflow='hidden';setTimeout(function(){closeBtn.focus();},60);}
+  function closeMenu(restore){if(!overlay.classList.contains('open'))return;overlay.classList.remove('open');burger.setAttribute('aria-expanded','false');if(lenis)lenis.start();root.style.overflow='';if(restore!==false&&lastFocus)lastFocus.focus();}
+  burger.addEventListener('click',openMenu); closeBtn.addEventListener('click',function(){closeMenu();});
+  overlay.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){closeMenu();return;}
+    if(e.key!=='Tab')return;
+    var f=$$('a,button',overlay), first=f[0], last=f[f.length-1];
+    if(e.shiftKey&&d.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&d.activeElement===last){e.preventDefault();first.focus();}
+  });
+
+  /* Statement: words light up while scrolling */
+  var statement=$('[data-words]'), words=[];
+  if(statement && !reduce){
+    statement.innerHTML=statement.textContent.trim().split(/\s+/).map(function(w){return '<span class="w">'+w+'</span>';}).join(' ');
+    words=$$('.w',statement);
+  }
+
+  /* Pinned horizontal services (large screens only) */
+  var hs=$('.hs'), track=$('.hs-track'), bar=$('.hs-bar');
+  var pinned=false;
+  function setupHS(){
+    pinned=!reduce && innerWidth>=1024 && innerHeight>=600;
+    hs.classList.toggle('pin',pinned);
+    if(pinned){var dist=track.scrollWidth-innerWidth;hs.style.height=(innerHeight+Math.max(0,dist))+'px';}
+    else{hs.style.height='';track.style.transform='';}
+  }
+
+  /* Scroll story */
+  var steps=$$('.step'), storyImgs=$$('.story-visual img'), storyCount=$('.story-visual .count b');
+  function setStep(i){steps.forEach(function(s,j){s.classList.toggle('on',i===j);});storyImgs.forEach(function(im,j){im.classList.toggle('on',i===j);});storyCount.textContent='0'+(i+1);}
+
+  /* One frame-synced scroll handler */
+  var header=$('.header'), progress=$('.progress'), totop=$('.totop'), hero=$('.hero'), heroMedia=$('.hero-media'), heroContent=$('.hero-content');
+  var parallax=$$('[data-parallax]'), bannerBg=$('[data-parallax-bg]'), navLinks=$$('.menu a');
+  var lastY=0, ticking=false;
+  function frame(){
+    ticking=false;
+    var y=scrollY, vh=innerHeight, max=root.scrollHeight-vh, p=max>0?y/max:0;
+    progress.style.setProperty('--p',p.toFixed(4)); totop.style.setProperty('--p',p.toFixed(4));
+    totop.classList.toggle('show',y>vh);
+    var heroH=hero.offsetHeight;
+    header.classList.toggle('solid',y>heroH-90);
+    if(!overlay.classList.contains('open')) header.classList.toggle('hide',y>lastY+3&&y>heroH);
+    if(y<lastY-3) header.classList.remove('hide');
+    lastY=y;
+    if(reduce) return;
+    /* hero: image drifts and zooms, copy lifts and fades */
+    var hp=clamp(y/heroH,0,1);
+    heroMedia.style.setProperty('--hs',(1+hp*.14).toFixed(4)); heroMedia.style.setProperty('--hy',(hp*90).toFixed(1)+'px');
+    heroContent.style.setProperty('--ho',(1-hp*1.5).toFixed(3)); heroContent.style.setProperty('--hc',(-hp*70).toFixed(1)+'px');
+    /* statement */
+    if(words.length){var r=statement.getBoundingClientRect();var sp=clamp((vh*.85-r.top)/(r.height+vh*.4),0,1)*words.length;for(var i=0;i<words.length;i++)words[i].style.setProperty('--o',clamp(sp-i+1,.14,1).toFixed(2));}
+    /* parallax images */
+    parallax.forEach(function(img){var b=img.parentElement.getBoundingClientRect();if(b.bottom<0||b.top>vh)return;var c=(b.top+b.height/2-vh/2)/vh;img.style.setProperty('--py',(c*-100*+img.dataset.parallax*4).toFixed(1)+'px');});
+    if(bannerBg){var bb=bannerBg.parentElement.getBoundingClientRect();if(bb.bottom>0&&bb.top<vh)bannerBg.style.setProperty('--py',((bb.top+bb.height/2-vh/2)*-.18).toFixed(1)+'px');}
+    /* pinned services */
+    if(pinned){var hr=hs.getBoundingClientRect();var dist=track.scrollWidth-innerWidth;var q=clamp(-hr.top/(hs.offsetHeight-vh),0,1);track.style.transform='translate3d('+(-q*dist).toFixed(1)+'px,0,0)';bar.style.setProperty('--hp',q.toFixed(4));}
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',function(){setupHS();onScroll();});
+  setupHS(); frame();
+  totop.addEventListener('click',function(){go('#start');});
+
+  /* Contact form → prepared e-mail */
+  var form=$('#anfrage'), status=$('.status',form), F=form.elements;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=null;
+    [F.fullname,F.email].forEach(function(f){var inv=!f.value.trim()||(f.type==='email'&&!/^\S+@\S+\.\S+$/.test(f.value.trim()));f.setAttribute('aria-invalid',inv);if(inv&&!bad)bad=f;});
+    if(bad){bad.focus();status.textContent='Bitte geben Sie Ihren Namen und eine gültige E-Mail-Adresse an.';return;}
+    var body='Name: '+F.fullname.value.trim()+'\nTelefon: '+F.tel.value.trim()+'\nE-Mail: '+F.email.value.trim()+'\nWunschtermin: '+(F.date.value||'–')+'\nThema: '+F.topic.value+'\n\n'+F.msg.value.trim();
+    status.textContent='Ihr E-Mail-Programm wird geöffnet …';
+    location.href='mailto:intensiv@archi-med.de?subject='+encodeURIComponent(F.topic.value+' – '+F.fullname.value.trim())+'&body='+encodeURIComponent(body);
+  });
+  $$('input',form).forEach(function(f){f.addEventListener('input',function(){f.removeAttribute('aria-invalid');});});
+
+  /* Failed images keep their frame instead of a broken icon */
+  $$('main img').forEach(function(img){function miss(){img.style.visibility='hidden';}if(img.complete&&img.src&&img.naturalWidth===0)miss();img.addEventListener('error',miss);});
+
+  /* Observers: reveals, counters, story steps, active nav */
+  var els=$$('[data-reveal]');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -10% 0px',threshold:.12});
+  els.forEach(function(el){var sib=[].filter.call(el.parentElement.children,function(c){return c.hasAttribute('data-reveal');});if(!el.style.getPropertyValue('--d'))el.style.setProperty('--d',(Math.min(sib.indexOf(el),5)*.08)+'s');io.observe(el);});
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var el=e.target,to=+el.dataset.count,from=+(el.dataset.from||0),t0=null;function t(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1800),v=1-Math.pow(1-k,4);el.textContent=Math.round(from+(to-from)*v);if(k<1)requestAnimationFrame(t);}el.textContent=from;requestAnimationFrame(t);});},{threshold:.6});
+  $$('[data-count]').forEach(function(c){co.observe(c);});
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setStep(steps.indexOf(e.target));});},{rootMargin:'-45% 0px -45% 0px'});
+  steps.forEach(function(s){so.observe(s);});
+  var spy=new IntersectionObserver(function(es){es.forEach(function(e){navLinks.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id)a.classList.toggle('on',e.isIntersecting);});});},{rootMargin:'-45% 0px -50% 0px'});
+  navLinks.forEach(function(a){var s=$(a.getAttribute('href'));if(s)spy.observe(s);});
+
+});
+</script>
+</body>
+</html>
