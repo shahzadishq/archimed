@@ -405,13 +405,13 @@ button{font:inherit;color:inherit}
 .press .ic{width:13px;height:13px}
 
 /* Footer */
-.footer{background:var(--cocoa);color:var(--on-cocoa-soft);font-size:.875rem;padding:clamp(64px,8vw,96px) 0 30px;border-radius:clamp(32px,5vw,64px) clamp(32px,5vw,64px) 0 0}
-.footer a{color:var(--on-cocoa-soft);text-decoration:none;transition:color .25s}
+.footer{background:var(--cocoa);color:#FFFFFF;font-size:.875rem;padding:clamp(64px,8vw,96px) 0 30px;border-radius:clamp(32px,5vw,64px) clamp(32px,5vw,64px) 0 0}
+.footer a{color:#FFFFFF;text-decoration:none;transition:color .25s}
 .footer a:hover{color:#FFB48A}
 .f-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:40px}
 .f-brand img{height:34px;width:auto;margin-bottom:22px}
 .f-brand p{max-width:40ch;font-size:.875rem}
-.footer h2{font-family:var(--body);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--on-cocoa);margin-bottom:18px}
+.footer h2{font-family:var(--body);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#FFFFFF;margin-bottom:18px}
 .footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:.875rem}
 .social{display:flex;gap:10px;margin-top:22px}
 .social a{width:44px;height:44px;border-radius:50%;border:1px solid var(--cocoa-line);display:grid;place-items:center;transition:border-color .25s,transform .3s var(--ease),color .25s}
@@ -419,6 +419,11 @@ button{font:inherit;color:inherit}
 .social svg{width:18px;height:18px}
 .f-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:60px;padding-top:24px;border-top:1px solid var(--cocoa-line);font-size:.875rem}
 .f-bottom ul{flex-direction:row;gap:22px;flex-wrap:wrap}
+.f-contact{gap:14px}
+.f-contact a{display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+.fi{flex:none;width:32px;height:32px;margin-top:-4px;border-radius:50%;display:grid;place-items:center;background:rgba(243,105,43,.18);color:#FF9663;transition:background-color .25s,color .25s}
+.fi svg{width:16px;height:16px}
+.f-contact a:hover .fi{background:var(--btn);color:#FFFFFF}
 @media (max-width:900px){.f-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.f-brand{grid-column:1/-1}}
 @media (max-width:480px){.f-grid{grid-template-columns:1fr}}
 
@@ -906,10 +911,10 @@ button{font:inherit;color:inherit}
       </nav>
       <div>
         <h2>Kontakt</h2>
-        <ul>
-          <li>Sokelantstraße 5<br>30165 Hannover</li>
-          <li><a href="tel:+495118982332">0511 / 8982332</a></li>
-          <li><a href="mailto:intensiv@archi-med.de">intensiv@archi-med.de</a></li>
+        <ul class="f-contact">
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Sokelantstra%C3%9Fe+5%2C+30165+Hannover" target="_blank" rel="noopener"><span class="fi" aria-hidden="true"><svg><use href="#pin"/></svg></span><span>Sokelantstraße 5<br>30165 Hannover</span></a></li>
+          <li><a href="tel:+495118982332"><span class="fi" aria-hidden="true"><svg><use href="#phone"/></svg></span><span>0511 / 8982332</span></a></li>
+          <li><a href="mailto:intensiv@archi-med.de"><span class="fi" aria-hidden="true"><svg><use href="#mail"/></svg></span><span>intensiv@archi-med.de</span></a></li>
         </ul>
       </div>
     </div>
