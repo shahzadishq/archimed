@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ARCHIMED Hannover – Ambulante Intensivpflege mit Herz</title>
 <meta name="description" content="ARCHIMED Hannover: ambulante Intensivpflege für Erwachsene und Kinder, Intensiv-Wohngemeinschaften, Schul- und Kitabegleitung, Individualbegleitung und ambulante Tourenpflege in Niedersachsen und Bremen. Seit 2007 · 24/7 Rufbereitschaft.">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#F3692B">
 <link rel="icon" href="https://archi-med.de/wp-content/uploads/2024/04/cropped-lgo-1-300x300.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +20,11 @@
    oversized Poppins display type, cinematic imagery and scroll-driven motion.
    Body text: Mulish 16px, small text 14px (as on archi-med.de). */
 :root{
-  --espresso:#1C120C; --espresso-2:#2A1B12; --espresso-3:#3A2619;
+  --brown:#613F24; --espresso:#613F24; --espresso-2:#54361F; --espresso-3:#6E4A2D;
   --ivory:#FFFFFF; --cream:#F8F2EB; --sand:#EFE4D8;
   --ink:#241913; --heading:#22150D; --muted:#6E625A; --line:rgba(34,21,13,.12);
   --on-dark:#FFFFFF; --on-dark-soft:rgba(255,255,255,.72); --dark-line:rgba(255,255,255,.14);
-  --orange:#F3692B; --btn:#E2581B; --btn-hover:#C2470F; --orange-text:#B84A12; --orange-soft:#FFB48A;
+  --orange:#F3692B; --btn:#F3692B; --btn-hover:#613F24; --orange-text:#F3692B; --orange-soft:#F3692B;
   --display:"Poppins","Segoe UI",system-ui,sans-serif; --body:"Mulish","Segoe UI",system-ui,-apple-system,sans-serif;
   --wrap:1280px; --gutter:clamp(16px,4vw,48px);
   --ease:cubic-bezier(.22,.8,.24,1); --ease-out:cubic-bezier(.16,1,.3,1);
@@ -68,13 +68,16 @@ button,input,select,textarea{font:inherit;color:inherit}
 .btn-primary{background:var(--btn);color:#fff}
 .btn-primary::before{background:var(--btn-hover)}
 .btn-ghost-light{border-color:rgba(255,255,255,.45);color:#fff}
-.btn-ghost-light::before{background:#fff}
-.btn-ghost-light:hover{color:var(--espresso)}
-.btn-dark{background:var(--espresso);color:#fff}
-.btn-dark::before{background:var(--btn)}
+.btn-ghost-light::before{background:var(--brown)}
+.btn-ghost-light:hover{border-color:var(--brown)}
+.btn-dark{background:var(--brown);color:#fff}
+.btn-dark::before{background:#4A2F1A}
+.btn-white{background:#fff;color:var(--brown)}
+.btn-white::before{background:var(--brown)}
+.btn-white:hover{color:#fff}
 .btn-line{border-color:var(--line);color:var(--heading)}
-.btn-line::before{background:var(--espresso)}
-.btn-line:hover{color:#fff;border-color:var(--espresso)}
+.btn-line::before{background:var(--brown)}
+.btn-line:hover{color:#fff;border-color:var(--brown)}
 .link{display:inline-flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--orange-text)}
 .dark .link{color:var(--orange-soft)}
 .link .ic{width:16px;height:16px;transition:transform .35s var(--ease)}
@@ -96,15 +99,15 @@ button,input,select,textarea{font:inherit;color:inherit}
 .progress{position:fixed;inset:0 0 auto 0;height:2px;z-index:150;background:var(--orange);transform-origin:0 50%;transform:scaleX(var(--p,0))}
 
 /* Topbar (as on the live site) */
-.topbar{background:var(--espresso-2);color:#fff;font-size:.875rem}
+.topbar{background:var(--orange);color:#fff;font-size:.875rem}
 .topbar .wrap{display:flex;justify-content:flex-end;align-items:center;gap:28px;min-height:46px}
 .topbar ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
-.topbar a,.topbar li{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.88);text-decoration:none;transition:color .2s}
-.topbar a:hover{color:var(--orange-soft)}
-.topbar .ic{width:15px;height:15px;color:var(--orange-soft)}
+.topbar a,.topbar li{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;transition:color .2s}
+.topbar a:hover{color:var(--brown)}
+.topbar .ic{width:15px;height:15px;color:#fff}
 .topbar .soc-t{display:flex;gap:8px}
-.topbar .soc-t a{width:30px;height:30px;border-radius:50%;border:1px solid var(--dark-line);justify-content:center;transition:border-color .2s,background-color .2s}
-.topbar .soc-t a:hover{background:var(--btn);border-color:var(--btn);color:#fff}
+.topbar .soc-t a{width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.55);justify-content:center;transition:border-color .2s,background-color .2s}
+.topbar .soc-t a:hover{background:var(--brown);border-color:var(--brown);color:#fff}
 .topbar .soc-t svg{width:14px;height:14px}
 @media (max-width:900px){.topbar .t-addr,.topbar .soc-t{display:none}.topbar .wrap{justify-content:center}}
 @media (max-width:440px){.topbar .t-mail{display:none}}
@@ -112,7 +115,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* Header */
 .header{position:sticky;top:0;z-index:120;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line);transition:box-shadow .4s,transform .5s var(--ease)}
 .header.solid{box-shadow:0 12px 30px -24px rgba(34,21,13,.45)}
-.header.hide{transform:translateY(-100%)}
 .header .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px}
 .brand{flex:none;line-height:0}
 .brand img{height:36px;width:auto;max-width:none}
@@ -172,7 +174,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .collage .small{position:absolute;left:0;bottom:0;width:36%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 60px -30px rgba(34,21,13,.55);background:var(--cream);animation:tileIn 1s var(--ease-out) 1.45s both;translate:0 var(--sy,0px)}
 .collage .small img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .tile{position:absolute;box-shadow:0 30px 60px -30px rgba(34,21,13,.55)}
-.tile-stat{left:0;top:9%;padding:20px 26px 22px;border-radius:24px;background:linear-gradient(135deg,#F3692B,#D9500F);color:#fff;animation:tileIn 1s var(--ease-out) 1.3s both;translate:0 var(--ty,0px)}
+.tile-stat{left:0;top:9%;padding:20px 26px 22px;border-radius:24px;background:var(--orange);color:#fff;animation:tileIn 1s var(--ease-out) 1.3s both;translate:0 var(--ty,0px)}
 .tile-stat .lbl{display:block;font-size:.875rem;font-weight:700;opacity:.95}
 .tile-stat b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,3.6vw,3rem);line-height:1.05;letter-spacing:-.03em}
 .tile-stat b i{font-style:normal;color:#FFE0CC}
@@ -231,7 +233,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 @media (max-width:520px){.mini{grid-template-columns:minmax(0,1fr)}}
 
 /* Services — pinned horizontal scroll on large screens */
-.hs{position:relative;background:var(--espresso);color:#fff}
+.hs{position:relative;background:var(--brown);color:#fff}
 .hs-sticky{display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,3.5vh,40px);padding-block:clamp(60px,8vw,96px)}
 .hs.pin .hs-sticky{position:sticky;top:0;height:100vh;overflow:hidden;padding-block:clamp(72px,10vh,96px) clamp(20px,3.5vh,40px);gap:clamp(20px,3vh,34px)}
 .hs-head{display:flex;justify-content:space-between;align-items:end;gap:24px 60px;flex-wrap:wrap}
@@ -300,18 +302,18 @@ button,input,select,textarea{font:inherit;color:inherit}
 .values{background:var(--cream)}
 .v-list{list-style:none;margin:clamp(30px,4vw,52px) 0 0;padding:0;border-top:1px solid var(--line)}
 .v-row{position:relative;display:grid;grid-template-columns:90px minmax(0,1.1fr) minmax(0,1fr);gap:16px 40px;align-items:center;padding:clamp(20px,2.4vw,32px) 0;border-bottom:1px solid var(--line);isolation:isolate}
-.v-row::before{content:"";position:absolute;inset:0 calc(var(--gutter) * -1);z-index:-1;background:var(--espresso);transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease)}
+.v-row::before{content:"";position:absolute;inset:0 calc(var(--gutter) * -1);z-index:-1;background:var(--orange);transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease)}
 .v-row:hover::before{transform:scaleY(1);transform-origin:top}
 .v-row .n{font-family:var(--display);font-weight:300;font-size:1.25rem;color:var(--orange-text);transition:color .4s}
 .v-row h3{font-size:clamp(1.6rem,3.4vw,3rem);font-weight:400;transition:color .4s,transform .6s var(--ease)}
 .v-row p{color:var(--muted);transition:color .4s}
 .v-row:hover h3{color:#fff;transform:translateX(12px)}
-.v-row:hover p{color:var(--on-dark-soft)}
-.v-row:hover .n{color:var(--orange-soft)}
+.v-row:hover p{color:#fff}
+.v-row:hover .n{color:#fff}
 @media (max-width:760px){.v-row{grid-template-columns:50px minmax(0,1fr)}.v-row p{grid-column:2}}
 
 /* Orange variant of the dark sections (Bewertungen, Kontakt) */
-.orange{background:radial-gradient(ellipse at 85% 0%,rgba(255,255,255,.16),transparent 55%),linear-gradient(135deg,#F3692B 0%,#DC5414 100%)}
+.orange{background:var(--orange)}
 .orange .eyebrow{color:#FFF1E8}
 .orange .eyebrow::before{background:#FFF1E8}
 .orange .lede,.orange .rating small,.orange .c-list small,.orange .form .hint{color:rgba(255,255,255,.9)}
@@ -341,7 +343,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 .rating small{font-size:.875rem;color:var(--on-dark-soft)}
 .mq{display:flex;gap:20px;width:max-content;animation:mq 60s linear infinite}
 .mq + .mq{margin-top:20px;animation-direction:reverse;animation-duration:70s}
-.reviews:hover .mq{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 .rv{flex:none;width:min(420px,80vw);margin:0;display:flex;flex-direction:column;gap:18px;padding:30px;border-radius:24px;background:var(--espresso-2);border:1px solid var(--dark-line)}
 .rv blockquote{margin:0;flex:1;color:rgba(255,255,255,.88)}
@@ -457,7 +458,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 @media (max-width:560px){.form{grid-template-columns:minmax(0,1fr)}}
 
 /* Footer */
-.footer{background:#140C07;color:#fff;font-size:.875rem;padding:clamp(56px,7vw,88px) 0 28px}
+.footer{background:var(--brown);color:#fff;font-size:.875rem;padding:clamp(56px,7vw,88px) 0 28px}
 .footer a{color:#fff;text-decoration:none;transition:color .2s}
 .footer a:hover{color:var(--orange-soft)}
 .f-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:40px}
@@ -478,10 +479,11 @@ button,input,select,textarea{font:inherit;color:inherit}
 @media (max-width:480px){.f-grid{grid-template-columns:minmax(0,1fr)}}
 
 /* Back to top with progress ring */
-.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:110;width:54px;height:54px;border-radius:50%;border:0;background:var(--espresso);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .4s,transform .4s var(--ease),visibility .4s}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:110;width:54px;height:54px;border-radius:50%;border:0;background:var(--orange);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .4s,transform .4s var(--ease),visibility .4s}
+.totop:hover{background:var(--brown)}
 .totop.show{opacity:1;visibility:visible;transform:none}
 .totop svg.ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
-.totop svg.ring circle{fill:none;stroke:var(--orange);stroke-width:2;stroke-dasharray:157;stroke-dashoffset:calc(157 - 157 * var(--p,0))}
+.totop svg.ring circle{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:157;stroke-dashoffset:calc(157 - 157 * var(--p,0))}
 .totop .arr{width:18px;height:18px;transform:rotate(-90deg)}
 
 /* Scroll reveals */
@@ -838,7 +840,7 @@ button,input,select,textarea{font:inherit;color:inherit}
       <div class="field"><label for="f-date">Wunschtermin</label><input id="f-date" name="date" type="date"></div>
       <div class="field full"><label for="f-topic">Thema</label><select id="f-topic" name="topic"><option>Anfrage Pflege</option><option>Anfrage Schulbegleitung</option><option>Bewerbung</option></select></div>
       <div class="field full"><label for="f-msg">Nachricht</label><textarea id="f-msg" name="msg"></textarea></div>
-      <button class="btn btn-dark" type="submit">Jetzt Kontakt aufnehmen <svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn-white" type="submit">Jetzt Kontakt aufnehmen <svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
       <p class="status" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -971,8 +973,6 @@ addEventListener('DOMContentLoaded',function(){
     totop.classList.toggle('show',y>vh);
     var heroH=hero.offsetHeight;
     header.classList.toggle('solid',y>40);
-    if(!overlay.classList.contains('open')) header.classList.toggle('hide',y>lastY+3&&y>heroH);
-    if(y<lastY-3) header.classList.remove('hide');
     lastY=y;
     if(reduce) return;
     /* hero collage: photo and the two tiles drift at different speeds */
