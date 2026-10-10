@@ -208,6 +208,16 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* About */
 .statement{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.6vw,3.25rem);line-height:1.22;letter-spacing:-.025em;color:var(--heading);max-width:22ch;margin-top:30px}
 .statement .w{opacity:var(--o,1);transition:opacity .15s linear}
+.about-intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(36px,6vw,96px);align-items:end}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.checks li{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-radius:18px;background:var(--cream);border:1px solid transparent;transition:transform .45s var(--ease),border-color .3s,background-color .3s,box-shadow .45s}
+.checks li:hover{transform:translateX(8px);background:#fff;border-color:rgba(243,105,43,.45);box-shadow:0 18px 40px -26px rgba(243,105,43,.6)}
+.tick{flex:none;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;transition:transform .45s var(--ease)}
+.checks li:hover .tick{transform:rotate(-12deg) scale(1.08)}
+.tick svg{width:18px;height:18px}
+.checks strong{display:block;color:var(--heading);font-size:1rem;line-height:1.35}
+.checks div span{font-size:.875rem;color:var(--muted);line-height:1.45}
+@media (max-width:980px){.about-intro{grid-template-columns:minmax(0,1fr);align-items:start}}
 .about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:center;margin-top:clamp(44px,6vw,80px)}
 .frame{position:relative;overflow:hidden;border-radius:18px;background:var(--cream)}
 .frame img{width:100%;height:116%;object-fit:cover;transform:translate3d(0,var(--py,0),0)}
@@ -515,6 +525,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -619,9 +630,19 @@ button,input,select,textarea{font:inherit;color:inherit}
 <!-- About -->
 <section class="section" id="ueber-uns" aria-labelledby="about-title">
   <div class="wrap">
-    <span class="eyebrow" data-reveal>Über uns · Wer ist ARCHIMED?</span>
-    <h2 class="sr-only" id="about-title">Wer ist ARCHIMED?</h2>
-    <p class="statement" data-words>Seit 2007 steht ARCHIMED für hochwertige ambulante Intensivpflege. Unsere Mission: Menschen durch qualitätsgesicherte Pflege ein selbstbestimmtes Leben im eigenen Zuhause zu ermöglichen.</p>
+    <div class="about-intro">
+      <div>
+      <span class="eyebrow" data-reveal>Über uns · Wer ist ARCHIMED?</span>
+      <h2 class="sr-only" id="about-title">Wer ist ARCHIMED?</h2>
+      <p class="statement" data-words>Seit 2007 steht ARCHIMED für hochwertige ambulante Intensivpflege. Unsere Mission: Menschen durch qualitätsgesicherte Pflege ein selbstbestimmtes Leben im eigenen Zuhause zu ermöglichen.</p>
+      </div>
+      <ul class="checks">
+        <li data-reveal><span class="tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><div><strong>Individuelle Begleitung</strong><span>Orientiert an persönlichen Bedürfnissen</span></div></li>
+        <li data-reveal><span class="tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><div><strong>Persönliche Nähe</strong><span>Der Mensch steht im Mittelpunkt</span></div></li>
+        <li data-reveal><span class="tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><div><strong>Verlässliche Unterstützung</strong><span>Auch wenn der Alltag besondere Hilfe benötigt</span></div></li>
+        <li data-reveal><span class="tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><div><strong>Langjährige Erfahrung</strong><span>ARCHIMED ist seit 2007 in Hannover aktiv</span></div></li>
+      </ul>
+    </div>
 
     <div class="about-grid">
       <div class="frame about-pic" data-reveal="clip"><img data-parallax="0.08" src="https://archi-med.de/wp-content/uploads/2024/09/6NB6768-min-2.jpeg" alt="Eine ältere Frau wird herzlich von zwei jüngeren Frauen umarmt" width="1232" height="1144" loading="lazy" decoding="async"></div>
