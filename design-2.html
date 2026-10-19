@@ -484,6 +484,19 @@ button{font:inherit;color:inherit}
 .f-contact a:hover .fi{border-color:#F3692B;transform:translateY(-3px)}
 @media (max-width:900px){.f-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.f-brand{grid-column:1/-1}}
 @media (max-width:480px){.f-grid{grid-template-columns:1fr}}
+/* kununu Top Company badges */
+.ku-awards{display:flex;gap:6px;margin-top:24px;flex-wrap:wrap}
+.ku-badge{width:62px;background:#fff;border-radius:7px;overflow:hidden;box-shadow:0 14px 28px -16px rgba(0,0,0,.6);font-family:var(--body);transition:transform .35s var(--ease)}
+.ku-badge:hover{transform:translateY(-4px)}
+.ku-badge .ku-top{display:flex;flex-direction:column;align-items:center;gap:3px;background:#28284a;color:#fff;padding:6px 3px}
+.ku-badge .ku-top b{font-weight:800;font-size:.48rem;letter-spacing:0;white-space:nowrap}
+.ku-badge .ku-yr{background:#fff;color:#28284a;border-radius:3px;padding:1px 5px;font-weight:800;font-size:.56rem}
+.ku-badge .ku-wave{height:36px;display:grid;place-items:center}
+.ku-badge .ku-wave svg{width:42px;height:22px}
+.ku-badge .ku-name{padding:3px 4px 7px;text-align:center;font-weight:800;font-size:.66rem;color:#28284a}
+.ku-badge.y24 .ku-wave{color:#EFA8C4}
+.ku-badge.y25 .ku-wave{color:#5663A6}
+.ku-badge.y26 .ku-wave{color:#F4B400}
 
 /* Floating call button (phones) */
 .fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;display:none;align-items:center;gap:10px;min-height:56px;padding:0 22px 0 18px;border-radius:10px;background:var(--btn);color:#FFFFFF;font-weight:800;text-decoration:none;box-shadow:0 18px 36px -14px rgba(243,105,43,.55);transform:translateY(140%);transition:transform .5s var(--ease)}
@@ -1063,6 +1076,11 @@ button{font:inherit;color:inherit}
           <li><a href="tel:+495118982332"><span class="fi" aria-hidden="true"><svg><use href="#phone"/></svg></span><span>0511 / 8982332</span></a></li>
           <li><a href="mailto:intensiv@archi-med.de"><span class="fi" aria-hidden="true"><svg><use href="#mail"/></svg></span><span>intensiv@archi-med.de</span></a></li>
         </ul>
+        <div class="ku-awards" aria-label="kununu Top Company Auszeichnungen 2024, 2025 und 2026">
+          <div class="ku-badge y24"><div class="ku-top"><b>Top Company</b><span class="ku-yr">2024</span></div><div class="ku-wave"><svg viewBox="0 0 52 26" aria-hidden="true"><path d="M3 18C8 6 14 6 18 14 22 22 28 22 32 14 35 8 41 8 49 14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ku-name">kununu</div></div>
+          <div class="ku-badge y25"><div class="ku-top"><b>Top Company</b><span class="ku-yr">2025</span></div><div class="ku-wave"><svg viewBox="0 0 52 26" aria-hidden="true"><path d="M3 18C8 6 14 6 18 14 22 22 28 22 32 14 35 8 41 8 49 14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ku-name">kununu</div></div>
+          <div class="ku-badge y26"><div class="ku-top"><b>Top Company</b><span class="ku-yr">2026</span></div><div class="ku-wave"><svg viewBox="0 0 52 26" aria-hidden="true"><path d="M3 18C8 6 14 6 18 14 22 22 28 22 32 14 35 8 41 8 49 14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ku-name">kununu</div></div>
+        </div>
       </div>
     </div>
     <div class="f-bottom">
