@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ARCHIMED Hannover – Mehr als Pflege. Echte Begleitung.</title>
-<meta name="description" content="ARCHIMED Hannover: Intensivpflege für Erwachsene und Kinder, Intensiv-Wohngemeinschaften, Schul- & Kita-Begleitung, individuelle Unterstützung und ambulante Tourenpflege. Seit 2007 · 24/7 erreichbar.">
+<meta name="description" content="ARCHIMED Hannover: Ambulante Pflege, Intensivpflege für Erwachsene und Kinder, Intensiv-Wohngemeinschaften, Schul- & Kita-Begleitung und individuelle Unterstützung. Seit 2007 · 24/7 erreichbar.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="https://archi-med.de/wp-content/uploads/2024/04/cropped-lgo-1-300x300.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -351,6 +351,7 @@ button{font:inherit;color:inherit}
 /* FAQ — native details, smooth height where supported */
 .faq{background:var(--sand)}
 .faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,90px);align-items:start}
+.faq-grid .head{position:sticky;top:120px}
 .qa{border-bottom:1px solid var(--line);interpolate-size:allow-keywords}
 .qa:first-child{border-top:1px solid var(--line)}
 .qa summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 4px;cursor:pointer;font-family:var(--display);font-weight:500;letter-spacing:-.01em;font-size:clamp(1.08rem,1.7vw,1.3rem);color:var(--heading);line-height:1.35;transition:color .25s}
@@ -362,7 +363,7 @@ button{font:inherit;color:inherit}
 .qa::details-content{height:0;overflow:hidden;transition:height .45s var(--ease),content-visibility .45s allow-discrete}
 .qa[open]::details-content{height:auto}
 .qa p{padding:0 4px 26px;color:var(--muted);max-width:60ch}
-@media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr}.faq-grid .head{position:static}}
 
 /* Reviews */
 #bewertungen{background:var(--sand)}
@@ -694,7 +695,7 @@ button{font:inherit;color:inherit}
 
       <div class="stage">
         <article class="panel active" id="p-1" role="tabpanel" aria-labelledby="tab-1" data-reveal>
-          <div class="arch media"><img src="https://archi-med.de/wp-content/uploads/2024/04/archi-med-Ambulante-Tourenpflege-.jpg" alt="Zwei Pflegekräfte der ambulanten Tourenpflege vor dem ARCHIMED-Dienstwagen" width="1920" height="1080" loading="lazy" decoding="async"></div>
+          <div class="arch media"><img src="https://archi-med.de/wp-content/uploads/2024/04/archi-med-Ambulante-Tourenpflege-.jpg" alt="Zwei Pflegekräfte der ambulanten Pflege vor dem ARCHIMED-Dienstwagen" width="1920" height="1080" loading="lazy" decoding="async"></div>
           <span class="tagline">01 · Zu Hause</span>
           <h3>Ambulante Pflege</h3>
           <p>Pflege direkt bei Ihnen zu Hause – im Alter, nach Schicksalsschlägen oder bei plötzlicher Pflegebedürftigkeit. Wir stehen an Ihrer Seite und stärken Ihnen den Rücken.</p>
@@ -883,7 +884,7 @@ button{font:inherit;color:inherit}
     <div data-reveal>
       <details class="qa" name="faq" open>
         <summary>Welche Leistungen bietet ARCHIMED an?<span class="pm" aria-hidden="true"><svg><use href="#plus"/></svg></span></summary>
-        <p>ARCHIMED bietet unter anderem Intensivpflege für Erwachsene und Kinder, Intensivpflege in Wohngemeinschaften, Schul- und Kita-Begleitung, Nachmittags- und Individualbegleitung sowie ambulante Tourenpflege an.</p>
+        <p>ARCHIMED bietet unter anderem ambulante Pflege, Intensivpflege für Erwachsene und Kinder, Intensivpflege in Wohngemeinschaften, Schul- und Kita-Begleitung sowie Nachmittags- und Individualbegleitung an.</p>
       </details>
       <details class="qa" name="faq">
         <summary>Wo ist ARCHIMED tätig?<span class="pm" aria-hidden="true"><svg><use href="#plus"/></svg></span></summary>
@@ -896,6 +897,22 @@ button{font:inherit;color:inherit}
       <details class="qa" name="faq">
         <summary>Ist ARCHIMED rund um die Uhr erreichbar?<span class="pm" aria-hidden="true"><svg><use href="#plus"/></svg></span></summary>
         <p>Ja, ARCHIMED ist rund um die Uhr erreichbar. Für konkrete Anliegen können Sie sich jederzeit direkt an das Team wenden.</p>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Übernimmt die Pflegekasse die Kosten?<span class="pm" aria-hidden="true"><svg><use href="#plus"/></svg></span></summary>
+        <p>In vielen Fällen werden die Leistungen der ambulanten Intensivpflege von der Kranken- und Pflegekasse übernommen. Wir beraten Sie gern individuell und unterstützen Sie bei allen Formalitäten.</p>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Wie schnell kann die Versorgung beginnen?<span class="pm" aria-hidden="true"><svg><use href="#plus"/></svg></span></summary>
+        <p>Nach einem persönlichen Gespräch und der Klärung des individuellen Pflegebedarfs richten wir die Versorgung so schnell wie möglich ein – auch kurzfristig und in akuten Situationen.</p>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Welche Qualifikation haben die Pflegekräfte?<span class="pm" aria-hidden="true"><svg><use href="#plus"/></svg></span></summary>
+        <p>Unsere Mitarbeitenden sind examinierte Pflegefachkräfte, speziell geschult für außerklinische Beatmung und ambulante Intensivpflege, und bilden sich regelmäßig nach aktuellen Standards fort.</p>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Bietet ARCHIMED auch außerklinische Beatmung an?<span class="pm" aria-hidden="true"><svg><use href="#plus"/></svg></span></summary>
+        <p>Ja, ARCHIMED ist auf die außerklinische Intensiv- und Beatmungspflege spezialisiert und betreut beatmungspflichtige Patient*innen rund um die Uhr – im eigenen Zuhause oder in unseren Intensiv-Wohngemeinschaften.</p>
       </details>
     </div>
   </div>
@@ -966,12 +983,11 @@ button{font:inherit;color:inherit}
       <nav aria-labelledby="f2">
         <h2 id="f2">Leistungen</h2>
         <ul>
+          <li><a href="https://archi-med.de/ambulanter-pflegedienst-hannover/">Ambulante Pflege</a></li>
           <li><a href="https://archi-med.de/intensivpflege-fuer-erwachsene/">1:1-Intensivpflege Erwachsene</a></li>
           <li><a href="https://archi-med.de/intensivstation-fuer-kinder/">1:1-Intensivpflege Kinder</a></li>
           <li><a href="https://archi-med.de/wohngemeinschaften/">Intensiv-Wohngemeinschaften</a></li>
           <li><a href="https://archi-med.de/schul-kitabegleitung/">Schul- &amp; Kitabegleitung</a></li>
-          <li><a href="https://archi-med.de/ambulanter-pflegedienst-hannover/">Ambulante Pflege</a></li>
-          <li><a href="https://archi-med.de/ambulante-tourenpflege/">Ambulante Tourenpflege</a></li>
         </ul>
       </nav>
       <div>
