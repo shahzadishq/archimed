@@ -348,6 +348,38 @@ button{font:inherit;color:inherit}
 @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.form{grid-template-columns:1fr}}
 
+/* Soziale Medien */
+.social-sec{background:radial-gradient(120% 120% at 85% 8%,rgba(253,230,215,.85),transparent 55%),var(--cream)}
+.social-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(40px,6vw,80px);align-items:center}
+.social-copy{display:flex;flex-direction:column;gap:18px}
+.social-copy h2{font-size:clamp(1.8rem,3.2vw,2.7rem)}
+.social-copy p{color:var(--muted);max-width:52ch}
+.social-founder{display:flex;align-items:center;gap:14px;margin-top:6px}
+.social-founder img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 20%;background:var(--sand);border:3px solid var(--blush)}
+.social-founder b{display:block;color:var(--heading);font-size:1rem}
+.social-founder span{font-size:.875rem;color:var(--muted)}
+.social-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:10px}
+.social-links{display:flex;gap:10px}
+.social-links a{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--heading);transition:background-color .3s,color .3s,border-color .3s,transform .35s var(--ease)}
+.social-links a:hover{background:var(--btn);color:#fff;border-color:var(--btn);transform:translateY(-3px)}
+.social-links svg{width:20px;height:20px}
+.social-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px}
+.phone{position:relative;width:min(260px,68%);aspect-ratio:9/19;border-radius:40px;background:#17120e;padding:9px;box-shadow:var(--shadow);z-index:1}
+.phone::before{content:"";position:absolute;top:13px;left:50%;transform:translateX(-50%);width:44%;height:16px;border-radius:0 0 12px 12px;background:#17120e;z-index:3}
+.phone .screen{position:relative;width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--sand)}
+.phone .screen img{width:100%;height:100%;object-fit:cover}
+.phone-play{position:absolute;inset:0;margin:auto;width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:grid;place-items:center;color:var(--orange);z-index:3;box-shadow:var(--shadow-sm)}
+.phone-play svg{width:30px;height:30px;margin-left:4px}
+.float-badge{position:absolute;width:60px;height:60px;border-radius:18px;display:grid;place-items:center;color:#fff;box-shadow:0 18px 36px -14px rgba(34,21,13,.5);z-index:2;animation:floaty 6s ease-in-out infinite}
+.float-badge svg{width:28px;height:28px}
+.float-badge.ig{top:4%;right:12%;background:linear-gradient(135deg,#feda75,#d62976 45%,#962fbf 80%,#4f5bd5)}
+.float-badge.fb{top:36%;right:2%;background:#1877F2;animation-delay:.8s}
+.float-badge.tt{bottom:12%;right:14%;background:#111;animation-delay:1.6s}
+.float-badge.heart{top:22%;left:6%;width:52px;height:52px;background:var(--btn);animation-delay:1.1s}
+.float-badge.heart svg{width:24px;height:24px}
+@keyframes floaty{50%{transform:translateY(-12px)}}
+@media (max-width:860px){.social-grid{grid-template-columns:1fr;gap:44px}.social-visual{min-height:400px}}
+
 /* FAQ — native details, smooth height where supported */
 .faq{background:var(--sand)}
 .faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,90px);align-items:start}
@@ -869,6 +901,40 @@ button{font:inherit;color:inherit}
           <div class="post-body"><time datetime="2026-09-21">21. September 2026</time><h3>Vom Krankenhaus nach Hause: So gelingt der sichere Übergang in die Intensivpflege</h3><p>Wie Sie den Übergang nach Hause sicher gestalten und welche Unterstützung Ihnen dabei zur Verfügung steht.</p><span class="link">Weiterlesen <svg class="ic" aria-hidden="true"><use href="#arrow"/></svg></span></div>
         </a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- Soziale Medien -->
+<section class="section social-sec" id="social" aria-labelledby="social-title">
+  <div class="wrap social-grid">
+    <div class="social-copy">
+      <span class="kicker" data-reveal>Soziale Medien</span>
+      <h2 class="h2" id="social-title" data-reveal>Folgen Sie uns für <em>mitfühlende Pflege</em> und Einblicke in die Gesundheit.</h2>
+      <p data-reveal>Dank unserer aktiven Präsenz auf Social Media erreichen wir viele Menschen, die unsere Beiträge sehen, sich inspirieren lassen und daraufhin zu uns kommen.</p>
+      <p data-reveal>Viele von ihnen werden aufgrund unserer hilfreichen und vertrauenswürdigen Inhalte zu treuen Kund*innen.</p>
+      <div class="social-founder" data-reveal>
+        <img src="https://archi-med.de/wp-content/uploads/2025/08/Dimitrij-Sonkin-Geschaftsfuhrer-300x300.png" alt="Dimitrij Sonkin, Geschäftsführer von ARCHIMED" width="56" height="56" loading="lazy" decoding="async">
+        <div><b>Dimitrij Sonkin</b><span>Geschäftsführer</span></div>
+      </div>
+      <div class="social-actions" data-reveal>
+        <a class="btn btn-primary" href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener">Folgen Sie uns jetzt <svg class="ic ic-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <div class="social-links">
+          <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" aria-label="ARCHIMED auf Instagram"><svg aria-hidden="true"><use href="#ig"/></svg></a>
+          <a href="https://www.facebook.com/archimedgmbh/" target="_blank" rel="noopener" aria-label="ARCHIMED auf Facebook"><svg aria-hidden="true"><use href="#fb"/></svg></a>
+          <a href="https://www.tiktok.com/@archimed_pflegedienst" target="_blank" rel="noopener" aria-label="ARCHIMED auf TikTok"><svg aria-hidden="true"><use href="#tt"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="social-visual" data-reveal>
+      <div class="phone">
+        <div class="screen"><img src="https://archi-med.de/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-09-at-15.07.173-scaled-1-768x1024.jpeg" alt="Einblick in den Pflegealltag bei ARCHIMED" width="768" height="1024" loading="lazy" decoding="async"></div>
+        <span class="phone-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+      </div>
+      <span class="float-badge ig" aria-hidden="true"><svg><use href="#ig"/></svg></span>
+      <span class="float-badge fb" aria-hidden="true"><svg><use href="#fb"/></svg></span>
+      <span class="float-badge tt" aria-hidden="true"><svg><use href="#tt"/></svg></span>
+      <span class="float-badge heart" aria-hidden="true"><svg><use href="#heart"/></svg></span>
     </div>
   </div>
 </section>
