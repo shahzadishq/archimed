@@ -113,6 +113,14 @@ button{font:inherit;color:inherit}
 .menu a:hover{color:var(--orange-text)}
 .menu a:hover::after,.menu a.on::after{transform:scaleX(1);transform-origin:left}
 .menu a.on{color:var(--orange-text)}
+.menu li{position:relative}
+.menu .caret{width:13px;height:13px;margin-left:5px;vertical-align:-1px;transition:transform .3s var(--ease)}
+.menu li.has-sub:hover > a .caret,.menu li.has-sub:focus-within > a .caret{transform:rotate(180deg)}
+.submenu{position:absolute;left:0;top:100%;min-width:300px;margin:0;padding:10px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 24px 48px -28px rgba(34,21,13,.5);display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility 0s .25s;z-index:10}
+.menu li.has-sub:hover .submenu,.menu li.has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .25s var(--ease),visibility 0s}
+.submenu a{display:block;padding:11px 14px;border-radius:8px;font-size:.9rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.submenu a::after{content:none}
+.submenu a:hover{background:var(--blush);color:var(--orange-text)}
 .nav-cta{display:flex;align-items:center;gap:10px}
 .nav-cta .btn{min-height:48px;padding:0 22px}
 .burger{display:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;place-items:center}
@@ -128,9 +136,12 @@ button{font:inherit;color:inherit}
 .ov-top img{height:30px;width:auto}
 .ov-close{width:48px;height:48px;border-radius:50%;border:1px solid var(--cocoa-line);background:none;color:#fff;cursor:pointer;display:grid;place-items:center}
 .overlay ol{list-style:none;margin:auto 0;padding:32px 0;counter-reset:m}
-.overlay li{overflow:hidden;border-bottom:1px solid var(--cocoa-line)}
-.overlay ol a{display:flex;align-items:baseline;gap:18px;padding:12px 0;text-decoration:none;font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,8vw,3rem);letter-spacing:-.03em;color:#fff;transform:translateY(100%);transition:transform .8s var(--ease-out),color .3s}
-.overlay ol a::before{counter-increment:m;content:"0" counter(m);font-family:var(--body);font-size:.8125rem;font-weight:800;letter-spacing:.12em;color:var(--orange)}
+.overlay ol>li{overflow:hidden;border-bottom:1px solid var(--cocoa-line)}
+.overlay ol>li>a{display:flex;align-items:baseline;gap:18px;padding:12px 0;text-decoration:none;font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,8vw,3rem);letter-spacing:-.03em;color:#fff;transform:translateY(100%);transition:transform .8s var(--ease-out),color .3s}
+.overlay ol>li>a::before{counter-increment:m;content:"0" counter(m);font-family:var(--body);font-size:.8125rem;font-weight:800;letter-spacing:.12em;color:var(--orange)}
+.ov-sub{list-style:none;margin:2px 0 14px;padding:0 0 0 34px;display:flex;flex-direction:column}
+.ov-sub a{display:block;padding:7px 0;text-decoration:none;font-family:var(--body);font-size:1.02rem;font-weight:600;color:var(--on-cocoa-soft);transition:color .2s}
+.ov-sub a:hover{color:#fff}
 .overlay ol a:hover{color:#FFB27E}
 .overlay.open ol a{transform:none}
 .overlay.open li:nth-child(2) a{transition-delay:.05s}.overlay.open li:nth-child(3) a{transition-delay:.1s}.overlay.open li:nth-child(4) a{transition-delay:.15s}.overlay.open li:nth-child(5) a{transition-delay:.2s}.overlay.open li:nth-child(6) a{transition-delay:.25s}
@@ -493,11 +504,21 @@ button{font:inherit;color:inherit}
     </a>
     <nav aria-label="Hauptnavigation">
       <ul class="menu">
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#ueber-uns">Über uns</a></li>
-        <li><a href="#warum">Warum ARCHIMED</a></li>
-        <li><a href="#bewertungen">Bewertungen</a></li>
-        <li><a href="#karriere">Karriere</a></li>
+        <li><a href="#start">Startseite</a></li>
+        <li><a href="https://archi-med.de/unternehmen/">Unternehmen</a></li>
+        <li class="has-sub">
+          <a href="#leistungen" aria-haspopup="true">Unsere Leistungen <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul class="submenu">
+            <li><a href="https://archi-med.de/ambulanter-pflegedienst-hannover/">Ambulante Pflege</a></li>
+            <li><a href="https://archi-med.de/intensivpflege-fuer-erwachsene/">1:1 (Intensiv)-Pflege für Erwachsene</a></li>
+            <li><a href="https://archi-med.de/intensivstation-fuer-kinder/">1:1 (Intensiv)-Pflege für Kinder</a></li>
+            <li><a href="https://archi-med.de/wohngemeinschaften/">(Intensiv)-Wohngemeinschaften</a></li>
+            <li><a href="https://archi-med.de/schul-kitabegleitung/">Schul-/Kitabegleitung</a></li>
+          </ul>
+        </li>
+        <li><a href="https://archi-med.de/jobs/">Jobs</a></li>
+        <li><a href="#ratgeber">Blog</a></li>
+        <li><a href="https://archi-med.de/presse/">Presse</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
@@ -514,11 +535,21 @@ button{font:inherit;color:inherit}
     <button class="ov-close" type="button" aria-label="Menü schließen"><svg class="ic" aria-hidden="true"><use href="#close"/></svg></button>
   </div>
   <ol>
-    <li><a href="#leistungen">Leistungen</a></li>
-    <li><a href="#ueber-uns">Über uns</a></li>
-    <li><a href="#warum">Warum ARCHIMED</a></li>
-    <li><a href="#bewertungen">Bewertungen</a></li>
-    <li><a href="#karriere">Karriere</a></li>
+    <li><a href="#start">Startseite</a></li>
+    <li><a href="https://archi-med.de/unternehmen/">Unternehmen</a></li>
+    <li>
+      <a href="#leistungen">Unsere Leistungen</a>
+      <ul class="ov-sub">
+        <li><a href="https://archi-med.de/ambulanter-pflegedienst-hannover/">Ambulante Pflege</a></li>
+        <li><a href="https://archi-med.de/intensivpflege-fuer-erwachsene/">1:1 (Intensiv)-Pflege für Erwachsene</a></li>
+        <li><a href="https://archi-med.de/intensivstation-fuer-kinder/">1:1 (Intensiv)-Pflege für Kinder</a></li>
+        <li><a href="https://archi-med.de/wohngemeinschaften/">(Intensiv)-Wohngemeinschaften</a></li>
+        <li><a href="https://archi-med.de/schul-kitabegleitung/">Schul-/Kitabegleitung</a></li>
+      </ul>
+    </li>
+    <li><a href="https://archi-med.de/jobs/">Jobs</a></li>
+    <li><a href="#ratgeber">Blog</a></li>
+    <li><a href="https://archi-med.de/presse/">Presse</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ol>
   <div class="ov-foot">
@@ -982,7 +1013,7 @@ button{font:inherit;color:inherit}
   var navLinks=$$('.menu a');
   if('IntersectionObserver' in window){
     var spy=new IntersectionObserver(function(es){es.forEach(function(e){navLinks.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id) a.classList.toggle('on',e.isIntersecting);});});},{rootMargin:'-45% 0px -50% 0px'});
-    navLinks.forEach(function(a){var s=$(a.getAttribute('href'));if(s) spy.observe(s);});
+    navLinks.forEach(function(a){var h=a.getAttribute('href');if(!h||h.charAt(0)!=='#')return;var s=$(h);if(s) spy.observe(s);});
   }
 
   /* ---------- Mobile menu ---------- */
