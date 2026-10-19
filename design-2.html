@@ -260,12 +260,12 @@ button{font:inherit;color:inherit}
 .tab[aria-selected="true"]::before{transform:scaleX(1)}
 .tab[aria-selected="true"] .go{background:var(--btn);border-color:var(--btn);color:#FFFFFF;transform:rotate(-45deg)}
 .stage{display:grid;position:sticky;top:120px}
-.panel{grid-area:1/1;display:flex;flex-direction:column;gap:22px}
-.panel .media{aspect-ratio:5/4;border-radius:10px}
+.panel{grid-area:1/1;display:flex;flex-direction:column;gap:16px}
+.panel .media{aspect-ratio:16/10;max-height:min(44vh,400px);border-radius:10px}
 .panel .media img{transition:transform 1.2s var(--ease-out)}
 .panel .tagline{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-text)}
-.panel h3{font-size:clamp(1.7rem,2.6vw,2.3rem)}
-.panel p{color:var(--muted)}
+.panel h3{font-size:clamp(1.5rem,2.2vw,2rem)}
+.panel p{color:var(--muted);font-size:.95rem}
 .js .tabs-on .panel{transition:opacity .6s var(--ease),transform .7s var(--ease-out),visibility 0s}
 .js .tabs-on .panel:not(.active){opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .3s,transform .3s,visibility 0s .3s}
 .js .tabs-on .panel:not(.active) .media img{transform:scale(1.08)}
