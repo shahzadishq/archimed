@@ -158,11 +158,11 @@ button{font:inherit;color:inherit}
 .trust .sep{width:1px;align-self:stretch;background:var(--line)}
 
 .hero-art{position:relative;max-width:540px;justify-self:end;width:100%;padding:0 0 50px 40px}
-.arch{position:relative;overflow:hidden;border-radius:14%;background:var(--sand);box-shadow:var(--shadow)}
+.arch{position:relative;overflow:hidden;border-radius:10px;background:var(--sand);box-shadow:var(--shadow)}
 .arch img{width:100%;height:100%;object-fit:cover}
 .hero-arch{aspect-ratio:4/5;animation:archIn 1.4s var(--ease-out) .1s both}
 .hero-arch img{object-position:50% 30%;transform:scale(1.12);animation:zoomOut 2.2s var(--ease-out) .1s both}
-@keyframes archIn{from{clip-path:inset(100% 0 0 0 round 14%)}to{clip-path:inset(0 0 0 0 round 14%)}}
+@keyframes archIn{from{clip-path:inset(100% 0 0 0 round 10px)}to{clip-path:inset(0 0 0 0 round 10px)}}
 @keyframes zoomOut{to{transform:scale(1)}}
 .hero-dot{position:absolute;left:0;bottom:0;width:42%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid var(--cream);box-shadow:var(--shadow);animation:pop 1s var(--ease-out) .8s both}
 .hero-dot img{width:100%;height:100%;object-fit:cover;object-position:20% 50%}
@@ -237,7 +237,7 @@ button{font:inherit;color:inherit}
 .tab[aria-selected="true"] .go{background:var(--btn);border-color:var(--btn);color:#FFFFFF;transform:rotate(-45deg)}
 .stage{display:grid;position:sticky;top:120px}
 .panel{grid-area:1/1;display:flex;flex-direction:column;gap:22px}
-.panel .media{aspect-ratio:5/4;border-radius:14%}
+.panel .media{aspect-ratio:5/4;border-radius:10px}
 .panel .media img{transition:transform 1.2s var(--ease-out)}
 .panel .tagline{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-text)}
 .panel h3{font-size:clamp(1.7rem,2.6vw,2.3rem)}
@@ -252,7 +252,7 @@ button{font:inherit;color:inherit}
   .panel{grid-area:auto;padding:18px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
   .js .tabs-on .panel:not(.active){opacity:1;visibility:visible;transform:none}
   .js .tabs-on .panel:not(.active) .media img{transform:none}
-  .panel .media{aspect-ratio:16/11;border-radius:14%}
+  .panel .media{aspect-ratio:16/11;border-radius:10px}
 }
 .no-tabs .tabs{display:none}
 .no-tabs .svc{grid-template-columns:1fr}
@@ -365,7 +365,7 @@ button{font:inherit;color:inherit}
 .team-head p{margin-top:10px;color:var(--muted);max-width:58ch}
 .members{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .member{display:flex;flex-direction:column;gap:2px}
-.member .pic{aspect-ratio:4/5;border-radius:14%;overflow:hidden;background:var(--sand);margin-bottom:14px}
+.member .pic{aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--sand);margin-bottom:14px}
 .member img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1s var(--ease-out)}
 .member:hover img{transform:scale(1.1)}
 .member b{font-family:var(--display);font-weight:600;font-size:1.1rem;color:var(--heading)}
