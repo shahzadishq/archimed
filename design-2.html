@@ -173,7 +173,12 @@ button{font:inherit;color:inherit}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 .hero .lede{animation:fadeUp 1s var(--ease-out) .35s both}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp 1s var(--ease-out) .5s both}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;animation:fadeUp 1s var(--ease-out) .5s both}
+.call{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--heading);font-weight:700;padding:6px 8px}
+.call .ci{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--orange-text);transition:background-color .3s,color .3s,border-color .3s}
+.call:hover .ci{background:var(--btn);color:#fff;border-color:var(--btn)}
+.call small{display:block;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.call svg{width:18px;height:18px}
 .chip{animation:fadeUp .9s var(--ease-out) both}
 .trust{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--line);animation:fadeUp 1s var(--ease-out) .65s both}
 .trust img{width:54px;height:auto;border-radius:6px;box-shadow:var(--shadow-sm)}
@@ -485,18 +490,9 @@ button{font:inherit;color:inherit}
 @media (max-width:900px){.f-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.f-brand{grid-column:1/-1}}
 @media (max-width:480px){.f-grid{grid-template-columns:1fr}}
 /* kununu Top Company badges */
-.ku-awards{display:flex;gap:6px;margin-top:24px;flex-wrap:wrap}
-.ku-badge{width:62px;background:#fff;border-radius:7px;overflow:hidden;box-shadow:0 14px 28px -16px rgba(0,0,0,.6);font-family:var(--body);transition:transform .35s var(--ease)}
-.ku-badge:hover{transform:translateY(-4px)}
-.ku-badge .ku-top{display:flex;flex-direction:column;align-items:center;gap:3px;background:#28284a;color:#fff;padding:6px 3px}
-.ku-badge .ku-top b{font-weight:800;font-size:.48rem;letter-spacing:0;white-space:nowrap}
-.ku-badge .ku-yr{background:#fff;color:#28284a;border-radius:3px;padding:1px 5px;font-weight:800;font-size:.56rem}
-.ku-badge .ku-wave{height:36px;display:grid;place-items:center}
-.ku-badge .ku-wave svg{width:42px;height:22px}
-.ku-badge .ku-name{padding:3px 4px 7px;text-align:center;font-weight:800;font-size:.66rem;color:#28284a}
-.ku-badge.y24 .ku-wave{color:#EFA8C4}
-.ku-badge.y25 .ku-wave{color:#5663A6}
-.ku-badge.y26 .ku-wave{color:#F4B400}
+.ku-awards{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap;align-items:flex-start}
+.ku-awards img{width:64px;height:auto;border-radius:6px;box-shadow:0 14px 28px -16px rgba(0,0,0,.6);transition:transform .35s var(--ease)}
+.ku-awards img:hover{transform:translateY(-4px)}
 
 /* Floating call button (phones) */
 .fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;display:none;align-items:center;gap:10px;min-height:56px;padding:0 22px 0 18px;border-radius:10px;background:var(--btn);color:#FFFFFF;font-weight:800;text-decoration:none;box-shadow:0 18px 36px -14px rgba(243,105,43,.55);transform:translateY(140%);transition:transform .5s var(--ease)}
@@ -504,6 +500,15 @@ button{font:inherit;color:inherit}
 .fab .ic{animation:ring 3s ease-in-out infinite}
 @keyframes ring{0%,80%,100%{transform:rotate(0)}84%{transform:rotate(-14deg)}88%{transform:rotate(14deg)}92%{transform:rotate(-8deg)}96%{transform:rotate(6deg)}}
 @media (max-width:760px){.fab{display:inline-flex}}
+
+/* Scroll-to-top button */
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:95;width:54px;height:54px;border-radius:50%;border:0;background:var(--orange);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .4s,transform .4s var(--ease),visibility .4s,background-color .3s}
+.totop:hover{background:var(--cocoa)}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop svg.ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.totop svg.ring circle{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:157;stroke-dashoffset:calc(157 - 157 * var(--p,0))}
+.totop .arr{width:18px;height:18px;transform:rotate(-90deg)}
+@media (max-width:760px){.totop{right:16px;bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 
 /* Scroll reveals (only when JS is running) */
 .js [data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease-out),transform 1s var(--ease-out);transition-delay:var(--d,0s)}
@@ -652,7 +657,7 @@ button{font:inherit;color:inherit}
       <p class="lede">ARCHIMED steht für individuelle Pflege, persönliche Begleitung und soziale Unterstützung. Wir schaffen Lösungen, die Menschen im Alltag Sicherheit, Nähe und Lebensqualität geben.</p>
       <div class="hero-actions">
         <a class="btn btn-primary magnet" href="#leistungen">Unsere Leistungen <svg class="ic ic-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
-        <a class="btn btn-soft magnet" href="#kontakt">Kontakt aufnehmen</a>
+        <a class="call" href="tel:+495118982332"><span class="ci" aria-hidden="true"><svg><use href="#phone"/></svg></span><span><small>24/7 erreichbar</small>0511 / 8982332</span></a>
       </div>
       <div class="trust">
         <img src="https://archi-med.de/wp-content/uploads/2026/04/kununu_TopCompanyBadge_2026_RGB-d44cec26-227x300.png" alt="kununu Top Company 2026" width="54" height="71">
@@ -1077,9 +1082,9 @@ button{font:inherit;color:inherit}
           <li><a href="mailto:intensiv@archi-med.de"><span class="fi" aria-hidden="true"><svg><use href="#mail"/></svg></span><span>intensiv@archi-med.de</span></a></li>
         </ul>
         <div class="ku-awards" aria-label="kununu Top Company Auszeichnungen 2024, 2025 und 2026">
-          <div class="ku-badge y24"><div class="ku-top"><b>Top Company</b><span class="ku-yr">2024</span></div><div class="ku-wave"><svg viewBox="0 0 52 26" aria-hidden="true"><path d="M3 18C8 6 14 6 18 14 22 22 28 22 32 14 35 8 41 8 49 14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ku-name">kununu</div></div>
-          <div class="ku-badge y25"><div class="ku-top"><b>Top Company</b><span class="ku-yr">2025</span></div><div class="ku-wave"><svg viewBox="0 0 52 26" aria-hidden="true"><path d="M3 18C8 6 14 6 18 14 22 22 28 22 32 14 35 8 41 8 49 14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ku-name">kununu</div></div>
-          <div class="ku-badge y26"><div class="ku-top"><b>Top Company</b><span class="ku-yr">2026</span></div><div class="ku-wave"><svg viewBox="0 0 52 26" aria-hidden="true"><path d="M3 18C8 6 14 6 18 14 22 22 28 22 32 14 35 8 41 8 49 14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ku-name">kununu</div></div>
+          <img src="assets/kununu-top-company-2024.png" alt="kununu Top Company 2024" width="282" height="372" loading="lazy" decoding="async">
+          <img src="assets/kununu-top-company-2025.png" alt="kununu Top Company 2025" width="600" height="791" loading="lazy" decoding="async">
+          <img src="assets/kununu-top-company-2026.png" alt="kununu Top Company 2026" width="265" height="350" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -1096,6 +1101,7 @@ button{font:inherit;color:inherit}
 </div>
 
 <a class="fab" href="tel:+495118982332" aria-label="Jetzt anrufen: 0511 / 8982332"><svg class="ic" aria-hidden="true"><use href="#phone"/></svg>Anrufen</a>
+<button class="totop" type="button" aria-label="Nach oben"><svg class="ring" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="25"/></svg><svg class="arr" aria-hidden="true"><use href="#arrow"/></svg></button>
 
 <script>
 (function(){
@@ -1107,7 +1113,7 @@ button{font:inherit;color:inherit}
   function $(s,c){return (c||d).querySelector(s);} function $$(s,c){return [].slice.call((c||d).querySelectorAll(s));}
 
   /* ---------- Scroll-driven bits: progress, header, fab, parallax, statement, stacking cards ---------- */
-  var header=$('.header'), progress=$('.progress'), fab=$('.fab'), hero=$('.hero');
+  var header=$('.header'), progress=$('.progress'), fab=$('.fab'), hero=$('.hero'), totop=$('.totop');
   var attBg=$('.attitude .bg'), attitude=$('.attitude');
   var words=[], statement=$('[data-words]');
   if(statement && !reduce){
@@ -1119,7 +1125,10 @@ button{font:inherit;color:inherit}
   function frame(){
     ticking=false;
     var y=scrollY, vh=innerHeight, max=root.scrollHeight-vh;
-    progress.style.setProperty('--p',max>0?(y/max).toFixed(4):0);
+    var pr=(max>0?(y/max):0).toFixed(4);
+    progress.style.setProperty('--p',pr);
+    totop.style.setProperty('--p',pr);
+    totop.classList.toggle('show',y>vh);
     header.classList.toggle('solid',y>30);
     var menuOpen=overlay.classList.contains('open');
     lastY=y;
@@ -1141,6 +1150,7 @@ button{font:inherit;color:inherit}
   }
   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
   addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll);
+  totop.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'});});
 
   /* ---------- Active nav link ---------- */
   var navLinks=$$('.menu a');
