@@ -353,38 +353,32 @@ button{font:inherit;color:inherit}
 @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.form{grid-template-columns:1fr}}
 
-/* Soziale Medien */
-.social-sec{background:radial-gradient(120% 120% at 85% 8%,rgba(253,230,215,.85),transparent 55%),var(--cream)}
-.social-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(40px,6vw,80px);align-items:center}
-.social-copy{display:flex;flex-direction:column;gap:20px}
-.social-copy h2{font-size:clamp(1.8rem,3.2vw,2.7rem)}
-.social-card{padding:26px;border-radius:8px;background:var(--blush);border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:16px}
+/* Presse & Soziale Medien (design 3 layout) */
+.press-sec{background:var(--cream)}
+.press-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,80px);align-items:start}
+.press{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.press a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--heading);transition:padding .45s var(--ease),color .3s}
+.press a:hover{padding-left:14px;color:var(--orange-text)}
+.press b{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:-.02em}
+.press .go{display:inline-flex;align-items:center;gap:10px;font-size:.875rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.press .go i{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background-color .3s,border-color .3s,color .3s,transform .4s var(--ease)}
+.press a:hover .go i{background:var(--btn);border-color:var(--btn);color:#fff;transform:rotate(-45deg)}
+.press .go svg{width:15px;height:15px}
+.social-card{margin-top:30px;padding:26px;border-radius:8px;background:var(--blush);border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:14px}
 .social-card .who{display:flex;align-items:center;gap:14px}
 .social-card .who img{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid #fff}
 .social-card .who b{display:block;color:var(--heading)}
 .social-card .who span{font-size:.875rem;color:var(--muted)}
 .social-card p{color:var(--ink)}
-.social-card .soc{display:flex;gap:10px}
+.social-card .soc{display:flex;gap:10px;margin-top:2px}
 .social-card .soc a{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--heading);transition:background-color .3s,color .3s,border-color .3s,transform .35s var(--ease)}
 .social-card .soc a:hover{background:var(--btn);color:#fff;border-color:var(--btn);transform:translateY(-3px)}
 .social-card .soc svg{width:20px;height:20px}
-.social-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px}
-.phone{position:relative;width:min(260px,68%);aspect-ratio:9/19;border-radius:40px;background:#17120e;padding:9px;box-shadow:var(--shadow);z-index:1}
-.phone::before{content:"";position:absolute;top:13px;left:50%;transform:translateX(-50%);width:44%;height:16px;border-radius:0 0 12px 12px;background:#17120e;z-index:3}
-.phone .screen{position:relative;width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--sand)}
-.phone .screen img{width:100%;height:100%;object-fit:cover}
-.phone-play{position:absolute;inset:0;margin:auto;width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:grid;place-items:center;color:var(--orange);z-index:3;box-shadow:var(--shadow-sm);cursor:pointer;text-decoration:none;transition:transform .3s var(--ease),background-color .3s}
-.phone-play:hover{transform:scale(1.08);background:#fff}
-.phone-play svg{width:30px;height:30px;margin-left:4px}
-.float-badge{position:absolute;width:60px;height:60px;border-radius:18px;display:grid;place-items:center;color:#fff;box-shadow:0 18px 36px -14px rgba(34,21,13,.5);z-index:2;animation:floaty 6s ease-in-out infinite}
-.float-badge svg{width:28px;height:28px}
-.float-badge.ig{top:4%;right:12%;background:linear-gradient(135deg,#feda75,#d62976 45%,#962fbf 80%,#4f5bd5)}
-.float-badge.fb{top:36%;right:2%;background:#1877F2;animation-delay:.8s}
-.float-badge.tt{bottom:12%;right:14%;background:#111;animation-delay:1.6s}
-.float-badge.heart{top:22%;left:6%;width:52px;height:52px;background:var(--btn);animation-delay:1.1s}
-.float-badge.heart svg{width:24px;height:24px}
-@keyframes floaty{50%{transform:translateY(-12px)}}
-@media (max-width:860px){.social-grid{grid-template-columns:1fr;gap:44px}.social-visual{min-height:400px}}
+.video-link{display:inline-flex;align-items:center;gap:10px;margin-top:4px;font-weight:800;color:var(--orange-text);text-decoration:none;align-self:flex-start}
+.video-link .vp{width:36px;height:36px;border-radius:50%;background:var(--btn);color:#fff;display:grid;place-items:center;transition:transform .3s var(--ease)}
+.video-link .vp svg{width:15px;height:15px;margin-left:2px}
+.video-link:hover .vp{transform:scale(1.1)}
+@media (max-width:900px){.press-wrap{grid-template-columns:minmax(0,1fr)}}
 
 /* FAQ — native details, smooth height where supported */
 .faq{background:var(--sand)}
@@ -924,12 +918,12 @@ button{font:inherit;color:inherit}
   </div>
 </section>
 
-<!-- Soziale Medien -->
-<section class="section social-sec" id="social" aria-labelledby="social-title">
-  <div class="wrap social-grid">
-    <div class="social-copy">
-      <span class="kicker" data-reveal>Soziale Medien</span>
-      <h2 class="h2" id="social-title" data-reveal>Folgen Sie uns für <em>mitfühlende Pflege</em> und Einblicke in die Gesundheit.</h2>
+<!-- Presse & Soziale Medien -->
+<section class="section press-sec" id="social" aria-labelledby="press-title">
+  <div class="wrap press-wrap">
+    <div>
+      <span class="kicker" data-reveal>Presse</span>
+      <h2 class="h2" id="press-title" data-reveal style="margin-top:14px">ARCHIMED <em>in den Medien.</em></h2>
       <div class="social-card" data-reveal>
         <div class="who">
           <img src="https://archi-med.de/wp-content/uploads/2025/08/Dimitrij-Sonkin-Geschaftsfuhrer-300x300.png" alt="Dimitrij Sonkin, Geschäftsführer von ARCHIMED" width="54" height="54" loading="lazy" decoding="async">
@@ -941,19 +935,17 @@ button{font:inherit;color:inherit}
           <a href="https://www.facebook.com/archimedgmbh/" target="_blank" rel="noopener" aria-label="ARCHIMED auf Facebook"><svg aria-hidden="true"><use href="#fb"/></svg></a>
           <a href="https://www.tiktok.com/@archimed_pflegedienst" target="_blank" rel="noopener" aria-label="ARCHIMED auf TikTok"><svg aria-hidden="true"><use href="#tt"/></svg></a>
         </div>
+        <a class="video-link" href="https://www.instagram.com/archimed.gmbh/reels/" target="_blank" rel="noopener"><span class="vp" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span> Video ansehen</a>
       </div>
-      <a class="btn btn-primary" href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" data-reveal style="align-self:flex-start">Folgen Sie uns jetzt <svg class="ic ic-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
     </div>
-    <div class="social-visual" data-reveal>
-      <div class="phone">
-        <div class="screen"><img src="https://archi-med.de/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-09-at-15.07.173-scaled-1-768x1024.jpeg" alt="Einblick in den Pflegealltag bei ARCHIMED" width="768" height="1024" loading="lazy" decoding="async"></div>
-        <a class="phone-play" href="https://www.instagram.com/archimed.gmbh/reels/" target="_blank" rel="noopener" aria-label="Video ansehen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></a>
-      </div>
-      <span class="float-badge ig" aria-hidden="true"><svg><use href="#ig"/></svg></span>
-      <span class="float-badge fb" aria-hidden="true"><svg><use href="#fb"/></svg></span>
-      <span class="float-badge tt" aria-hidden="true"><svg><use href="#tt"/></svg></span>
-      <span class="float-badge heart" aria-hidden="true"><svg><use href="#heart"/></svg></span>
-    </div>
+    <ul class="press">
+      <li data-reveal><a href="https://www.connektar.de/gesundheitswesen-wellness/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz-155736" target="_blank" rel="noopener"><b>connektar.de</b><span class="go">Zum Artikel <i aria-hidden="true"><svg><use href="#ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://www.pflumm.de/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz/" target="_blank" rel="noopener"><b>pflumm.de</b><span class="go">Zum Artikel <i aria-hidden="true"><svg><use href="#ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://www.presseprisma.de/2025/10/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz/" target="_blank" rel="noopener"><b>presseprisma.de</b><span class="go">Zum Artikel <i aria-hidden="true"><svg><use href="#ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://www.newsnomade.de/2025/10/06/mehr-lebensqualitaet-durch-archimed-ambulante-intensivpflege-mit-herz/" target="_blank" rel="noopener"><b>newsnomade.de</b><span class="go">Zum Artikel <i aria-hidden="true"><svg><use href="#ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://neue-pressemitteilungen.de/mit-sicherheit-gross-werden-kinderintensivpflege-von-archimed-hannover.html" target="_blank" rel="noopener"><b>neue-pressemitteilungen.de</b><span class="go">Zum Artikel <i aria-hidden="true"><svg><use href="#ext"/></svg></i></span></a></li>
+      <li data-reveal><a href="https://newsdach.de/bildung-karriere/a-14783/" target="_blank" rel="noopener"><b>newsdach.de</b><span class="go">Zum Artikel <i aria-hidden="true"><svg><use href="#ext"/></svg></i></span></a></li>
+    </ul>
   </div>
 </section>
 
