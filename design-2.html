@@ -68,13 +68,11 @@ button{font:inherit;color:inherit}
 @media (max-width:860px){.head-split{grid-template-columns:1fr}}
 
 /* Buttons */
-.btn{--mx:0px;--my:0px;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;border-radius:18px;font-weight:800;font-size:1rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;white-space:nowrap;position:relative;isolation:isolate;overflow:hidden;transform:translate(var(--mx),var(--my));transition:transform .35s var(--ease),background-color .3s,color .3s,border-color .3s,box-shadow .3s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;border-radius:10px;font-weight:800;font-size:1rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;white-space:nowrap;position:relative;transition:background-color .25s,color .25s,border-color .25s,box-shadow .25s}
 .btn .ic{width:18px;height:18px;transition:transform .35s var(--ease)}
 .btn:hover .ic-arrow{transform:translateX(4px)}
 .btn-primary{background:var(--btn);color:var(--on-btn);box-shadow:0 14px 30px -16px var(--btn)}
-.btn-primary::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s var(--ease)}
 .btn-primary:hover{background:var(--btn-hover)}
-.btn-primary:hover::after{transform:translateX(120%)}
 .btn-soft{background:var(--card);color:var(--heading);border-color:var(--line);box-shadow:var(--shadow-sm)}
 .btn-soft:hover{border-color:var(--orange);color:var(--orange-text)}
 .btn-light{background:#FFFFFF;color:#613F24}
@@ -1007,13 +1005,6 @@ button{font:inherit;color:inherit}
   });
   $$('input',form).forEach(function(f){f.addEventListener('input',function(){f.removeAttribute('aria-invalid');});});
 
-  /* ---------- Magnetic hero buttons ---------- */
-  if(fine && !reduce){
-    $$('.magnet').forEach(function(b){
-      b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--mx',((e.clientX-r.left-r.width/2)*.18).toFixed(1)+'px');b.style.setProperty('--my',((e.clientY-r.top-r.height/2)*.3).toFixed(1)+'px');});
-      b.addEventListener('pointerleave',function(){b.style.setProperty('--mx','0px');b.style.setProperty('--my','0px');});
-    });
-  }
 
   /* ---------- Failed images: keep the warm frame, hide the broken-image icon and alt text ---------- */
   $$('main img').forEach(function(img){function miss(){img.style.visibility='hidden';}if(img.complete&&img.src&&img.naturalWidth===0)miss();img.addEventListener('error',miss);});
