@@ -87,43 +87,58 @@ button{font:inherit;color:inherit}
 /* Scroll progress */
 .progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:120;background:linear-gradient(90deg,var(--orange),#FFB27E);transform-origin:0 50%;transform:scaleX(var(--p,0))}
 
-/* Header — floating pill, always visible */
-.header{position:fixed;top:14px;left:0;right:0;z-index:100;transition:transform .5s var(--ease)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;padding:8px 8px 8px 22px;border-radius:10px;background:color-mix(in srgb,var(--cream) 78%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border:1px solid var(--line);box-shadow:0 1px 0 rgba(255,255,255,.35) inset;transition:box-shadow .4s,background-color .4s}
-.header.solid .bar{box-shadow:var(--shadow-sm),0 1px 0 rgba(255,255,255,.35) inset;background:color-mix(in srgb,var(--cream) 90%,transparent)}
-.brand{flex:none;display:block;line-height:0}
-.brand img{height:36px;width:auto;max-width:none}
-.nav{display:flex;gap:2px;list-style:none;margin:0;padding:0}
-.nav a{position:relative;display:block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.96rem;color:var(--ink);transition:background-color .25s,color .25s}
-.nav a:hover{background:var(--blush)}
-.nav a.on{color:var(--orange-text)}
-.nav a.on::after{content:"";position:absolute;left:50%;bottom:4px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--orange)}
-.bar-cta{display:flex;align-items:center;gap:8px}
-.bar-cta .btn{min-height:50px;padding:0 20px}
-.menu-btn{display:none;width:50px;height:50px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;place-items:center}
-.menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s}
-.menu-btn span+span{margin-top:5px}
-@media (max-width:1060px){.nav{display:none}.menu-btn{display:grid;align-content:center;justify-items:center}}
-@media (max-width:560px){.bar-cta .btn span{display:none}.bar-cta .btn{width:50px;padding:0}.brand img{height:30px}.bar{padding-left:16px}}
+/* Topbar (orange) — from design 3 */
+.topbar{background:var(--orange);color:#fff;font-size:.875rem}
+.topbar .wrap{display:flex;justify-content:flex-end;align-items:center;gap:28px;min-height:46px}
+.topbar ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.topbar a,.topbar li{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;transition:color .2s}
+.topbar a:hover{color:var(--cocoa)}
+.topbar .ic{width:15px;height:15px;color:#fff}
+.topbar .soc-t{display:flex;gap:8px}
+.topbar .soc-t a{width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.55);justify-content:center;transition:border-color .2s,background-color .2s}
+.topbar .soc-t a:hover{background:var(--cocoa);border-color:var(--cocoa);color:#fff}
+.topbar .soc-t svg{width:14px;height:14px}
+@media (max-width:900px){.topbar .t-addr,.topbar .soc-t{display:none}.topbar .wrap{justify-content:center}}
+@media (max-width:440px){.topbar .t-mail{display:none}}
 
-/* Full-screen mobile menu */
-.overlay{position:fixed;inset:0;z-index:110;background:var(--cocoa);color:var(--on-cocoa);display:flex;flex-direction:column;padding:calc(22px + env(safe-area-inset-top,0px)) var(--gutter) calc(28px + env(safe-area-inset-bottom,0px));clip-path:circle(0 at calc(100% - 50px) 50px);visibility:hidden;transition:clip-path .7s var(--ease-out),visibility 0s .7s;overflow-y:auto}
-.overlay.open{clip-path:circle(150% at calc(100% - 50px) 50px);visibility:visible;transition:clip-path .8s var(--ease-out),visibility 0s}
-.overlay-top{display:flex;justify-content:space-between;align-items:center}
-.overlay-top img{height:30px;width:auto}
-.close-btn{width:50px;height:50px;border-radius:50%;border:1px solid var(--cocoa-line);background:transparent;color:var(--on-cocoa);cursor:pointer;display:grid;place-items:center}
-.overlay ol{list-style:none;margin:auto 0;padding:32px 0;display:flex;flex-direction:column;gap:4px;counter-reset:m}
-.overlay li{overflow:hidden}
-.overlay ol a{display:flex;align-items:baseline;gap:16px;text-decoration:none;font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:clamp(1.9rem,8.5vw,3rem);line-height:1.25;color:var(--on-cocoa);transform:translateY(105%);transition:transform .7s var(--ease-out),color .25s}
-.overlay ol a::before{counter-increment:m;content:"0" counter(m);font-family:var(--body);font-size:.8rem;font-weight:700;color:var(--orange);letter-spacing:.1em}
-.overlay ol a:hover{color:var(--orange)}
+/* Header (sticky) — from design 3 */
+.header{position:sticky;top:0;z-index:120;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line);transition:box-shadow .4s}
+.header.solid{box-shadow:0 12px 30px -24px rgba(34,21,13,.45)}
+.header .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px}
+.brand{flex:none;line-height:0}
+.brand img{height:36px;width:auto;max-width:none}
+.menu{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.menu a{position:relative;display:block;padding:10px 14px;text-decoration:none;font-weight:600;font-size:.9375rem;color:var(--ink);transition:color .3s}
+.menu a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.menu a:hover{color:var(--orange-text)}
+.menu a:hover::after,.menu a.on::after{transform:scaleX(1);transform-origin:left}
+.menu a.on{color:var(--orange-text)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.nav-cta .btn{min-height:48px;padding:0 22px}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;place-items:center}
+.burger svg{width:22px;height:22px}
+@media (max-width:1100px){.menu{display:none}.burger{display:grid}}
+@media (max-width:540px){.nav-cta .btn span{display:none}.nav-cta .btn{width:48px;padding:0}.brand img{height:30px}.header .nav{min-height:70px}}
+@media (max-width:360px){.header .nav{gap:10px}.brand img{height:26px}}
+
+/* Full-screen menu — from design 3 */
+.overlay{position:fixed;inset:0;z-index:200;background:var(--cocoa);color:#fff;display:flex;flex-direction:column;padding:calc(22px + env(safe-area-inset-top,0px)) var(--gutter) calc(28px + env(safe-area-inset-bottom,0px));clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .7s var(--ease-out),visibility 0s .7s;overflow-y:auto}
+.overlay.open{clip-path:inset(0);visibility:visible;transition:clip-path .8s var(--ease-out),visibility 0s}
+.ov-top{display:flex;justify-content:space-between;align-items:center}
+.ov-top img{height:30px;width:auto}
+.ov-close{width:48px;height:48px;border-radius:50%;border:1px solid var(--cocoa-line);background:none;color:#fff;cursor:pointer;display:grid;place-items:center}
+.overlay ol{list-style:none;margin:auto 0;padding:32px 0;counter-reset:m}
+.overlay li{overflow:hidden;border-bottom:1px solid var(--cocoa-line)}
+.overlay ol a{display:flex;align-items:baseline;gap:18px;padding:12px 0;text-decoration:none;font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,8vw,3rem);letter-spacing:-.03em;color:#fff;transform:translateY(100%);transition:transform .8s var(--ease-out),color .3s}
+.overlay ol a::before{counter-increment:m;content:"0" counter(m);font-family:var(--body);font-size:.8125rem;font-weight:800;letter-spacing:.12em;color:var(--orange)}
+.overlay ol a:hover{color:#FFB27E}
 .overlay.open ol a{transform:none}
 .overlay.open li:nth-child(2) a{transition-delay:.05s}.overlay.open li:nth-child(3) a{transition-delay:.1s}.overlay.open li:nth-child(4) a{transition-delay:.15s}.overlay.open li:nth-child(5) a{transition-delay:.2s}.overlay.open li:nth-child(6) a{transition-delay:.25s}
-.overlay-foot{display:grid;gap:10px}
-.overlay-foot a{color:var(--on-cocoa-soft);text-decoration:none}
+.ov-foot{display:grid;gap:10px;font-size:.875rem;color:var(--on-cocoa-soft)}
+.ov-foot a{color:#fff;text-decoration:none}
 
 /* Hero */
-.hero{position:relative;padding:clamp(130px,16vw,180px) 0 clamp(70px,9vw,120px);isolation:isolate}
+.hero{position:relative;padding:clamp(48px,7vw,90px) 0 clamp(70px,9vw,120px);isolation:isolate}
 .blob{position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);opacity:.6;animation:drift 18s ease-in-out infinite alternate}
 .blob.b1{width:520px;height:520px;background:#FFD2B6;top:-120px;right:-120px}
 .blob.b2{width:380px;height:380px;background:#FBE3C8;bottom:-60px;left:-140px;animation-duration:22s}
@@ -456,36 +471,47 @@ button{font:inherit;color:inherit}
   <symbol id="tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.2 1.7 3.6 3.9 3.8v3a7 7 0 0 1-3.9-1.2v6.2A5.8 5.8 0 1 1 10.8 9v3.1a2.8 2.8 0 1 0 2 2.7V3h3.8z"/></symbol>
 </svg>
 
-<header class="header" id="top">
+<div class="topbar" id="top">
   <div class="wrap">
-    <div class="bar">
-      <a class="brand" href="#start" aria-label="ARCHIMED – nach oben">
-        <picture>
-          <img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED" width="191" height="36">
-        </picture>
-      </a>
-      <nav aria-label="Hauptnavigation">
-        <ul class="nav">
-          <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#warum">Warum ARCHIMED</a></li>
-          <li><a href="#bewertungen">Bewertungen</a></li>
-          <li><a href="#karriere">Karriere</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="bar-cta">
-        <a class="btn btn-primary" href="tel:+495118982332" aria-label="Jetzt anrufen: 0511 / 8982332"><svg class="ic" aria-hidden="true"><use href="#phone"/></svg><span>Jetzt anrufen</span></a>
-        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-      </div>
+    <ul>
+      <li class="t-addr"><svg class="ic" aria-hidden="true"><use href="#pin"/></svg>Sokelantstraße 5, 30165 Hannover</li>
+      <li><a href="tel:+495118982332"><svg class="ic" aria-hidden="true"><use href="#phone"/></svg>0511 / 8982332</a></li>
+      <li class="t-mail"><a href="mailto:intensiv@archi-med.de"><svg class="ic" aria-hidden="true"><use href="#mail"/></svg>intensiv@archi-med.de</a></li>
+    </ul>
+    <div class="soc-t">
+      <a href="https://www.facebook.com/archimedgmbh/" target="_blank" rel="noopener" aria-label="ARCHIMED auf Facebook"><svg aria-hidden="true"><use href="#fb"/></svg></a>
+      <a href="https://www.tiktok.com/@archimed_pflegedienst" target="_blank" rel="noopener" aria-label="ARCHIMED auf TikTok"><svg aria-hidden="true"><use href="#tt"/></svg></a>
+      <a href="https://www.instagram.com/archimed.gmbh" target="_blank" rel="noopener" aria-label="ARCHIMED auf Instagram"><svg aria-hidden="true"><use href="#ig"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="#start" aria-label="ARCHIMED – nach oben">
+      <img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt="ARCHIMED" width="191" height="36">
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="menu">
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#warum">Warum ARCHIMED</a></li>
+        <li><a href="#bewertungen">Bewertungen</a></li>
+        <li><a href="#karriere">Karriere</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="tel:+495118982332" aria-label="Jetzt anrufen: 0511 / 8982332"><svg class="ic" aria-hidden="true"><use href="#phone"/></svg><span>Jetzt anrufen</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     </div>
   </div>
 </header>
 
 <div class="overlay" id="menu" role="dialog" aria-modal="true" aria-label="Menü">
-  <div class="overlay-top">
+  <div class="ov-top">
     <img src="https://archi-med.de/wp-content/uploads/2025/02/20240807_193751-1024x183.png" alt="ARCHIMED" width="168" height="30">
-    <button class="close-btn" type="button" aria-label="Menü schließen"><svg class="ic" aria-hidden="true"><use href="#close"/></svg></button>
+    <button class="ov-close" type="button" aria-label="Menü schließen"><svg class="ic" aria-hidden="true"><use href="#close"/></svg></button>
   </div>
   <ol>
     <li><a href="#leistungen">Leistungen</a></li>
@@ -495,7 +521,7 @@ button{font:inherit;color:inherit}
     <li><a href="#karriere">Karriere</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ol>
-  <div class="overlay-foot">
+  <div class="ov-foot">
     <a class="btn btn-primary" href="tel:+495118982332"><svg class="ic" aria-hidden="true"><use href="#phone"/></svg>0511 / 8982332</a>
     <a href="mailto:intensiv@archi-med.de">intensiv@archi-med.de</a>
     <span>Sokelantstraße 5, 30165 Hannover</span>
@@ -953,15 +979,15 @@ button{font:inherit;color:inherit}
   addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll);
 
   /* ---------- Active nav link ---------- */
-  var navLinks=$$('.nav a');
+  var navLinks=$$('.menu a');
   if('IntersectionObserver' in window){
     var spy=new IntersectionObserver(function(es){es.forEach(function(e){navLinks.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id) a.classList.toggle('on',e.isIntersecting);});});},{rootMargin:'-45% 0px -50% 0px'});
     navLinks.forEach(function(a){var s=$(a.getAttribute('href'));if(s) spy.observe(s);});
   }
 
   /* ---------- Mobile menu ---------- */
-  var overlay=$('#menu'), menuBtn=$('.menu-btn'), closeBtn=$('.close-btn'), lastFocus;
-  function openMenu(){lastFocus=d.activeElement;overlay.classList.add('open');menuBtn.setAttribute('aria-expanded','true');root.style.overflow='hidden';header.classList.remove('tuck');setTimeout(function(){closeBtn.focus();},60);}
+  var overlay=$('#menu'), menuBtn=$('.burger'), closeBtn=$('.ov-close'), lastFocus;
+  function openMenu(){lastFocus=d.activeElement;overlay.classList.add('open');menuBtn.setAttribute('aria-expanded','true');root.style.overflow='hidden';setTimeout(function(){closeBtn.focus();},60);}
   function closeMenu(restore){overlay.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');root.style.overflow='';if(restore!==false && lastFocus) lastFocus.focus();}
   menuBtn.addEventListener('click',openMenu); closeBtn.addEventListener('click',closeMenu);
   $$('a',overlay).forEach(function(a){a.addEventListener('click',function(){closeMenu(false);});});
