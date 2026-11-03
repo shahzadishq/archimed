@@ -394,6 +394,118 @@ button{font:inherit;color:inherit}
 @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.wz-pane{grid-template-columns:1fr}.wz-steps li{flex-direction:column;gap:6px;text-align:center}.wz-sum div{grid-template-columns:1fr;gap:2px}}
 
+
+/* ===== Social Media showcase ===== */
+.sm{position:relative;background:var(--cocoa);color:var(--on-cocoa);overflow:hidden;isolation:isolate;padding-bottom:0}
+.sm::before{content:"";position:absolute;inset:-20%;z-index:-2;background:radial-gradient(40% 45% at 78% 30%,rgba(243,105,43,.38),transparent 70%),radial-gradient(35% 40% at 8% 85%,rgba(243,105,43,.18),transparent 70%)}
+.sm::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:radial-gradient(rgba(255,242,234,.09) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.sm-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(40px,6vw,96px);align-items:center}
+.sm .kicker{color:#FF8A55}
+.sm .h2{color:#fff;margin-top:18px}
+.sm .h2 em{font-style:normal;color:#FF7A3D}
+.sm .lede{color:var(--on-cocoa-soft);margin-top:22px}
+.sm-quote{margin:28px 0 0;padding:4px 0 4px 22px;border-left:2px solid #F3692B;font-family:var(--display);font-size:clamp(1.02rem,1.4vw,1.15rem);line-height:1.6;color:#FFF2EA;max-width:52ch}
+.sm-quote cite{display:block;margin-top:10px;font-family:var(--body);font-style:normal;font-size:.82rem;font-weight:700;letter-spacing:.06em;color:var(--on-cocoa-soft)}
+.sm-list{list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.sm-card{--g:linear-gradient(110deg,#F3692B,#FF9A62);position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:18px;padding:16px 18px 16px 16px;border-radius:14px;background:rgba(255,242,234,.05);border:1px solid rgba(255,242,234,.12);color:#fff;text-decoration:none;overflow:hidden;isolation:isolate;transition:transform .45s var(--ease),border-color .4s,box-shadow .45s}
+.sm-card::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--g);clip-path:inset(0 100% 0 0);transition:clip-path .6s var(--ease-out)}
+.sm-card[data-p="ig"]{--g:linear-gradient(115deg,#FEDA75 -10%,#FA7E1E 20%,#D62976 55%,#962FBF 80%,#4F5BD5 110%)}
+.sm-card[data-p="tt"]{--g:linear-gradient(115deg,#111 40%,#25F4EE 140%)}
+.sm-card[data-p="fb"]{--g:linear-gradient(115deg,#1877F2,#0A5BD3)}
+.sm-card:hover,.sm-card:focus-visible,.sm-card.on{transform:translateX(8px);border-color:transparent;box-shadow:0 22px 44px -24px rgba(0,0,0,.8)}
+.sm-card:hover::before,.sm-card:focus-visible::before,.sm-card.on::before{clip-path:inset(0)}
+.sm-ico{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:rgba(255,242,234,.08);transition:background-color .4s,transform .5s var(--ease)}
+.sm-ico svg{width:26px;height:26px}
+.sm-card:hover .sm-ico,.sm-card.on .sm-ico{background:rgba(255,255,255,.18);transform:rotate(-8deg) scale(1.05)}
+.sm-card b{display:block;font-family:var(--display);font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
+.sm-card small{display:block;font-size:.9rem;color:var(--on-cocoa-soft);transition:color .4s}
+.sm-card:hover small,.sm-card.on small{color:rgba(255,255,255,.85)}
+.sm-follow{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;border:1px solid rgba(255,242,234,.22);font-size:.88rem;font-weight:800;white-space:nowrap;transition:background-color .35s,color .35s,border-color .35s}
+.sm-follow svg{width:14px;height:14px;transition:transform .35s var(--ease)}
+.sm-card:hover .sm-follow,.sm-card.on .sm-follow{background:#fff;color:#1d120b;border-color:#fff}
+.sm-card:hover .sm-follow svg{transform:translate(2px,-2px)}
+
+/* phone */
+.sm-stage{position:relative;display:grid;place-items:center;padding:30px 0 40px;perspective:1400px}
+.sm-ring{position:absolute;width:min(520px,95%);aspect-ratio:1;border-radius:50%;border:1px dashed rgba(255,242,234,.16);animation:smspin 60s linear infinite}
+.sm-ring::before,.sm-ring::after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#F3692B;top:12%;left:12%;box-shadow:0 0 0 6px rgba(243,105,43,.18)}
+.sm-ring::after{top:auto;left:auto;bottom:6%;right:22%;width:8px;height:8px;background:#FFF2EA}
+@keyframes smspin{to{transform:rotate(360deg)}}
+.phone{--acc:#D62976;--ring:linear-gradient(45deg,#FEDA75,#FA7E1E,#D62976,#962FBF,#4F5BD5);position:relative;width:min(310px,80vw);aspect-ratio:9/19;border-radius:46px;padding:11px;background:linear-gradient(145deg,#3a2a20,#120b07);box-shadow:0 0 0 1.5px rgba(255,242,234,.18),0 60px 100px -40px rgba(0,0,0,.9),0 30px 80px -30px rgba(243,105,43,.45);transform-style:preserve-3d;transform:rotateY(var(--ry,-10deg)) rotateX(var(--rx,4deg));transition:transform .8s var(--ease-out)}
+.phone[data-p="tt"]{--acc:#FE2C55;--ring:linear-gradient(45deg,#25F4EE,#FE2C55)}
+.phone[data-p="fb"]{--acc:#1877F2;--ring:linear-gradient(45deg,#1877F2,#56A2FF)}
+.phone-scr{position:relative;height:100%;border-radius:36px;overflow:hidden;background:#fff;color:#111;font-family:var(--body);display:flex;flex-direction:column}
+.phone-notch{position:absolute;top:9px;left:50%;width:96px;height:26px;margin-left:-48px;border-radius:20px;background:#000;z-index:3}
+.ph-status{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 0;height:40px;font-size:.72rem;font-weight:800}
+.ph-status i{display:inline-block;width:22px;height:10px;border-radius:3px;border:1.5px solid #111;position:relative}
+.ph-status i::after{content:"";position:absolute;inset:1.5px 5px 1.5px 1.5px;background:#111;border-radius:1px}
+.ph-bar{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 4px}
+.ph-bar b{min-width:0;white-space:nowrap;font-family:var(--display);font-size:.98rem;font-weight:600;display:flex;align-items:center;gap:6px}
+.ph-bar .ph-handle{overflow:hidden;text-overflow:ellipsis}
+.phone[data-p="tt"] .ph-bar b{font-size:.84rem}
+.ph-bar b svg{flex:none;width:16px;height:16px;color:var(--acc);transition:color .5s}
+.ph-bar span{display:flex;gap:12px}
+.ph-bar span svg{width:18px;height:18px}
+.ph-prof{display:flex;align-items:center;gap:14px;padding:10px 16px 4px}
+.ph-av{flex:none;width:68px;height:68px;border-radius:50%;padding:3px;background:var(--ring);transition:background .6s}
+.ph-av span{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:#fff;border:3px solid #fff}
+.ph-av img{width:70%;height:auto}
+.ph-name b{display:block;font-family:var(--display);font-size:.92rem;font-weight:600}
+.ph-name small{display:block;font-size:.72rem;color:#555;line-height:1.4}
+.ph-bio{padding:6px 16px 0;font-size:.7rem;line-height:1.45;color:#333}
+.ph-act{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 16px}
+.ph-act span{display:grid;place-items:center;height:28px;border-radius:8px;background:#EFEFEF;font-size:.72rem;font-weight:800}
+.ph-act span:first-child{background:var(--acc);color:#fff;transition:background-color .5s}
+.ph-hl{display:flex;gap:12px;padding:2px 16px 10px}
+.ph-hl figure{margin:0;text-align:center;font-size:.6rem;color:#333}
+.ph-hl img{display:block;width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1.5px #ddd;margin-bottom:3px}
+.ph-tabs{display:flex;border-top:1px solid #eee}
+.ph-tabs i{flex:1;height:30px;display:grid;place-items:center;color:#999}
+.ph-tabs i:first-child{color:#111;box-shadow:inset 0 -1.5px #111}
+.ph-tabs svg{width:15px;height:15px}
+.ph-grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;align-content:start;overflow:hidden}
+.ph-grid a{position:relative;display:block;aspect-ratio:1;overflow:hidden;background:#F6EADC;transition:aspect-ratio .6s var(--ease-out)}
+.phone[data-p="tt"] .ph-grid a{aspect-ratio:3/4}
+.ph-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease-out)}
+.ph-grid a:hover img{transform:scale(1.08)}
+.ph-grid a.reel::after,.phone[data-p="tt"] .ph-grid a::after{content:"";position:absolute;top:6px;right:6px;width:0;height:0;border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.ph-grid a{animation:tileIn .6s var(--ease-out) both;animation-delay:calc(var(--k) * 60ms)}
+.phone.swap .ph-grid a{animation:none}
+@keyframes tileIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+.ph-fade{transition:opacity .35s}
+.phone.swap .ph-fade{opacity:0}
+/* floating bits */
+.sm-float{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:#fff;color:#1d120b;font-size:.82rem;font-weight:800;box-shadow:0 24px 40px -18px rgba(0,0,0,.6);animation:bob 5s ease-in-out infinite}
+.sm-float i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--blush);color:#F3692B;font-style:normal}
+.sm-float i svg{width:16px;height:16px}
+.sm-f1{left:-2%;top:22%}
+.sm-f2{right:-4%;top:56%;animation-delay:-2.5s}
+.sm-f3{left:6%;bottom:8%;animation-delay:-1.2s;background:#F3692B;color:#fff}
+.sm-f3 i{background:rgba(255,255,255,.2);color:#fff}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hearts{position:absolute;right:16%;bottom:16%;width:60px;height:260px;pointer-events:none;z-index:5}
+.hearts span{position:absolute;bottom:0;left:50%;font-size:22px;color:#FE2C55;opacity:0;animation:heart 3.6s ease-in infinite}
+.hearts span:nth-child(2){animation-delay:.9s;color:#F3692B;font-size:16px}
+.hearts span:nth-child(3){animation-delay:1.8s;color:#FF7A3D;font-size:26px}
+.hearts span:nth-child(4){animation-delay:2.7s;color:#fff;font-size:14px}
+@keyframes heart{0%{opacity:0;transform:translate(-50%,0) scale(.4)}12%{opacity:1;transform:translate(-50%,-30px) scale(1)}50%{transform:translate(calc(-50% + 18px),-130px)}100%{opacity:0;transform:translate(calc(-50% - 10px),-250px) scale(.8)}}
+/* dots */
+.sm-dots{display:flex;gap:8px;justify-content:center;margin-top:26px}
+.sm-dots button{width:30px;height:4px;border:0;padding:0;border-radius:4px;background:rgba(255,242,234,.2);cursor:pointer;overflow:hidden;position:relative}
+.sm-dots button.on::after{content:"";position:absolute;inset:0;background:#F3692B;transform-origin:left;animation:fill 4.5s linear forwards}
+.sm.paused .sm-dots button.on::after{animation:none}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+/* hashtag marquee */
+.sm-tags{margin-top:clamp(60px,8vw,100px);padding:26px 0;border-top:1px solid rgba(255,242,234,.1);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.sm-tags div{display:flex;width:max-content;animation:marq 40s linear infinite}
+.sm-tags:hover div{animation-play-state:paused}
+.sm-tags span{padding:0 28px;font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,5.5vw,4.6rem);letter-spacing:-.03em;line-height:1.1;color:transparent;-webkit-text-stroke:1.2px rgba(255,242,234,.35);white-space:nowrap;transition:color .4s,-webkit-text-stroke-color .4s}
+.sm-tags span:nth-child(even){color:#F3692B;-webkit-text-stroke-color:#F3692B}
+.sm-tags span:hover{color:#fff;-webkit-text-stroke-color:#fff}
+@media (max-width:960px){.sm-grid{grid-template-columns:1fr}.phone{width:min(280px,70vw)}.sm-f1{left:2%}.sm-f2{right:2%}}
+@media (max-width:520px){.sm-card{grid-template-columns:48px minmax(0,1fr)}.sm-ico{width:48px;height:48px}.sm-follow{display:none}.sm-float{font-size:.74rem;padding:8px 10px}.sm-f3{display:none}}
+@media (prefers-reduced-motion: reduce){.sm-ring,.sm-float,.hearts span,.sm-tags div,.ph-grid a{animation:none!important}.hearts{display:none}}
+
 /* Presse & Soziale Medien (design 3 layout) */
 .press-sec{background:var(--cream)}
 .press-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,80px);align-items:start}
@@ -572,6 +684,7 @@ button{font:inherit;color:inherit}
 <div class="progress" aria-hidden="true"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
   <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 3h3l1.6 4.2-2 1.5a12 12 0 0 0 6.1 6.1l1.5-2L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
@@ -990,6 +1103,59 @@ button{font:inherit;color:inherit}
   </div>
 </section>
 
+<!-- Social Media -->
+<section class="section sm" id="social-media" aria-labelledby="sm-title">
+  <div class="wrap sm-grid">
+    <div>
+      <span class="kicker" data-reveal>Social Media</span>
+      <h2 class="h2" id="sm-title" data-reveal>Pflege, die man <em>sehen kann.</em></h2>
+      <p class="lede" data-reveal>Echte Momente statt Hochglanz: Auf unseren Kanälen zeigen wir Teamgeist, Alltag in der Pflege, neue Jobs und die kleinen Augenblicke, die unsere Arbeit besonders machen.</p>
+      <blockquote class="sm-quote" data-reveal>„Dank unserer aktiven Präsenz auf Social Media erreichen wir viele Menschen, die unsere Beiträge sehen, sich inspirieren lassen und daraufhin zu uns kommen.“<cite>— Dimitrij Sonkin, Geschäftsführer</cite></blockquote>
+      <ul class="sm-list">
+        <li data-reveal><a class="sm-card on" data-p="ig" href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener"><span class="sm-ico"><svg aria-hidden="true"><use href="#ig"/></svg></span><span><b>Instagram</b><small>@archimed.gmbh · Reels &amp; Einblicke</small></span><span class="sm-follow">Folgen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li data-reveal style="--d:.08s"><a class="sm-card" data-p="tt" href="https://www.tiktok.com/@archimed_pflegedienst" target="_blank" rel="noopener"><span class="sm-ico"><svg aria-hidden="true"><use href="#tt"/></svg></span><span><b>TikTok</b><small>@archimed_pflegedienst · Kurzvideos</small></span><span class="sm-follow">Folgen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li data-reveal style="--d:.16s"><a class="sm-card" data-p="fb" href="https://www.facebook.com/archimedgmbh/" target="_blank" rel="noopener"><span class="sm-ico"><svg aria-hidden="true"><use href="#fb"/></svg></span><span><b>Facebook</b><small>ARCHIMED GmbH · News &amp; Community</small></span><span class="sm-follow">Folgen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      </ul>
+    </div>
+
+    <div class="sm-stage" data-reveal>
+      <div class="sm-ring" aria-hidden="true"></div>
+      <div class="sm-float sm-f1" aria-hidden="true"><i><svg><use href="#play"/></svg></i>Neues Reel</div>
+      <div class="sm-float sm-f2" aria-hidden="true"><i>♥</i>#PflegeMitHerz</div>
+      <div class="sm-float sm-f3" aria-hidden="true"><i>+</i>Jetzt folgen</div>
+      <div class="hearts" aria-hidden="true"><span>♥</span><span>♥</span><span>♥</span><span>♥</span></div>
+      <div class="phone" data-p="ig" aria-hidden="true">
+        <div class="phone-scr">
+          <span class="phone-notch"></span>
+          <div class="ph-status"><span>9:41</span><i></i></div>
+          <div class="ph-bar"><b class="ph-fade"><svg class="ph-pico"><use href="#ig"/></svg><span class="ph-handle">archimed.gmbh</span></b><span><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+          <div class="ph-prof">
+            <div class="ph-av"><span><img src="https://archi-med.de/wp-content/uploads/2025/02/cropped-lgo-e1720853715792.png" alt=""></span></div>
+            <div class="ph-name ph-fade"><b>ARCHIMED GmbH</b><small class="ph-kind">Pflegedienst · Hannover</small></div>
+          </div>
+          <p class="ph-bio">Mehr als Pflege. Echte Begleitung. 🧡<br>Ambulant · Intensiv · Schul- &amp; Kita · seit 2007</p>
+          <div class="ph-act"><span class="ph-btn">Folgen</span><span>Nachricht</span></div>
+          <div class="ph-hl"><figure><img src="https://archi-med.de/wp-content/uploads/2024/04/F.jpg" alt="" loading="lazy">Team</figure><figure><img src="https://archi-med.de/wp-content/uploads/2024/09/6NB6810-min-1-768x580.jpeg" alt="" loading="lazy">Pflege</figure><figure><img src="https://archi-med.de/wp-content/uploads/2025/02/DSC2776-min-scaled-1-1.webp" alt="" loading="lazy">WGs</figure><figure><img src="https://archi-med.de/wp-content/uploads/2024/04/3-1.jpg" alt="" loading="lazy">Jobs</figure></div>
+          <div class="ph-tabs"><i><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 10h16M4 15h16M10 4v16M15 4v16" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></i><i><svg viewBox="0 0 24 24"><path d="M3 4h18v16H3zM10 9v6l5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i><i><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></i></div>
+          <div class="ph-grid">
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:0"><img src="https://archi-med.de/wp-content/uploads/2024/09/6NB6768-min-2.jpeg" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:1" class="reel"><img src="https://archi-med.de/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-09-at-15.07.173-scaled-1-768x1024.jpeg" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:2"><img src="https://archi-med.de/wp-content/uploads/2026/09/cf0d02fe-cf5e-4e14-b95d-a6d36aafe090-768x512.png" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:3"><img src="https://archi-med.de/wp-content/uploads/2025/02/DSC2776-min-scaled-1-1.webp" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:4" class="reel"><img src="https://archi-med.de/wp-content/uploads/2024/04/archi-med-Ambulante-Tourenpflege-.jpg" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:5"><img src="https://archi-med.de/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-09-at-15.07.174-scaled-1-768x1024.jpeg" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:6" class="reel"><img src="https://archi-med.de/wp-content/uploads/2026/04/sdfgh.jpg" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:7"><img src="https://archi-med.de/wp-content/uploads/2026/09/fe0b0561-6a8a-4a50-ae85-3499ade38719-768x512.png" alt="" loading="lazy"></a>
+              <a href="https://www.instagram.com/archimed.gmbh/" target="_blank" rel="noopener" tabindex="-1" style="--k:8"><img src="https://archi-med.de/wp-content/uploads/2024/06/archi-med-Intensivpflege-fur-Kinder.jpg" alt="" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+      <div class="sm-dots" role="group" aria-label="Plattform wählen"><button class="on" data-p="ig" aria-label="Instagram zeigen"></button><button data-p="tt" aria-label="TikTok zeigen"></button><button data-p="fb" aria-label="Facebook zeigen"></button></div>
+    </div>
+  </div>
+  <div class="sm-tags" aria-hidden="true"><div><span>#PflegeMitHerz</span><span>#ARCHIMED</span><span>#Intensivpflege</span><span>#Hannover</span><span>#Teamgeist</span><span>#PflegeJobs</span><span>#Kitabegleitung</span><span>#EchteBegleitung</span><span>#PflegeMitHerz</span><span>#ARCHIMED</span><span>#Intensivpflege</span><span>#Hannover</span><span>#Teamgeist</span><span>#PflegeJobs</span><span>#Kitabegleitung</span><span>#EchteBegleitung</span></div></div>
+</section>
+
 <!-- FAQ -->
 <section class="section faq" id="faq" aria-labelledby="faq-title">
   <div class="wrap faq-grid">
@@ -1308,6 +1474,42 @@ button{font:inherit;color:inherit}
       location.href='mailto:intensiv@archi-med.de?subject='+encodeURIComponent('Anfrage: '+F.topic.value)+'&body='+encodeURIComponent(body);
       $('.wz-progress',form).hidden=true; panes[cur].hidden=true; $('.hint',form).hidden=true; $('.wz-done',form).hidden=false;
     });
+  })();
+
+  /* ---------- Social Media showcase: phone switches platform ---------- */
+  (function(){
+    var sec=$('#social-media'); if(!sec) return;
+    var phone=$('.phone',sec), cards=$$('.sm-card',sec), dots=$$('.sm-dots button',sec), order=['ig','tt','fb'], cur='ig', timer, inView=false;
+    var D={ig:{h:'archimed.gmbh',k:'Pflegedienst · Hannover',b:'Folgen'},tt:{h:'@archimed_pflegedienst',k:'Kurzvideos aus dem Pflegealltag',b:'Folgen'},fb:{h:'ARCHIMED GmbH',k:'Gesundheit & Pflege · Hannover',b:'Gefällt mir'}};
+    function show(p){
+      if(p===cur) return; cur=p;
+      phone.classList.add('swap');
+      setTimeout(function(){
+        phone.dataset.p=p; $('.ph-handle',phone).textContent=D[p].h; $('.ph-kind',phone).textContent=D[p].k; $('.ph-btn',phone).textContent=D[p].b;
+        $('.ph-pico use',phone).setAttribute('href','#'+p);
+        phone.classList.remove('swap');
+        $$('.ph-grid a',phone).forEach(function(a){a.style.animation='none';void a.offsetWidth;a.style.animation='';});
+      },320);
+      cards.forEach(function(c){c.classList.toggle('on',c.dataset.p===p);});
+      dots.forEach(function(d){var on=d.dataset.p===p;d.classList.remove('on');if(on){void d.offsetWidth;d.classList.add('on');}});
+    }
+    function next(){show(order[(order.indexOf(cur)+1)%order.length]);}
+    function play(){clearInterval(timer);if(!reduce&&inView) timer=setInterval(next,4500);}
+    function pause(){clearInterval(timer);sec.classList.add('paused');}
+    cards.forEach(function(c){
+      c.addEventListener('mouseenter',function(){pause();show(c.dataset.p);});
+      c.addEventListener('focus',function(){pause();show(c.dataset.p);});
+      c.addEventListener('mouseleave',function(){sec.classList.remove('paused');play();});
+    });
+    dots.forEach(function(d){d.addEventListener('click',function(){show(d.dataset.p);play();});});
+    if('IntersectionObserver' in window){new IntersectionObserver(function(e){inView=e[0].isIntersecting;inView?play():clearInterval(timer);},{threshold:.25}).observe(sec);}
+    if(reduce) sec.classList.add('paused');
+    /* subtle 3D tilt */
+    if(!reduce && matchMedia('(pointer:fine)').matches){
+      var stage=$('.sm-stage',sec);
+      stage.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;phone.style.setProperty('--ry',(x*22)+'deg');phone.style.setProperty('--rx',(-y*14)+'deg');});
+      stage.addEventListener('mouseleave',function(){phone.style.removeProperty('--ry');phone.style.removeProperty('--rx');});
+    }
   })();
 
   /* ---------- Failed images: keep the warm frame, hide the broken-image icon and alt text ---------- */
