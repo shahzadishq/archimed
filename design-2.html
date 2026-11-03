@@ -338,20 +338,61 @@ button{font:inherit;color:inherit}
 .info .ii{flex:none;width:46px;height:46px;border-radius:50%;background:var(--blush);color:var(--orange-text);display:grid;place-items:center}
 .info small{display:block;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .info b{display:block;font-weight:700;color:var(--heading);font-size:1rem;overflow-wrap:anywhere}
-.form{padding:clamp(24px,4vw,44px);border-radius:8px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.form h3{grid-column:1/-1;font-size:clamp(1.6rem,2.6vw,2.1rem)}
-.form .hint{grid-column:1/-1;color:var(--muted);font-size:.875rem;margin-top:-8px}
-.field{display:flex;flex-direction:column;gap:6px}
+.form{padding:clamp(26px,4vw,46px);border-radius:16px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 70px -30px rgba(97,63,36,.28)}
+.form .eyebrow{display:flex;align-items:center;gap:12px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-text)}
+.form .eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+.form h3{margin-top:14px;font-size:clamp(1.9rem,3.2vw,2.5rem);font-weight:700}
+.form h3 em{font-style:normal;color:var(--orange-text)}
+.form .hint{color:var(--muted);font-size:1rem;margin:10px 0 0}
+.wz-progress{margin-top:28px}
+.wz-top{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--display);font-size:.9rem;font-weight:600;color:var(--heading)}
+.wz-top b{font-size:.82rem;color:var(--orange-text);font-weight:700}
+.wz-bar{height:6px;border-radius:99px;background:#F1ECE8;margin-top:10px;overflow:hidden}
+.wz-bar i{display:block;height:100%;width:33.34%;border-radius:inherit;background:var(--orange);transition:width .5s var(--ease-out)}
+.wz-steps{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.wz-steps li{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:.8rem;font-weight:500;color:#9A938E}
+.wz-steps span{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#F1F1F3;font-size:.7rem;font-weight:600;transition:background .3s,color .3s}
+.wz-steps li.on{color:var(--heading)}
+.wz-steps li.on span{background:var(--orange);color:#fff}
+.wz-steps li.done span{background:var(--blush);color:var(--orange-text)}
+.wz-pane{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px 16px}
+.wz-pane[hidden]{display:none}
+.wz-pane>h4{grid-column:1/-1;margin:0;font-family:var(--display);font-size:clamp(1.4rem,2.2vw,1.75rem);font-weight:600;color:var(--heading);letter-spacing:-.02em}
+.wz-pane>h4+p{grid-column:1/-1;margin:-12px 0 0;color:var(--muted)}
+.wz-pane.anim{animation:wzin .45s var(--ease-out)}
+@keyframes wzin{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.field{display:flex;flex-direction:column;gap:8px}
 .field.full{grid-column:1/-1}
-.field label{font-size:.875rem;font-weight:700;color:var(--heading)}
-.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--cream);border:1.5px solid var(--line);border-radius:8px;padding:14px 16px;transition:border-color .25s,box-shadow .25s,background-color .25s}
-.field textarea{min-height:130px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 4px color-mix(in srgb,var(--orange) 18%,transparent);background:var(--card)}
-.field [aria-invalid="true"]{border-color:#C2410C}
-.form .btn{grid-column:1/-1;justify-self:start}
-.status{grid-column:1/-1;font-size:.875rem;color:var(--orange-text);min-height:1.5em}
+.field label{font-family:var(--display);font-size:.9rem;font-weight:600;color:var(--heading)}
+.field label i{font-style:normal;color:var(--orange-text)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:#F5F6F8;border:1.5px solid transparent;border-radius:12px;padding:16px 18px;transition:border-color .25s,box-shadow .25s,background-color .25s}
+.field input::placeholder,.field textarea::placeholder{color:#9A9AA2}
+.field textarea{min-height:140px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 4px color-mix(in srgb,var(--orange) 15%,transparent);background:#fff}
+.field [aria-invalid="true"]{border-color:#C2410C;background:#FFF6F2}
+.field .err{display:none;font-size:.82rem;color:#C2410C}
+.field [aria-invalid="true"]~.err{display:block}
+.wz-nav{grid-column:1/-1;display:flex;gap:12px;margin-top:8px}
+.wz-nav .btn{flex:1;justify-content:center;min-height:62px;border-radius:12px}
+.wz-nav .btn-back{flex:0 0 auto;background:transparent;color:var(--heading);border:1.5px solid var(--line);box-shadow:none}
+.wz-nav .btn-back:hover{border-color:var(--heading);background:transparent;color:var(--heading)}
+.wz-sum{grid-column:1/-1;margin:0;border-radius:12px;background:#F5F6F8;padding:6px 20px}
+.wz-sum div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.wz-sum div:last-child{border-bottom:0}
+.wz-sum dt{font-family:var(--display);font-size:.85rem;font-weight:600;color:var(--heading)}
+.wz-sum dd{margin:0;color:var(--ink);overflow-wrap:anywhere;white-space:pre-line}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:var(--muted);cursor:pointer}
+.consent input{flex:none;width:20px;height:20px;margin-top:3px;accent-color:var(--orange)}
+.consent a{color:var(--orange-text)}
+.consent.bad{color:#C2410C}
+.status{grid-column:1/-1;font-size:.875rem;color:#C2410C;min-height:1.2em;margin:0}
+.wz-done{text-align:center;padding:30px 0 10px}
+.wz-done .ok{width:72px;height:72px;margin:0 auto 18px;border-radius:50%;background:var(--blush);color:var(--orange-text);display:grid;place-items:center}
+.wz-done .ok svg{width:34px;height:34px}
+.wz-done h4{font-family:var(--display);font-size:1.8rem;color:var(--heading);margin:0}
+.wz-done p{color:var(--muted);margin:10px auto 0;max-width:36ch}
 @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
-@media (max-width:560px){.form{grid-template-columns:1fr}}
+@media (max-width:560px){.wz-pane{grid-template-columns:1fr}.wz-steps li{flex-direction:column;gap:6px;text-align:center}.wz-sum div{grid-template-columns:1fr;gap:2px}}
 
 /* Presse & Soziale Medien (design 3 layout) */
 .press-sec{background:var(--cream)}
@@ -1009,25 +1050,66 @@ button{font:inherit;color:inherit}
       </ul>
     </div>
     <form class="form" id="anfrage" data-reveal novalidate>
-      <h3>Beratung anfragen</h3>
-      <p class="hint">Füllen Sie die Felder aus – beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Nachricht an ARCHIMED.</p>
-      <div class="field"><label for="f-name">Name *</label><input id="f-name" name="fullname" autocomplete="name" required></div>
-      <div class="field"><label for="f-reach">Telefon oder E-Mail *</label><input id="f-reach" name="reach" autocomplete="email" required></div>
-      <div class="field full"><label for="f-topic">Anliegen</label>
-        <select id="f-topic" name="topic">
+      <span class="eyebrow">ARCHIMED</span>
+      <h3>Ihre <em>Anfrage</em></h3>
+      <p class="hint">Wir beraten Sie gerne persönlich. Füllen Sie einfach die folgenden Schritte aus.</p>
+      <div class="wz-progress" aria-hidden="true">
+        <div class="wz-top"><span class="wz-label">Kontaktdaten</span><b class="wz-count">01 / 03</b></div>
+        <div class="wz-bar"><i></i></div>
+        <ol class="wz-steps"><li class="on"><span>01</span>Kontakt</li><li><span>02</span>Anliegen</li><li><span>03</span>Prüfen</li></ol>
+      </div>
+
+      <div class="wz-pane" data-step="1" data-label="Kontaktdaten">
+        <h4>Kontaktdaten</h4>
+        <p>Sagen Sie uns, wie wir Sie erreichen können.</p>
+        <div class="field"><label for="f-name">Vor- und Nachname <i>*</i></label><input id="f-name" name="fullname" autocomplete="name" placeholder="Ihr Name" required><span class="err">Bitte geben Sie Ihren Namen ein.</span></div>
+        <div class="field"><label for="f-phone">Telefon <i>*</i></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="Telefonnummer" required><span class="err">Bitte geben Sie Ihre Telefonnummer ein.</span></div>
+        <div class="field full"><label for="f-mail">E-Mail <i>*</i></label><input id="f-mail" name="email" type="email" autocomplete="email" placeholder="ihre@email.de" required><span class="err">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span></div>
+        <div class="wz-nav"><button class="btn btn-primary" type="button" data-next>Weiter <svg class="ic ic-arrow" aria-hidden="true"><use href="#arrow"/></svg></button></div>
+      </div>
+
+      <div class="wz-pane" data-step="2" data-label="Ihr Anliegen" hidden>
+        <h4>Ihr Anliegen</h4>
+        <p>Wählen Sie ein Thema und beschreiben Sie kurz Ihre Situation.</p>
+        <div class="field"><label for="f-topic">Anliegen <i>*</i></label>
+          <select id="f-topic" name="topic" required>
+          <option value="">– Bitte wählen –</option>
           <option>Allgemeine Beratung</option>
+          <option>Ambulante Pflege</option>
           <option>Intensivpflege für Erwachsene</option>
           <option>Intensivpflege für Kinder</option>
           <option>Intensivpflege in Wohngemeinschaften</option>
           <option>Schul- &amp; Kita-Begleitung</option>
           <option>Nachmittags- &amp; Individualbegleitung</option>
-          <option>Ambulante Pflege</option>
-          <option>Bewerbung / Karriere</option>
-        </select>
+          <option>Sonstiges</option>
+          </select><span class="err">Bitte wählen Sie ein Anliegen aus.</span>
+        </div>
+        <div class="field"><label for="f-for">Für wen?</label>
+          <select id="f-for" name="forwhom">
+          <option>Für mich selbst</option>
+          <option>Für eine*n Angehörige*n</option>
+          <option>Für mein Kind</option>
+          <option>Als Fachkraft / Einrichtung</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-msg">Nachricht <i>*</i></label><textarea id="f-msg" name="msg" placeholder="Beschreiben Sie kurz Ihre Situation …" required></textarea><span class="err">Bitte schreiben Sie eine kurze Nachricht.</span></div>
+        <div class="wz-nav"><button class="btn btn-back" type="button" data-prev>← Zurück</button><button class="btn btn-primary" type="button" data-next>Weiter <svg class="ic ic-arrow" aria-hidden="true"><use href="#arrow"/></svg></button></div>
       </div>
-      <div class="field full"><label for="f-msg">Ihre Nachricht</label><textarea id="f-msg" name="msg" placeholder="Beschreiben Sie kurz Ihre Situation …"></textarea></div>
-      <button class="btn btn-primary" type="submit">Anfrage per E-Mail senden <svg class="ic ic-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
-      <p class="status" role="status" aria-live="polite"></p>
+
+      <div class="wz-pane" data-step="3" data-label="Anfrage prüfen" hidden>
+        <h4>Anfrage prüfen</h4>
+        <p>Bitte überprüfen Sie Ihre Angaben, bevor Sie sie absenden.</p>
+        <dl class="wz-sum"></dl>
+        <label class="consent"><input type="checkbox" name="consent"> <span>Ich habe die <a href="https://archi-med.de/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. <i style="font-style:normal;color:var(--orange-text)">*</i></span></label>
+        <p class="status" role="status" aria-live="polite"></p>
+        <div class="wz-nav"><button class="btn btn-back" type="button" data-prev>← Zurück</button><button class="btn btn-primary" type="submit">Anfrage absenden ↗</button></div>
+      </div>
+
+      <div class="wz-done" hidden>
+        <div class="ok"><svg aria-hidden="true"><use href="#check"/></svg></div>
+        <h4>Vielen Dank!</h4>
+        <p>Ihr E-Mail-Programm wurde mit Ihrer Anfrage geöffnet. Bitte senden Sie die E-Mail ab – wir melden uns schnellstmöglich bei Ihnen.</p>
+      </div>
     </form>
   </div>
 </section>
@@ -1184,19 +1266,49 @@ button{font:inherit;color:inherit}
     });
   });
 
-  /* ---------- Contact form → prepared e-mail ---------- */
-  var form=$('#anfrage'), status=$('.status',form);
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var F=form.elements, name=F.fullname.value.trim(), reach=F.reach.value.trim(), ok=true;
-    [F.fullname,F.reach].forEach(function(f){var bad=!f.value.trim();f.setAttribute('aria-invalid',bad);if(bad&&ok){f.focus();ok=false;}});
-    if(!ok){status.textContent='Bitte geben Sie Ihren Namen und eine Telefonnummer oder E-Mail-Adresse an.';return;}
-    var topic=F.topic.value, body='Name: '+name+'\nErreichbar unter: '+reach+'\nAnliegen: '+topic+'\n\n'+F.msg.value.trim();
-    status.textContent='Ihr E-Mail-Programm wird geöffnet …';
-    location.href='mailto:intensiv@archi-med.de?subject='+encodeURIComponent('Anfrage: '+topic)+'&body='+encodeURIComponent(body);
-  });
-  $$('input',form).forEach(function(f){f.addEventListener('input',function(){f.removeAttribute('aria-invalid');});});
-
+  /* ---------- Contact form: 3-step inquiry wizard → prepared e-mail ---------- */
+  (function(){
+    var form=$('#anfrage'); if(!form) return;
+    var panes=$$('.wz-pane',form), steps=$$('.wz-steps li',form), bar=$('.wz-bar i',form),
+        label=$('.wz-label',form), count=$('.wz-count',form), status=$('.status',form), F=form.elements, cur=0;
+    var mailOk=function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);};
+    function valid(i){
+      var ok=true, first=null;
+      $$('[required]',panes[i]).forEach(function(f){
+        var v=f.value.trim(), bad=!v||(f.type==='email'&&!mailOk(v));
+        f.setAttribute('aria-invalid',bad); if(bad&&!first) first=f;
+      });
+      if(first){first.focus();ok=false;}
+      return ok;
+    }
+    function summary(){
+      var rows=[['Name',F.fullname.value],['Telefon',F.phone.value],['E-Mail',F.email.value],['Anliegen',F.topic.value],['Für wen',F.forwhom.value],['Nachricht',F.msg.value]];
+      $('.wz-sum',form).innerHTML='';
+      rows.forEach(function(r){var d=document.createElement('div'),t=document.createElement('dt'),v=document.createElement('dd');t.textContent=r[0];v.textContent=r[1].trim()||'–';d.append(t,v);$('.wz-sum',form).appendChild(d);});
+    }
+    function go(i){
+      panes[cur].hidden=true; cur=i; panes[i].hidden=false;
+      panes[i].classList.remove('anim'); void panes[i].offsetWidth; panes[i].classList.add('anim');
+      steps.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.toggle('done',k<i);});
+      bar.style.width=((i+1)/panes.length*100)+'%';
+      label.textContent=panes[i].dataset.label; count.textContent='0'+(i+1)+' / 0'+panes.length;
+      if(i===panes.length-1) summary();
+      var top=form.getBoundingClientRect().top; if(top<0) form.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    $$('[data-next]',form).forEach(function(b){b.addEventListener('click',function(){if(valid(cur)) go(cur+1);});});
+    $$('[data-prev]',form).forEach(function(b){b.addEventListener('click',function(){go(cur-1);});});
+    $$('input,select,textarea',form).forEach(function(f){f.addEventListener('input',function(){f.removeAttribute('aria-invalid');});f.addEventListener('change',function(){f.removeAttribute('aria-invalid');});});
+    $$('.wz-pane input',form).forEach(function(f){f.addEventListener('keydown',function(e){if(e.key==='Enter'&&cur<panes.length-1){e.preventDefault();if(valid(cur))go(cur+1);}});});
+    F.consent.addEventListener('change',function(){$('.consent',form).classList.remove('bad');status.textContent='';});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(cur<panes.length-1){if(valid(cur))go(cur+1);return;}
+      if(!F.consent.checked){$('.consent',form).classList.add('bad');status.textContent='Bitte bestätigen Sie die Datenschutzerklärung.';return;}
+      var body='Name: '+F.fullname.value.trim()+'\nTelefon: '+F.phone.value.trim()+'\nE-Mail: '+F.email.value.trim()+'\nAnliegen: '+F.topic.value+'\nFür wen: '+F.forwhom.value+'\n\n'+F.msg.value.trim();
+      location.href='mailto:intensiv@archi-med.de?subject='+encodeURIComponent('Anfrage: '+F.topic.value)+'&body='+encodeURIComponent(body);
+      $('.wz-progress',form).hidden=true; panes[cur].hidden=true; $('.hint',form).hidden=true; $('.wz-done',form).hidden=false;
+    });
+  })();
 
   /* ---------- Failed images: keep the warm frame, hide the broken-image icon and alt text ---------- */
   $$('main img').forEach(function(img){function miss(){img.style.visibility='hidden';}if(img.complete&&img.src&&img.naturalWidth===0)miss();img.addEventListener('error',miss);});
