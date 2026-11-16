@@ -681,6 +681,14 @@ button{font:inherit;color:inherit}
 .feat .iw svg{width:22px;height:22px}
 .feat h3{font-size:1.15rem;color:var(--heading);margin-bottom:8px;line-height:1.3}
 .feat p{color:var(--muted);font-size:.95rem;line-height:1.6}
+/* photo location card (WG standorte) */
+.feat.loc{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.feat.loc .loc-img{aspect-ratio:16/10;overflow:hidden;background:var(--sand)}
+.feat.loc .loc-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+.feat.loc:hover .loc-img img{transform:scale(1.05)}
+.feat.loc .loc-body{padding:22px 24px 26px}
+.feat.loc .loc-addr{font-weight:700;color:var(--heading);font-size:.95rem;margin:0 0 6px;display:flex;align-items:center;gap:7px}
+.feat.loc .loc-addr svg{width:16px;height:16px;color:var(--orange-text);flex:none}
 .cta-band{background:var(--cocoa);color:var(--on-cocoa);border-radius:8px;padding:clamp(40px,5vw,66px) clamp(24px,4vw,48px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;overflow:hidden;isolation:isolate}
 .cta-band::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 20% 0%,rgba(243,105,43,.28),transparent 55%)}
 .cta-band h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.8rem)}
