@@ -26,7 +26,7 @@
     header.classList.toggle('solid',y>30);
     var menuOpen=overlay.classList.contains('open');
     lastY=y;
-    if(hero) fab.classList.toggle('show',y>hero.offsetHeight*.7);
+    fab.classList.toggle('show',y>(hero?hero.offsetHeight*.7:520));
     if(reduce) return;
     if(attitude){var r=attitude.getBoundingClientRect();
     if(r.bottom>0 && r.top<vh && attBg) attBg.style.setProperty('--py',((r.top-vh/2)*-.12).toFixed(1)+'px');}
