@@ -685,3 +685,9 @@ button{font:inherit;color:inherit}
 .cta-band h2 em{color:var(--orange)}
 .cta-band p{color:var(--on-cocoa-soft);max-width:56ch;font-size:1.05rem}
 .cta-band .actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+
+/* Sub-page: areas band + FAQ tweaks */
+.areas-band{background:var(--blush);border-radius:8px;padding:clamp(30px,5vw,56px)}
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.areas span{padding:9px 16px;border-radius:8px;background:var(--card);border:1px solid var(--line);font-size:.9rem;font-weight:700;color:var(--heading);transition:transform .3s var(--ease),border-color .3s}
+.areas span:hover{transform:translateY(-3px);border-color:var(--orange)}
