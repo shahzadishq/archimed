@@ -686,8 +686,12 @@ button{font:inherit;color:inherit}
 .cta-band p{color:var(--on-cocoa-soft);max-width:56ch;font-size:1.05rem}
 .cta-band .actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
 
-/* Sub-page: areas band + FAQ tweaks */
-.areas-band{background:var(--blush);border-radius:8px;padding:clamp(30px,5vw,56px)}
+/* Sub-page: areas band (same look as the CTA band) */
+.areas-band{background:var(--cocoa);color:var(--on-cocoa);border-radius:8px;padding:clamp(32px,5vw,60px);position:relative;overflow:hidden;isolation:isolate}
+.areas-band::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 20% 0%,rgba(243,105,43,.28),transparent 55%)}
+.areas-band .kicker{color:#F3692B}
+.areas-band h2{color:#fff}
+.areas-band p{color:var(--on-cocoa-soft)}
 .areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.areas span{padding:9px 16px;border-radius:8px;background:var(--card);border:1px solid var(--line);font-size:.9rem;font-weight:700;color:var(--heading);transition:transform .3s var(--ease),border-color .3s}
-.areas span:hover{transform:translateY(-3px);border-color:var(--orange)}
+.areas span{padding:9px 16px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid var(--cocoa-line);font-size:.9rem;font-weight:700;color:#fff;transition:transform .3s var(--ease),border-color .3s,background-color .3s}
+.areas span:hover{transform:translateY(-3px);border-color:var(--orange);background:rgba(243,105,43,.18)}
