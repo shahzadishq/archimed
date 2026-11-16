@@ -662,11 +662,13 @@ button{font:inherit;color:inherit}
 
 /* ---------- Sub-pages ---------- */
 .subhero{padding-top:clamp(40px,6vw,78px)}
+.subhero h1{overflow-wrap:anywhere;hyphens:auto}
 .lead-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(36px,5vw,70px);align-items:center}
-@media (max-width:900px){.lead-grid{grid-template-columns:1fr}}
+@media (max-width:900px){.lead-grid{grid-template-columns:minmax(0,1fr)}}
 .lead-art{aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--sand);box-shadow:var(--shadow)}
 .lead-art img{width:100%;height:100%;object-fit:cover}
-.crumbs{display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--muted);margin-bottom:10px}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:.875rem;color:var(--muted);margin-bottom:10px}
+.crumbs span{min-width:0;overflow-wrap:anywhere}
 .crumbs a{color:var(--muted);text-decoration:none;transition:color .2s}
 .crumbs a:hover{color:var(--orange-text)}
 .crumbs span{color:var(--heading);font-weight:700}
@@ -695,3 +697,11 @@ button{font:inherit;color:inherit}
 .areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .areas span{padding:9px 16px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid var(--cocoa-line);font-size:.9rem;font-weight:700;color:#fff;transition:transform .3s var(--ease),border-color .3s,background-color .3s}
 .areas span:hover{transform:translateY(-3px);border-color:var(--orange);background:rgba(243,105,43,.18)}
+
+/* Sub-page: cocoa quote / highlight band */
+.quote-band{background:var(--cocoa);color:var(--on-cocoa);border-radius:8px;padding:clamp(40px,6vw,72px);position:relative;overflow:hidden;isolation:isolate}
+.quote-band::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 85% 0%,rgba(243,105,43,.26),transparent 55%)}
+.quote-band .kicker{color:#F3692B}
+.quote-band .q{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,3.8vw,3.1rem);line-height:1.12;letter-spacing:-.03em;color:#fff;max-width:20ch;margin:14px 0 18px}
+.quote-band .q em{color:var(--orange)}
+.quote-band p{color:var(--on-cocoa-soft);max-width:58ch}
