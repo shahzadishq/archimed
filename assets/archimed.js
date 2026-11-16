@@ -26,7 +26,7 @@
     header.classList.toggle('solid',y>30);
     var menuOpen=overlay.classList.contains('open');
     lastY=y;
-    if(hero) fab.classList.toggle('show',y>hero.offsetHeight*.7);
+    fab.classList.toggle('show',y>(hero?hero.offsetHeight*.7:520));
     if(reduce) return;
     if(attitude){var r=attitude.getBoundingClientRect();
     if(r.bottom>0 && r.top<vh && attBg) attBg.style.setProperty('--py',((r.top-vh/2)*-.12).toFixed(1)+'px');}
@@ -88,25 +88,34 @@
   });
   }
 
-  /* ---------- Contact form: 3-step inquiry wizard → prepared e-mail ---------- */
-  (function(){
-    var form=$('#anfrage'); if(!form) return;
+  /* ---------- Multi-step wizards (inquiry + job applications) → prepared e-mail ---------- */
+  $$('form.wizard').forEach(function(form){
     var panes=$$('.wz-pane',form), steps=$$('.wz-steps li',form), bar=$('.wz-bar i',form),
         label=$('.wz-label',form), count=$('.wz-count',form), status=$('.status',form), F=form.elements, cur=0;
     var mailOk=function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);};
+    if(bar) bar.style.width=(100/panes.length)+'%';
     function valid(i){
-      var ok=true, first=null;
+      var first=null;
       $$('[required]',panes[i]).forEach(function(f){
         var v=f.value.trim(), bad=!v||(f.type==='email'&&!mailOk(v));
         f.setAttribute('aria-invalid',bad); if(bad&&!first) first=f;
       });
-      if(first){first.focus();ok=false;}
-      return ok;
+      if(first){first.focus();return false;}
+      return true;
+    }
+    function rows(){
+      var out=[];
+      $$('input,select,textarea',form).forEach(function(f){
+        if(!f.name||f.type==='checkbox') return;
+        var l=f.id&&$('label[for="'+f.id+'"]',form), name=f.dataset.sum||(l?l.textContent.replace('*','').trim():f.name);
+        var v=f.type==='file'?(f.files&&f.files[0]?f.files[0].name:''):f.value;
+        out.push([name,v]);
+      });
+      return out;
     }
     function summary(){
-      var rows=[['Name',F.fullname.value],['Telefon',F.phone.value],['E-Mail',F.email.value],['Anliegen',F.topic.value],['Für wen',F.forwhom.value],['Nachricht',F.msg.value]];
-      $('.wz-sum',form).innerHTML='';
-      rows.forEach(function(r){var d=document.createElement('div'),t=document.createElement('dt'),v=document.createElement('dd');t.textContent=r[0];v.textContent=r[1].trim()||'–';d.append(t,v);$('.wz-sum',form).appendChild(d);});
+      var sum=$('.wz-sum',form); sum.innerHTML='';
+      rows().forEach(function(r){var w=d.createElement('div'),t=d.createElement('dt'),v=d.createElement('dd');t.textContent=r[0];v.textContent=String(r[1]).trim()||'–';w.append(t,v);sum.appendChild(w);});
     }
     function go(i){
       panes[cur].hidden=true; cur=i; panes[i].hidden=false;
@@ -121,15 +130,55 @@
     $$('[data-prev]',form).forEach(function(b){b.addEventListener('click',function(){go(cur-1);});});
     $$('input,select,textarea',form).forEach(function(f){f.addEventListener('input',function(){f.removeAttribute('aria-invalid');});f.addEventListener('change',function(){f.removeAttribute('aria-invalid');});});
     $$('.wz-pane input',form).forEach(function(f){f.addEventListener('keydown',function(e){if(e.key==='Enter'&&cur<panes.length-1){e.preventDefault();if(valid(cur))go(cur+1);}});});
+    $$('.file input',form).forEach(function(f){f.addEventListener('change',function(){var box=f.closest('.file'),n=$('[data-fname]',box);box.classList.toggle('has',!!f.files.length);if(n)n.textContent=f.files.length?f.files[0].name:'PDF, JPG oder PNG · max. 10 MB';});});
     F.consent.addEventListener('change',function(){$('.consent',form).classList.remove('bad');status.textContent='';});
     form.addEventListener('submit',function(e){
       e.preventDefault();
       if(cur<panes.length-1){if(valid(cur))go(cur+1);return;}
-      if(!F.consent.checked){$('.consent',form).classList.add('bad');status.textContent='Bitte bestätigen Sie die Datenschutzerklärung.';return;}
-      var body='Name: '+F.fullname.value.trim()+'\nTelefon: '+F.phone.value.trim()+'\nE-Mail: '+F.email.value.trim()+'\nAnliegen: '+F.topic.value+'\nFür wen: '+F.forwhom.value+'\n\n'+F.msg.value.trim();
-      location.href='mailto:intensiv@archi-med.de?subject='+encodeURIComponent('Anfrage: '+F.topic.value)+'&body='+encodeURIComponent(body);
+      if(!F.consent.checked){$('.consent',form).classList.add('bad');status.textContent=form.dataset.consentMsg||'Bitte bestätigen Sie die Datenschutzerklärung.';return;}
+      var subjF=form.dataset.subjectField&&F[form.dataset.subjectField];
+      var subject=(form.dataset.subject||'Anfrage')+(subjF&&subjF.value?': '+subjF.value:'');
+      var body=rows().map(function(r){return r[0]+': '+String(r[1]).trim();}).join('\n');
+      if($('.file input',form)) body+='\n\n(Bitte Lebenslauf / Unterlagen an diese E-Mail anhängen.)';
+      location.href='mailto:'+(form.dataset.mail||'intensiv@archi-med.de')+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
       $('.wz-progress',form).hidden=true; panes[cur].hidden=true; $('.hint',form).hidden=true; $('.wz-done',form).hidden=false;
     });
+  });
+
+  /* "Jetzt bewerben" on a job card: pre-select that job in the application form */
+  $$('[data-apply]').forEach(function(a){a.addEventListener('click',function(){
+    var f=d.getElementById(a.getAttribute('href').slice(1)), sel=f&&$('select[name="job"]',f);
+    if(sel){sel.value=a.dataset.apply;sel.removeAttribute('aria-invalid');}
+  });});
+
+  /* ---------- Filterable lists (jobs, blog, press) ---------- */
+  $$('[data-filter-list]').forEach(function(box){
+    var list=d.getElementById(box.dataset.filterList), items=$$('[data-cat]',list), chips=$$('[data-value]',box),
+        sel=$('select',box), q=$('input[type="search"]',box), cnt=$('.count',box), empty=list.parentElement.querySelector('.empty'), cat='';
+    function apply(){
+      var loc=sel?sel.value:'', s=q?q.value.trim().toLowerCase():'', n=0;
+      items.forEach(function(it){
+        var ok=(!cat||(' '+it.dataset.cat+' ').indexOf(' '+cat+' ')>-1)&&(!loc||it.dataset.loc===loc)&&(!s||it.textContent.toLowerCase().indexOf(s)>-1);
+        it.hidden=!ok; if(ok){n++;it.classList.add('in');}
+      });
+      if(cnt) cnt.textContent=n+(n===1?' Eintrag':' Einträge');
+      if(empty) empty.hidden=n>0;
+    }
+    chips.forEach(function(c){c.addEventListener('click',function(){cat=c.dataset.value;chips.forEach(function(x){x.setAttribute('aria-pressed',String(x===c));});apply();});});
+    if(sel) sel.addEventListener('change',apply);
+    if(q) q.addEventListener('input',apply);
+    apply();
+  });
+
+  /* Press release cards jump to the article list and pre-filter it */
+  $$('[data-topic]').forEach(function(a){a.addEventListener('click',function(){var c=$('.filters [data-value="'+a.dataset.topic+'"]');if(c)c.click();});});
+
+  /* ---------- Legal pages: highlight the current TOC entry ---------- */
+  (function(){
+    var links=$$('.toc a'); if(!links.length||!('IntersectionObserver' in window)) return;
+    var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+    var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on');});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-15% 0px -75% 0px'});
+    $$('.prose h2[id]').forEach(function(h){obs.observe(h);});
   })();
 
   /* ---------- Social Media showcase: phone switches platform ---------- */
