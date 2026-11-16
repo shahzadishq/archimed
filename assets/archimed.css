@@ -777,7 +777,7 @@ button{font:inherit;color:inherit}
 .posts.p3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:1000px){.posts.p3{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.posts.p3{grid-template-columns:1fr}}
-.post .tag{align-self:flex-start;padding:4px 10px;border-radius:6px;background:var(--blush);color:var(--orange-text);font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.post .tag,.featured .tag{align-self:flex-start;padding:4px 10px;border-radius:6px;background:var(--blush);color:var(--orange-text);font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .post[hidden]{display:none}
 .featured{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);border-radius:8px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .5s var(--ease)}
 .featured:hover{transform:translateY(-6px)}
@@ -862,3 +862,8 @@ button{font:inherit;color:inherit}
 .releases .feat{text-decoration:none;color:inherit;display:flex;flex-direction:column}
 .releases .feat h3{font-size:1.05rem}
 .releases .feat .n{margin-top:auto;padding-top:12px;font-size:.85rem;font-weight:800;color:var(--orange-text)}
+/* Blog thumbnails are 16:9 with text on the left and people on the right: show them uncropped */
+.posts.p3 .post-img{aspect-ratio:16/9}
+.featured{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center}
+.featured .post-img{aspect-ratio:16/9;min-height:0;height:auto;align-self:center}
+@media (max-width:860px){.featured{grid-template-columns:1fr}}
