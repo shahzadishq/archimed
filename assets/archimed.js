@@ -199,7 +199,7 @@
       dots.forEach(function(d){var on=d.dataset.p===p;d.classList.remove('on');if(on){void d.offsetWidth;d.classList.add('on');}});
     }
     function next(){show(order[(order.indexOf(cur)+1)%order.length]);}
-    function play(){clearInterval(timer);if(!reduce&&inView) timer=setInterval(next,4500);}
+    function play(){clearInterval(timer);} /* auto-switch disabled: phone stays still unless the visitor hovers/clicks a channel */
     function pause(){clearInterval(timer);sec.classList.add('paused');}
     cards.forEach(function(c){
       c.addEventListener('mouseenter',function(){pause();show(c.dataset.p);});
@@ -209,13 +209,11 @@
     dots.forEach(function(d){d.addEventListener('click',function(){show(d.dataset.p);play();});});
     if('IntersectionObserver' in window){new IntersectionObserver(function(e){inView=e[0].isIntersecting;inView?play():clearInterval(timer);},{threshold:.25}).observe(sec);}
     if(reduce) sec.classList.add('paused');
-    /* subtle 3D tilt */
-    if(!reduce && matchMedia('(pointer:fine)').matches){
-      var stage=$('.sm-stage',sec);
-      stage.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;phone.style.setProperty('--ry',(x*22)+'deg');phone.style.setProperty('--rx',(-y*14)+'deg');});
-      stage.addEventListener('mouseleave',function(){phone.style.removeProperty('--ry');phone.style.removeProperty('--rx');});
-    }
+    /* 3D tilt removed: phone stays static */
   })();
+
+  /* ---------- Kontakt: Google Map, loaded only after the visitor clicks (DSGVO two-click) ---------- */
+  $$('[data-gmap]').forEach(function(b){b.addEventListener('click',function(){var box=b.closest('.gmap'),f=d.createElement('iframe');f.src=b.dataset.gmap;f.title='Google Maps: ARCHIMED, Sokelantstraße 5, 30165 Hannover';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';f.allowFullscreen=true;box.innerHTML='';box.appendChild(f);box.classList.add('on');});});
 
   /* ---------- Failed images: keep the warm frame, hide the broken-image icon and alt text ---------- */
   $$('main img').forEach(function(img){function miss(){img.style.visibility='hidden';}if(img.complete&&img.src&&img.naturalWidth===0)miss();img.addEventListener('error',miss);});
