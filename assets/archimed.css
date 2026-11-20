@@ -1074,3 +1074,20 @@ div.cta-band.cta-split::after{background:radial-gradient(ellipse at 0% 0%,rgba(2
 @media (max-width:600px){.kb-why .lead-art{aspect-ratio:1/1!important}.kb-why .checks{grid-template-columns:minmax(0,1fr)}.kb-why .statement{font-size:1.15rem}}
 @media (min-width:601px) and (max-width:900px){.kb-why .checks li:last-child:nth-child(odd){grid-column:1/-1}}
 .feat-grid.feat-4 h3{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+
+/* "Unser Versprechen" – light editorial layout (replaces the brown quote-band; trial on Intensivpflege Erwachsene) */
+.promise{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,80px);align-items:center;padding:clamp(36px,5vw,64px);border-radius:8px;background:var(--blush);border:1px solid var(--line);overflow:hidden;isolation:isolate}
+.promise::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--orange)}
+.promise::after{content:"";position:absolute;right:-120px;top:-120px;width:340px;aspect-ratio:1;border-radius:50%;z-index:-1;background:radial-gradient(circle,rgba(243,105,43,.18),transparent 70%)}
+.promise-quote{position:relative}
+.promise-mark{position:absolute;left:-6px;top:-70px;font-family:Georgia,serif;font-size:11rem;line-height:1;color:rgba(243,105,43,.18);pointer-events:none}
+.promise .q{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.12;letter-spacing:-.03em;color:var(--heading);max-width:18ch;margin:14px 0 16px}
+.promise .q em{font-style:normal;color:var(--orange-text)}
+.promise-sub{color:var(--muted);max-width:46ch;margin:0}
+.promise-points{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.promise-points li{display:flex;gap:18px;align-items:flex-start;padding:18px 20px;border-radius:8px;background:var(--card);box-shadow:var(--shadow-sm);transition:transform .4s var(--ease)}
+.promise-points li:hover{transform:translateX(6px)}
+.promise-points .pn{flex:none;font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--orange-text);width:40px;height:40px;border-radius:50%;border:2px solid rgba(243,105,43,.35);display:grid;place-items:center}
+.promise-points b{display:block;color:var(--heading);margin-bottom:2px}
+.promise-points span{font-size:.9rem;color:var(--muted)}
+@media (max-width:900px){.promise{grid-template-columns:minmax(0,1fr)}.promise-mark{font-size:8rem;top:-50px}}
