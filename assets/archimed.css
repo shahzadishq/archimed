@@ -1004,3 +1004,4 @@ div.cta-band.cta-split::after{background:radial-gradient(ellipse at 0% 0%,rgba(2
 .kb-dark .checks span{color:var(--on-cocoa-soft)}
 .kb-dark .tick{background:rgba(243,105,43,.22);color:#F3692B}
 .kb-fit{padding-top:clamp(20px,3vw,40px)}
+#artikel.section{padding-bottom:clamp(32px,4vw,56px)}
