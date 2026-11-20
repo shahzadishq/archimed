@@ -1080,7 +1080,7 @@ div.cta-band.cta-split::after{background:radial-gradient(ellipse at 0% 0%,rgba(2
 .promise::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--orange)}
 .promise::after{content:"";position:absolute;right:-120px;top:-120px;width:340px;aspect-ratio:1;border-radius:50%;z-index:-1;background:radial-gradient(circle,rgba(243,105,43,.18),transparent 70%)}
 .promise-quote{position:relative}
-.promise-mark{position:absolute;left:-6px;top:-70px;font-family:Georgia,serif;font-size:11rem;line-height:1;color:rgba(243,105,43,.18);pointer-events:none}
+.promise-mark{position:absolute;right:0;top:-60px;font-family:Georgia,serif;font-size:11rem;line-height:1;color:rgba(243,105,43,.18);pointer-events:none}
 .promise .q{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.12;letter-spacing:-.03em;color:var(--heading);max-width:18ch;margin:14px 0 16px}
 .promise .q em{font-style:normal;color:var(--orange-text)}
 .promise-sub{color:var(--muted);max-width:46ch;margin:0}
