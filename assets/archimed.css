@@ -982,8 +982,6 @@ div.cta-band.cta-split::after{background:radial-gradient(ellipse at 0% 0%,rgba(2
 .gmap-consent p{margin:0;max-width:44ch;font-size:.9rem;color:var(--muted)}
 .gmap-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px}
 .gmap.on iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.cta-photo img{object-position:50% 12%}
-.section:has(> .wrap > .cta-split){padding-top:clamp(28px,3.5vw,48px)}
 
 /* --- Kitabegleitung: tighter, more balanced layout --- */
 .kb-why .about-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(32px,5vw,72px)}
@@ -1004,4 +1002,51 @@ div.cta-band.cta-split::after{background:radial-gradient(ellipse at 0% 0%,rgba(2
 .kb-dark .checks span{color:var(--on-cocoa-soft)}
 .kb-dark .tick{background:rgba(243,105,43,.22);color:#F3692B}
 .kb-fit{padding-top:clamp(20px,3vw,40px)}
-#artikel.section{padding-bottom:clamp(32px,4vw,56px)}
+
+/* --- Round 2 (Nov 20 PM) --- */
+/* CTA: identical spacing on every page, photo sits on the card's bottom edge */
+.section.cta-sec{padding-block:clamp(56px,7vw,96px)}
+.section:not([style*="background"]):not(.subhero):has(+ .cta-sec){padding-bottom:0}
+.cta-photo{inset:28px 28px 0 0;border-radius:200px 200px 0 0}
+.cta-badge{bottom:36px}
+@media (max-width:860px){.cta-photo{inset:20px 20px 0 20px;border-radius:140px 140px 0 0}.cta-side{min-height:280px}.cta-badge{bottom:20px;left:36px}}
+
+/* Unternehmen: redesigned "Pflege mit Herz" section */
+.about2{padding-top:clamp(24px,3vw,40px)}
+.about2-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:center}
+.about2-media{position:relative;padding:0 clamp(40px,6vw,80px) clamp(40px,5vw,64px) 0}
+.a2-main{border-radius:8px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-sm)}
+.a2-main img,.a2-small img{width:100%;height:100%;object-fit:cover;display:block}
+.a2-small{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;border-radius:8px;overflow:hidden;border:8px solid var(--cream);box-shadow:0 30px 50px -28px rgba(60,35,15,.55)}
+.a2-small img{object-position:50% 30%}
+.a2-badge{position:absolute;left:-18px;top:28px;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:8px;background:var(--btn);color:#fff;box-shadow:0 20px 34px -16px rgba(243,105,43,.75);max-width:230px}
+.a2-badge b{font-family:var(--display);font-size:2rem;line-height:1}
+.a2-badge span{font-size:.82rem;font-weight:700;line-height:1.3}
+.a2-lead{font-family:var(--display);font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.5;color:var(--heading);margin:20px 0 0}
+.a2-values{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.a2-values li{display:flex;gap:16px;align-items:flex-start}
+.a2-values .iw{flex:none;width:44px;height:44px;border-radius:50%;background:var(--blush);color:var(--orange-text);display:grid;place-items:center}
+.a2-values .iw svg{width:20px;height:20px}
+.a2-values b{display:block;color:var(--heading)}
+.a2-values span{font-size:.92rem;color:var(--muted)}
+.a2-quote{margin:30px 0 0;padding:24px 26px;border-radius:8px;background:var(--cocoa);color:var(--on-cocoa);display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center}
+.a2-quote img{grid-row:span 2;width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid rgba(243,105,43,.6)}
+.a2-quote blockquote{margin:0;font-size:.95rem;line-height:1.55;color:var(--on-cocoa)}
+.a2-quote figcaption{font-size:.85rem;color:var(--on-cocoa-soft)}
+.a2-quote figcaption b{color:#F3692B}
+@media (max-width:900px){.about2-grid{grid-template-columns:minmax(0,1fr)}.a2-badge{left:12px}}
+
+/* Schul- & Kitabegleitung: 4 strengths in one row */
+.feat-grid.feat-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.feat-grid.feat-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.feat-grid.feat-4{grid-template-columns:minmax(0,1fr)}}
+
+/* Kitabegleitung: narrower image that runs the full height of the text; equal heading rows */
+.kb-why .about-grid{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);align-items:stretch}
+.kb-why .lead-art{aspect-ratio:auto!important;max-height:none;height:100%;min-height:420px;position:relative;top:0}
+.kb-why .lead-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.kb-h{margin:14px 0 24px!important;font-size:clamp(1.9rem,3.2vw,2.6rem)}
+@media (max-width:900px){.kb-why .lead-art{height:auto;aspect-ratio:4/3!important}.kb-h br{display:none}}
+
+/* Kontakt: map shown directly */
+.gmap{min-height:420px}
