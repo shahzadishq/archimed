@@ -212,6 +212,19 @@
     /* 3D tilt removed: phone stays static */
   })();
 
+  /* ---------- Active menu state for main menu, dropdown items and mobile menu ---------- */
+  (function(){
+    var here=(location.pathname.split('/').pop()||'design-2.html').toLowerCase();
+    if(here==='index.html') here='design-2.html';
+    $$('.menu a, .overlay a').forEach(function(a){
+      var h=(a.getAttribute('href')||'').split('#')[0].toLowerCase();
+      if(!h||h!==here||(a.getAttribute('href')||'').indexOf('#')>-1) return;
+      a.classList.add('on'); a.setAttribute('aria-current','page');
+      var sub=a.closest('.submenu, .ov-sub');
+      if(sub){var parent=sub.parentElement.querySelector(':scope > a'); if(parent) parent.classList.add('on');}
+    });
+  })();
+
   /* ---------- Kontakt: Google Map, loaded only after the visitor clicks (DSGVO two-click) ---------- */
   $$('[data-gmap]').forEach(function(b){b.addEventListener('click',function(){var box=b.closest('.gmap'),f=d.createElement('iframe');f.src=b.dataset.gmap;f.title='Google Maps: ARCHIMED, Sokelantstraße 5, 30165 Hannover';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';f.allowFullscreen=true;box.innerHTML='';box.appendChild(f);box.classList.add('on');});});
 
