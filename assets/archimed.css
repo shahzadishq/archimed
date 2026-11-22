@@ -1169,3 +1169,11 @@ div.cta-band.cta-split::after{background:radial-gradient(ellipse at 0% 0%,rgba(2
 .ctx-a .ctx-card a{font-size:.9rem;padding:8px 10px}
 .ctx-a .ctx-card .ci{width:38px;height:38px}
 @media (max-width:700px){.ctx-a .ctx-card{grid-template-columns:minmax(0,1fr)}}
+
+/* Homepage Presse: left column stays in view while the list scrolls (like FAQ) */
+@media (min-width:901px){.press-wrap > div:first-child{position:sticky;top:120px}}
+/* CTA (variant A) is the site-wide CTA – compact height */
+.ctx-a{padding:clamp(56px,6vw,88px) 0}
+.ctx-a h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin:12px 0 12px}
+.ctx-a .actions{margin-top:22px}
+.ctx-a-grid{gap:22px}

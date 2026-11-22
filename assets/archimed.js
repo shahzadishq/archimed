@@ -209,12 +209,7 @@
     dots.forEach(function(d){d.addEventListener('click',function(){show(d.dataset.p);play();});});
     if('IntersectionObserver' in window){new IntersectionObserver(function(e){inView=e[0].isIntersecting;inView?play():clearInterval(timer);},{threshold:.25}).observe(sec);}
     if(reduce) sec.classList.add('paused');
-    /* subtle 3D tilt */
-    if(!reduce && matchMedia('(pointer:fine)').matches){
-      var stage=$('.sm-stage',sec);
-      stage.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;phone.style.setProperty('--ry',(x*22)+'deg');phone.style.setProperty('--rx',(-y*14)+'deg');});
-      stage.addEventListener('mouseleave',function(){phone.style.removeProperty('--ry');phone.style.removeProperty('--rx');});
-    }
+    /* no mouse tilt: the phone stays put on hover (other animations stay) */
   })();
 
   /* ---------- Active menu state for main menu, dropdown items and mobile menu ---------- */
