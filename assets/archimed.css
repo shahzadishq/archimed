@@ -1177,3 +1177,10 @@ div.cta-band.cta-split::after{background:radial-gradient(ellipse at 0% 0%,rgba(2
 .ctx-a h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin:12px 0 12px}
 .ctx-a .actions{margin-top:22px}
 .ctx-a-grid{gap:22px}
+.ctx-a-grid{grid-template-columns:minmax(0,700px)}
+.ctx-a .ctx-card{padding:10px 12px}
+.ctx-a .ctx-card a{white-space:nowrap;font-size:.86rem;gap:10px;padding:6px 8px}
+.ctx-a .ctx-card .ci{width:34px;height:34px}
+.ctx-a .ctx-card .ci svg{width:16px;height:16px}
+.ctx-a .ctx-live{margin:2px 0 4px 8px;font-size:.72rem}
+@media (max-width:1100px){.ctx-a .ctx-card{grid-template-columns:minmax(0,1fr)}}
